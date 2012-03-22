@@ -58,7 +58,7 @@ function decode(strToDecode)
       </table>
     </form>
     <script language="Javascript">
-      document.getElementById('texture').src = decode(gup('imageurl'));
+      document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
       document.getElementById('assignmentId').value = gup('assignmentId');
 
 
@@ -74,6 +74,9 @@ function decode(strToDecode)
       var form = document.getElementById('mturk_form');
       if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+          
+      document.getElementById('texture').src = decode(gup('imageurl'));    
+          
       }
       }
 
