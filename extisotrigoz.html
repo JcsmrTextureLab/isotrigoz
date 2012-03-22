@@ -47,8 +47,8 @@ function decode(strToDecode)
                 Right<br>
                 <input name="category" value="none" type="radio">&nbsp;None<br>
               </p>
-              <p> <img id="texture" alt="random" height="400" width="400"> <input
-                       id="submitButton" name="Submit" value="Submit" type="submit">
+              <p> <img id="texture" alt="random" height="400" width="400">
+              <input id="submitButton" name="Submit" value="Submit" type="submit">
               </p>
             </td>
           </tr>
@@ -65,17 +65,17 @@ function decode(strToDecode)
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
-      //if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
-      //{If we're previewing, disable the button and give it a helpful message
-      //document.getElementById('submitButton').disabled = true;
-      // document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
-      //} else {
-      //var form = document.getElementById('mturk_form');
-      //if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
-      //    form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
-      //}
-      //}
- 
+      if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+      {If we're previewing, disable the button and give it a helpful message
+      document.getElementById('submitButton').disabled = true;
+       document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
+      } else {
+      var form = document.getElementById('mturk_form');
+      if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
+          form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+      }
+      }
+
 </script>
   </body>
 </html>
