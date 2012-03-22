@@ -72,10 +72,11 @@ function decode(strToDecode)
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
       var form = document.getElementById('mturk_form');
+      document.getElementById('texture').src = decode(gup('imageurl'));
       if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
           
-      document.getElementById('texture').src = decode(gup('imageurl'));    
+      
           
       }
       }
