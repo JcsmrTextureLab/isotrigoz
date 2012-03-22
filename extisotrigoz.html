@@ -1,6 +1,7 @@
 <!-- This file needs to be hosted on an external server.  -->
 <html>
   <head>
+    <title> IsotrigOz </title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <script language="Javascript">
 //
@@ -46,24 +47,19 @@ function decode(strToDecode)
                 Right<br>
                 <input name="category" value="none" type="radio">&nbsp;None<br>
               </p>
-              <p> <input id="submitButton" name="Submit" value="Submit" type="submit">
+              <p> <img id="texture" alt="random" height="400" width="400"> <input
+                       id="submitButton" name="Submit" value="Submit" type="submit">
               </p>
-              <p> <img src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg"
-
-                  alt="random" height="228" width="304">; </p>
             </td>
           </tr>
           <tr>
-            <td height="100%"> <iframe id="pageFrame" height="100%" width="100%"></iframe>
-              <br>
-            </td>
           </tr>
         </tbody>
       </table>
     </form>
     <script language="Javascript">
-    document.getElementById('pageFrame').src = decode(gup('url'));
-    document.getElementById('assignmentId').value = gup('assignmentId');
+      document.getElementById('texture').src = decode(gup('imageurl'));
+      document.getElementById('assignmentId').value = gup('assignmentId');
 
 
     //
@@ -71,9 +67,9 @@ function decode(strToDecode)
     //
     if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
     {
-  // If we're previewing, disable the button and give it a helpful message
-  document.getElementById('submitButton').disabled = true;
-  document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
+   If we're previewing, disable the button and give it a helpful message
+       document.getElementById('submitButton').disabled = true;
+       document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
     } else {
         var form = document.getElementById('mturk_form');
         if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
