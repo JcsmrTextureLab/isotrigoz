@@ -30,11 +30,13 @@ function decode(strToDecode)
 
 </script> </head>
   <body>
-  <center>
+
     <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
+      <h4> At which point these two bars blend best when you squint? </h4>
+      <img id="chart" alt="random" height="80" width="600">
+      Blending point: <input type="text" name="blending" /><br />
       <h4>Where is the oddball patch in this image, if any?</h4>
-      <center>
       <table border="0" height="100%" width="100%" align="center">
         <tbody>
           <tr>
@@ -58,10 +60,13 @@ function decode(strToDecode)
           </tr>
         </tbody>
       </table>
-      </center>
     </form>
     <script language="Javascript">
       document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
+      document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
+      
+      
+      
       document.getElementById('assignmentId').value = gup('assignmentId');
 
 
@@ -82,6 +87,6 @@ function decode(strToDecode)
       }
 
 </script>
-</center>
+
   </body>
 </html>
