@@ -30,7 +30,7 @@ function decode(strToDecode)
 
 </script> </head>
   <body>
-    <form id="mturk_form" method="POST" action="http://www.workersandbox.mturk.com/mturk/externalSubmit">
+    <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
       <table border="0" height="100%" width="100%">
         <tbody>
@@ -71,14 +71,11 @@ function decode(strToDecode)
       document.getElementById('submitButton').disabled = true;
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
-      var form = document.getElementById('mturk_form');
-      document.getElementById('texture').src = decode(gup('imageurl'));
-      if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
-          form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
-          
-      
-          
-      }
+         var form = document.getElementById('mturk_form');
+         document.getElementById('texture').src = decode(gup('imageurl'));
+           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
+           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+         }     
       }
 
 </script>
