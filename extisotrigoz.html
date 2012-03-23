@@ -34,7 +34,7 @@ function decode(strToDecode)
     <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
       <h4> At which point these two bars blend best when you squint? </h4>
-      <img id="chart" alt="random" height="80" width="600">
+      <img id="chart" alt="random" height="80" width="1200">
       Blending point: <input type="text" name="blending" /><br />
       <h4>Where is the oddball patch in this image, if any?</h4>
       <table border="0" height="100%" width="100%" align="center">
@@ -50,7 +50,7 @@ function decode(strToDecode)
                 <input name="category" value="bottom right" type="radio">&nbsp;Bottom
                 Right<br>
                 <input name="category" value="center" type="radio">&nbsp;Center<br>
-                <input name="category" value="none" type="radio">&nbsp;None<br>                
+                <input name="category" value="none" type="radio">&nbsp;None<br>
               </p>
             </td>
             <td>
@@ -64,9 +64,9 @@ function decode(strToDecode)
     <script language="Javascript">
       document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
       document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
-      
-      
-      
+
+
+
       document.getElementById('assignmentId').value = gup('assignmentId');
 
 
