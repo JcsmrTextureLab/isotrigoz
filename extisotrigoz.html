@@ -62,6 +62,7 @@ function decode(strToDecode)
             </td>
             <td>
             <p> <img id="texture" alt="random" height="300" width="300">
+            <input id="readyButton" type="Button" value="Ready?"/>
             <input id="submitButton" name="Submit" value="Submit" type="submit">
             </p>
           </tr>
@@ -78,8 +79,8 @@ function decode(strToDecode)
 
   function timedTexture()
    {
-   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),5000);
-   var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
+   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl'))",5000);
+   var t2=setTimeout("document.getElementById('texture').src=http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
    }
 
 
@@ -93,11 +94,11 @@ function decode(strToDecode)
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
-
+            document.getElementById('readyButton').onclick=timedTexture()
          //document.getElementById('texture').src = decode(gup('imageurl'));
          
 
-         <input type="Button" value="Ready?" onclick="timedTexture() "/>
+        
            
            
            if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
