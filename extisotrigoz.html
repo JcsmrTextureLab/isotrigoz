@@ -28,14 +28,6 @@ function decode(strToDecode)
   return unescape(encoded.replace(/\+/g,  " "));
 }
 </script>
-<script type="text/javascript">
-function timedTexture()
-{
-var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),5000);
-var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
-}
-</script>
-
  </head>
   <body>
 
@@ -45,7 +37,7 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
       <h4> At which point these two bars blend best when you squint? </h4>
       <table border="0" height="100%" width="100%" >
       <tr>
-      <p><img id="chart" alt="random" height="133" width="868"></p>
+      <p><img id="chart" alt="chart" height="133" width="868"></p>
       <\tr>
       <tr>
       <p>Blending point: <input type="text" name="blending" /></p>
@@ -76,14 +68,20 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
         </tbody>
       </table>
     </form>
-    <script language="Javascript">
-      document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
-      document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
+    
+    <script language="Javascript">    
+  document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
+  document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
+  document.getElementById('assignmentId').value = gup('assignmentId');
+  document.getElementById('textureId').value = decode(gup('imageurl'));
 
 
+  function timedTexture()
+   {
+   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),5000);
+   var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
+   }
 
-    document.getElementById('assignmentId').value = gup('assignmentId');
-    document.getElementById('textureId').value = decode(gup('imageurl'));
 
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
@@ -108,6 +106,5 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
       }
 
 </script>
-
-  </body>
+</body>
 </html>
