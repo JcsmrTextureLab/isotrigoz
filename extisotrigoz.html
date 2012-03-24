@@ -28,15 +28,21 @@ function decode(strToDecode)
   return unescape(encoded.replace(/\+/g,  " "));
 }
 
-  function timedTexture()
+function timedTexture()
    {
-   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl'))",1000);
-   var t2=setTimeout("document.getElementById('texture').src=http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",3000);
+   var t1=setTimeout("settexture()",1000);
+   var t2=setTimeout("setmask",3000);
    }
 
+function settexture()
+{
+document.getElementById('texture').src=decode(gup('imageurl'))
+}
 
-
-
+function setmask()
+{
+document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg"
+}
 </script>
  </head>
   <body>
@@ -101,13 +107,8 @@ function decode(strToDecode)
       } else {
          var form = document.getElementById('mturk_form');
             document.getElementById('readyButton').onclick=timedTexture();
-            //document.getElementById('texture').src = decode(gup('imageurl'));
-         
-
-        
            
-           
-           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
+          if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
          }
       }
