@@ -27,15 +27,15 @@ function decode(strToDecode)
   var encoded = strToDecode;
   return unescape(encoded.replace(/\+/g,  " "));
 }
-
-
+</script>
+<script type="text/javascript">
 function timedTexture()
 {
 var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),5000);
 var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
 }
-
 </script>
+
  </head>
   <body>
 
@@ -99,8 +99,7 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
          //document.getElementById('texture').src = decode(gup('imageurl'));
          
 
-         
-         timedTexture()
+         <input type="Button" value="Ready?" onclick="timedTexture() "/>
            
            
            if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
