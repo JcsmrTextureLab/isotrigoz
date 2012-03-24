@@ -28,6 +28,17 @@ function decode(strToDecode)
   return unescape(encoded.replace(/\+/g,  " "));
 }
 
+
+function timedTexture()
+{
+var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),100);
+var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",1000);
+}
+
+
+
+
+
 </script> </head>
   <body>
 
@@ -41,8 +52,9 @@ function decode(strToDecode)
       <tr>
       <p>Blending point: <input type="text" name="blending" /></p>
       <\tr>
+
+
       </table>
-      
       <h4>Where is the oddball patch in this image, if any?</h4>
       <table border="0" height="100%" width="100%" >
         <tbody>
@@ -87,10 +99,12 @@ function decode(strToDecode)
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
-         document.getElementById('texture').src = decode(gup('imageurl'));
+
+         //document.getElementById('texture').src = decode(gup('imageurl'));
+           timedTexture()
            if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
-         }     
+         }
       }
 
 </script>
