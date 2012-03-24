@@ -27,6 +27,16 @@ function decode(strToDecode)
   var encoded = strToDecode;
   return unescape(encoded.replace(/\+/g,  " "));
 }
+
+  function timedTexture()
+   {
+   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl'))",1000);
+   var t2=setTimeout("document.getElementById('texture').src=http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",3000);
+   }
+
+
+
+
 </script>
  </head>
   <body>
@@ -76,15 +86,7 @@ function decode(strToDecode)
   document.getElementById('assignmentId').value = gup('assignmentId');
   document.getElementById('textureId').value = decode(gup('imageurl'));
 
-
-  function timedTexture()
-   {
-   var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl'))",1000);
-   var t2=setTimeout("document.getElementById('texture').src=http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",3000);
-   }
-
-
-    //
+   //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
       if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
@@ -94,8 +96,8 @@ function decode(strToDecode)
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
-            document.getElementById('readyButton').onclick="timedTexture()";
-         //document.getElementById('texture').src = decode(gup('imageurl'));
+            document.getElementById('readyButton').onclick=timedTexture();
+            document.getElementById('texture').src = decode(gup('imageurl'));
          
 
         
