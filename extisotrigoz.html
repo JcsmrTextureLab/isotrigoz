@@ -31,19 +31,17 @@ function decode(strToDecode)
 
 function timedTexture()
 {
-var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),100);
-var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",1000);
+var t1=setTimeout("document.getElementById('texture').src=decode(gup('imageurl')),5000);
+var t2=setTimeout("document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg ",6000);
 }
 
-
-
-
-
-</script> </head>
+</script>
+ </head>
   <body>
 
-    <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
+      <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
+      <input id="textureId" name="textureId" value="" type="hidden">
       <h4> At which point these two bars blend best when you squint? </h4>
       <table border="0" height="100%" width="100%" >
       <tr>
@@ -52,8 +50,6 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
       <tr>
       <p>Blending point: <input type="text" name="blending" /></p>
       <\tr>
-
-
       </table>
       <h4>Where is the oddball patch in this image, if any?</h4>
       <table border="0" height="100%" width="100%" >
@@ -86,8 +82,8 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
 
 
 
-      document.getElementById('assignmentId').value = gup('assignmentId');
-
+    document.getElementById('assignmentId').value = gup('assignmentId');
+    document.getElementById('textureId').value = decode(gup('imageurl'));
 
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
@@ -101,7 +97,12 @@ var t2=setTimeout("document.getElementById('texture').src="http://marconioz.gith
          var form = document.getElementById('mturk_form');
 
          //document.getElementById('texture').src = decode(gup('imageurl'));
-           timedTexture()
+         
+
+         
+         timedTexture()
+           
+           
            if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
          }
