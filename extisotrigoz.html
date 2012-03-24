@@ -40,10 +40,10 @@ function decode(strToDecode)
 </script>
  </head>
   <body>
-
+      <input id="textureId" name="textureId" value="" type="hidden">
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-      <input id="textureId" name="textureId" value="" type="hidden">
+
       <h4> At which point these two bars blend best when you squint? </h4>
       <table border="0" height="100%" width="100%" >
       <tr>
@@ -97,7 +97,7 @@ function decode(strToDecode)
       } else {
          var form = document.getElementById('mturk_form');
             document.getElementById('readyButton').onclick=timedTexture();
-            document.getElementById('texture').src = decode(gup('imageurl'));
+            //document.getElementById('texture').src = decode(gup('imageurl'));
          
 
         
