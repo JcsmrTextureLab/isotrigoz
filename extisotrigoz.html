@@ -28,11 +28,7 @@ function decode(strToDecode)
   return unescape(encoded.replace(/\+/g,  " "));
 }
 
-function timedTexture()
-   {
-   var t1=setTimeout('settexture()',1000);
-   var t2=setTimeout('setmask',3000);
-   }
+
 
 function settexture()
 {
@@ -81,21 +77,39 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
           </tr>
         </tbody>
       </table>
-      
+
     <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"></p>
    <p>Blending point: <input type="text" name="blending" /></p>
     <input id="textureId" name="textureId" value="" type="hidden">
-      
-      
 
-    
+
+
+
 <script language="Javascript">
  document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
   document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
   document.getElementById('assignmentId').value = gup('assignmentId');
   document.getElementById('textureId').value = decode(gup('imageurl'));
-  document.getElementById('readyButton').onclick=timedTexture();
+  document.getElementById('readyButton').onclick=timedTexture(){
+   var t1=setTimeout('settexture()',5000);
+   var t2=setTimeout('setmask',10000);
+   };
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
    //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
@@ -106,7 +120,7 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
        document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
-            
+
 
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
