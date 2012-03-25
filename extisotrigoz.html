@@ -50,16 +50,12 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
 </script>
 </head>
   <body>
-      <input id="textureId" name="textureId" value="" type="hidden">
+
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
 
-      <h4> At which point these two bars blend best when you squint? </h4>
-   <p><img id="chart" alt="chart" height="133" width="868"></p>
-   <p>Blending point: <input type="text" name="blending" /></p>
    
-
-   <!-- <table border="0" height="100%" width="100%" > -->
+ 
         <table >
         <tbody>
           <tr>
@@ -85,7 +81,14 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
           </tr>
         </tbody>
       </table>
-    </form>
+      
+    <h4> At which point these two bars blend best when you squint? </h4>
+   <p><img id="chart" alt="chart" height="133" width="868"></p>
+   <p>Blending point: <input type="text" name="blending" /></p>
+    <input id="textureId" name="textureId" value="" type="hidden">
+      
+      
+
     
 <script language="Javascript">
  document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
@@ -110,6 +113,7 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
          }
       }
 </script>
+</form>
 </body>
 </html>
 
