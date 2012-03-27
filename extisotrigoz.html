@@ -120,8 +120,9 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
   <body>
 
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
+
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-      <input id="feed" name="feed" value="" type="hidden">
+      <input id="feed" name="feed" value="feedback[]" type="hidden">
 
 
         <table >
