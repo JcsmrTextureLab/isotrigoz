@@ -75,11 +75,19 @@ document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=document.getElementById(str).name;
 document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
+
+if(ct==1){
+disableit();
+document.getElementById('readyButton').disabled==true;
+document.getElementById('readyButton').value ="you are done with this hit, click submit";
+}else{
 ct=ct-1;
 disableit();
 var t3=setTimeout('cleanit()',1000);
 gotiger();
 }
+}
+
 
 function cleanit()
 {
@@ -172,11 +180,7 @@ document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
 
-if(ct==1){
-disableit();
-document.getElementById('readyButton').disabled==true;
-document.getElementById('readyButton').value ="you are done with this hit, click submit";
-};
+
 
 
     //
