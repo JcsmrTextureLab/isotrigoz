@@ -34,7 +34,7 @@ function decode(strToDecode)
 
 var home=decode(gup('imageurl'));
 var rn=1;
-var ct=20;
+var ct=10;
 var str="";
 
 
@@ -118,7 +118,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
           <tr>
             <td>
             <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
-            
+
               <h4>Where is the oddball patch in this image, if any?</h4>
               <p> <input id="R0" name="cat"  onclick="ipick(this.id)" value="top left" type="radio" >&nbsp;Top
                 Left <br>
@@ -138,23 +138,23 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
             </td>
             <td>
             <p> <img id="texture" alt="random" height="300" width="300">
-            
+
             <input id="submitButton" name="Submit" value="Submit" type="submit">
             </p>
           </tr>
         </tbody>
       </table>
-      
-      
+
+
   <h4> Your last selection was </h4>
    <input id="feedback1" type="text" name="txt1" value=""><br>
    <input id="feedback2" type="text" name="txt2" value=""><br>
    <input id="feedback3" type="text" name="txt3" value=""><br>
-      
-      
-      
-      
-      
+
+
+
+
+
 
     <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"></p>
