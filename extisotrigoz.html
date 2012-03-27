@@ -28,17 +28,81 @@ function decode(strToDecode)
   return unescape(encoded.replace(/\+/g,  " "));
 }
 
+//
+// Set parameters
+//
+
+var home=decode(gup('imageurl'));
+var rn=1;
+var ct=20;
+var str="";
 
 
 function settexture()
 {
-document.getElementById('texture').src=decode(gup('imageurl'))
+document.getElementById('texture').src=home +"t"+rn+ ".jpg"
 }
 
 function setmask()
 {
-document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg"
+document.getElementById('texture').src=home +"t" +rn+ "a.jpg"
 }
+
+function timedTexture()
+{
+rn=Math.ceil(320*Math.random());
+var t1=setTimeout('settexture(rn)',1000);
+var t2=setTimeout('setmask(rn)',2000);
+easytiger();
+}
+
+function easytiger()
+{
+document.getElementById('readyButton').disabled = true;
+document.getElementById('readyButton').value = "Please select a location";
+enableit();
+}
+
+function gotiger(){
+document.getElementById('readyButton').disabled = false;
+document.getElementById('readyButton').value ="Ready?";
+}
+
+
+function ipick(choice)
+{str=String(choice);
+document.getElementById(str).name="cat" +ct;
+document.getElementById('feedback1').value=document.getElementById(str).name;
+document.getElementById('feedback2').value=document.getElementById(str).value;
+document.getElementById('feedback3').value="t"+rn+".jpg";
+ct=ct-1;
+disableit();
+var t3=setTimeout('cleanit()',1000);
+gotiger();
+}
+
+function cleanit()
+{
+for(i=0;i<=5;i++){
+if(document.getElementById("R"+i).checked){document.getElementById("R"+i).checked=false}
+}
+}
+
+function disableit(){
+for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=true}
+}
+
+function enableit(){
+for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
+}
+
+
+
+
+
+
+
+
 
 </script>
 </head>
@@ -47,33 +111,50 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
 
-   
- 
+
+
         <table >
         <tbody>
           <tr>
             <td>
+            <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
+            
               <h4>Where is the oddball patch in this image, if any?</h4>
-              <p> <input name="category" value="top left" type="radio">&nbsp;Top
+              <p> <input id="R0" name="cat"  onclick="ipick(this.id)" value="top left" type="radio" >&nbsp;Top
                 Left <br>
-                <input name="category" value="top right" type="radio">&nbsp;Top
+                <input id="R1"   name="cat"   onclick="ipick(this.id)" value="top right" type="radio">&nbsp;Top
                 Right <br>
-                <input name="category" value="bottom left" type="radio">&nbsp;Bottom
+                <input id="R2"  name="cat"    onclick="ipick(this.id)" value="bottom left" type="radio">&nbsp;Bottom
                 Left <br>
-                <input name="category" value="bottom right" type="radio">&nbsp;Bottom
+                <input id="R3"  name="cat"    onclick="ipick(this.id)" value="bottom right" type="radio">&nbsp;Bottom
                 Right<br>
-                <input name="category" value="center" type="radio">&nbsp;Center<br>
-                <input name="category" value="none" type="radio">&nbsp;None<br>
+                <input id="R4"  name="cat"    onclick="ipick(this.id)" value="center" type="radio">&nbsp;Center<br>
+                <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None<br>
               </p>
+
+
+
+
             </td>
             <td>
             <p> <img id="texture" alt="random" height="300" width="300">
-            <input id="readyButton" type="Button" value="Ready?">
+            
             <input id="submitButton" name="Submit" value="Submit" type="submit">
             </p>
           </tr>
         </tbody>
       </table>
+      
+      
+  <h4> Your last selection was </h4>
+   <input id="feedback1" type="text" name="txt1" value=""><br>
+   <input id="feedback2" type="text" name="txt2" value=""><br>
+   <input id="feedback3" type="text" name="txt3" value=""><br>
+      
+      
+      
+      
+      
 
     <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"></p>
@@ -84,29 +165,24 @@ document.getElementById('texture').src="http://marconioz.github.com/isotrigoz/Fo
 
 </form>
 <script language="Javascript">
- document.getElementById('texture').src = "http://marconioz.github.com/isotrigoz/Foot_3_even_r.jpg "
-  document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg "
-  document.getElementById('assignmentId').value = gup('assignmentId');
-  document.getElementById('textureId').value = decode(gup('imageurl'));
-  document.getElementById('readyButton').onclick=timedTexture(){
-   var t1=setTimeout('settexture()',5000);
-   var t2=setTimeout('setmask',10000);
-   };
+document.getElementById('texture').src =  home +"t1a.jpg";
+document.getElementById('chart').src = home +"graychart.jpg";
+
+if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
+if(ct==1){disableit();document.getElementById('readyButton').value ="you are done with this hit, click submit"};
 
 
 
-   //
+    //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
-      if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+      if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE" && ct==1)
       {
       //If we're previewing, disable the button and give it a helpful message
       document.getElementById('submitButton').disabled = true;
-       document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
+       document.getElementById('submitButton').value = "You must ACCEPT the HIT, and finish a batch of 20 textures before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
-
-
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
          }
