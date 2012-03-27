@@ -71,12 +71,14 @@ document.getElementById('readyButton').value ="Ready?";
 
 function ipick(choice)
 {str=String(choice);
+
 document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=document.getElementById(str).name;
 document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
-feedback0[ct]="cat" +ct;
-document.getElementById('feedback0[ct]').value=document.getElementById('feedback1').value;
+var x="cat"+ct
+feedback0.push(x);
+
 
 if(ct==1){
 disableit();
@@ -119,7 +121,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-      <input id="feedback0[ct]" name="feedback0[ct]" value="" type="text">
+      <input id="feed" name="feed" value="" type="hidden">
 
 
         <table >
@@ -185,7 +187,7 @@ document.getElementById('texture').src =  home +"t1a.jpg";
 document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
-
+document.getElementById('feed').value=feedback0;
 
 
 
