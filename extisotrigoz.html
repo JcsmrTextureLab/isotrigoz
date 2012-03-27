@@ -34,7 +34,7 @@ function decode(strToDecode)
 
 var home=decode(gup('imageurl'));
 var rn=1;
-var ct=10;
+var ct=5;
 var str="";
 
 
@@ -169,6 +169,7 @@ document.getElementById('texture').src =  home +"t1a.jpg";
 document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
+
 if(ct==1){disableit();document.getElementById('readyButton').value ="you are done with this hit, click submit"};
 
 
@@ -176,11 +177,11 @@ if(ct==1){disableit();document.getElementById('readyButton').value ="you are don
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
-      if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE" && ct==1)
+      if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
       {
       //If we're previewing, disable the button and give it a helpful message
       document.getElementById('submitButton').disabled = true;
-       document.getElementById('submitButton').value = "You must ACCEPT the HIT, and finish a batch of 20 textures before you can submit the results.";
+       document.getElementById('submitButton').value = "You must ACCEPT the HIT, and finish a batch of 5 textures before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
