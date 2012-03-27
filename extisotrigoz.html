@@ -31,7 +31,7 @@ function decode(strToDecode)
 //
 // Set parameters
 //
-
+var feedback0 =new Array();
 var home=decode(gup('imageurl'));
 var rn=1;
 var ct=5;
@@ -75,8 +75,8 @@ document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=document.getElementById(str).name;
 document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
-
-
+feedback0[ct]="cat" +ct;
+document.getElementById('feedback0[ct]').value=document.getElementById('feedback1').value;
 
 if(ct==1){
 disableit();
@@ -119,7 +119,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-      <input id="feedback0[]" name="feedback0[]" value="" type="hidden">
+      <input id="feedback0[ct]" name="feedback0[ct]" value="" type="text">
 
 
         <table >
@@ -156,11 +156,11 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
 
   <h4> Your last selection was </h4>
-   
+
    <input id="feedback1" type="text" name="txt1" value=""><br>
    <input id="feedback2" type="text" name="txt2" value=""><br>
    <input id="feedback3" type="text" name="txt3" value=""><br>
-   
+
 
 
 
@@ -169,7 +169,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
     <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"></p>
    <p>Blending point: <input type="text" name="blending" /></p>
-   
+
 
 
 
@@ -178,7 +178,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 <script language="Javascript">
 
 document.getElementById('assignmentId').value = gup('assignmentId');
-document.getElementById('feedback0[ct]').value=document.getElementById('feedback1).value;
+
 
 
 document.getElementById('texture').src =  home +"t1a.jpg";
