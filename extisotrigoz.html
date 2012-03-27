@@ -172,8 +172,11 @@ document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
 
-if(ct==1){disableit();document.getElementById('readyButton').value ="you are done with this hit, click submit"};
-
+if(ct==1){
+disableit();
+document.getElementById('readyButton').disabled==true;
+document.getElementById('readyButton').value ="you are done with this hit, click submit";
+};
 
 
     //
