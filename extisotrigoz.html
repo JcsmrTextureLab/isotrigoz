@@ -31,7 +31,7 @@ function decode(strToDecode)
 //
 // Set parameters
 //
-var feedback0 =["Banana", "Orange", "Apple", "Mango"]
+var feedback0 =["Banana", "Orange", "Apple", "Mango"];
 
 var home=decode(gup('imageurl'));
 var rn=1;
@@ -164,7 +164,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
    <input id="feedback1" type="text" name="txt1" value=""><br>
    <input id="feedback2" type="text" name="txt2" value=""><br>
    <input id="feedback3" type="text" name="txt3" value=""><br>
-   <input id="feed" name="feed" value="feedback0" type="hidden">
+   <input id="feed" name="feed" value="" type="hidden">
 
 
 
@@ -189,7 +189,8 @@ document.getElementById('texture').src =  home +"t1a.jpg";
 document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
-document.getElementById('feed').value=feedback0;
+
+
 
 
 
