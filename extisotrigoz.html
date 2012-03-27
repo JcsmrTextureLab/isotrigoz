@@ -85,6 +85,7 @@ if(ct==1){
 disableit();
 document.getElementById('readyButton').disabled==true;
 document.getElementById('readyButton').value ="you are done with this hit, click submit";
+document.getElementById('feed').value=feedback0;
 }else{
 ct=ct-1;
 disableit();
@@ -206,6 +207,9 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
          var form = document.getElementById('mturk_form');
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
            form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+           
+           
+           
          }
       }
 </script>
