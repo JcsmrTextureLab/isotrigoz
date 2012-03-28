@@ -47,7 +47,7 @@ document.getElementById('texture').src=home +"t"+rn+ ".jpg"
 
 function setmask()
 {
-document.getElementById('texture').src=home +"t" +rn+ "a.jpg"
+document.getElementById('texture').src=home +"t" +1+ ".jpg"
 }
 
 function timedTexture()
@@ -75,7 +75,7 @@ function ipick(choice)
 {str=String(choice);
 
 document.getElementById(str).name="cat" +ct;
-document.getElementById('feedback1').value=document.getElementById(str).name;
+document.getElementById('feedback1').value=home;
 document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
 
@@ -164,18 +164,18 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
   <h4> Your last selection was </h4>
 
-   <input id="feedback1" type="text" name="txt1" value=""><br>
-   <input id="feedback2" type="text" name="txt2" value=""><br>
-   <input id="feedback3" type="text" name="txt3" value=""><br>
+   <input id="feedback1" type="text" name="TextureFamily" value=""><br>
+   //<input id="feedback2" type="text" name="txt2" value=""><br>
+   //<input id="feedback3" type="text" name="txt3" value=""><br>
    <input id="feed0" name="feed0" value="" type="hidden">
    <input id="feed1" name="feed1" value="" type="hidden">
 
 
 
 
-    <h4> At which point these two bars blend best when you squint? </h4>
+   <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"></p>
-   <p>Blending point: <input type="text" name="blending" /></p>
+   <p>Blending point: <input type="text" name="blending" value="not for now"/></p>
 
 
 
@@ -185,10 +185,8 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 <script language="Javascript">
 
 document.getElementById('assignmentId').value = gup('assignmentId');
+document.getElementById('texture').src =  home +"t3.jpg";
 
-
-
-document.getElementById('texture').src =  home +"t1a.jpg";
 document.getElementById('chart').src = home +"graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
