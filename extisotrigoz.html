@@ -115,11 +115,6 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
 
 
-
-
-
-
-
 </script>
 </head>
   <body>
@@ -127,8 +122,6 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
 
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-
-
 
         <table >
         <tbody>
@@ -149,9 +142,6 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
                 <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None<br>
               </p>
 
-
-
-
             </td>
             <td>
             <p> <img id="texture" alt="random" height="300" width="300">
@@ -163,9 +153,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
       </table>
 
 
-  <h4> Your last selection was </h4>
-
-   <input id="feedback1" type="text" name="TextureFamily" value=""><br>
+   <input id="feedback1" type="hidden" name="TextureFamily" value=""><br>
    <input id="feed0" name="feed0" value="" type="hidden">
    <input id="feed1" name="feed1" value="" type="hidden">
 
@@ -193,8 +181,6 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
 
 
 
-
-
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
@@ -203,14 +189,16 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
       {
       //If we're previewing, disable the button and give it a helpful message
     document.getElementById('submitButton').disabled = true;
-       document.getElementById('submitButton').value = "You must ACCEPT the HIT, and finish a batch of 5 textures before you can submit the results.";
+    document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
+
+    document.getElementById('readyButton').disabled=true;
+    document.getElementById('readyButton').value="You must  ACCEPT the HIT before you start";
+
       } else {
          var form = document.getElementById('mturk_form');
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
-           
-           
-           
+                      
         }
       }
 </script>
