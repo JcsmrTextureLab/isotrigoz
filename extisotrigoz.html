@@ -43,19 +43,55 @@ var str="";
 
 function settexture()
 {
-document.getElementById('texture').src=home +"t"+rn+ ".jpg"
-}
+try
+   {
+    document.getElementById('texture').src=home +"t"+rn+ ".jpg"
+    }
+catch(err1)
+   {
+    try
+   {
+    document.getElementById('texture').src=home +"t"+rn+ ".jpg"
+    }
+    catch(err2)
+   {
+    txt="There was an error loading this texture.\n\n";
+    txt+="Error description: " + err2.message + "\n\n";
+    txt+="Click OK to continue.\n\n";
+    alert(txt);
+  }
+  }
+  }
 
 function setmask()
 {
-document.getElementById('texture').src=home +"t" +1+ ".jpg"
+try
+   {
+    document.getElementById('texture').src=home +"t" +1+ ".jpg"
+    }
+catch(err1)
+   {
+    try
+   {
+    document.getElementById('texture').src=home +"t" +1+ ".jpg"
+    }
+    catch(err2)
+    {
+  txt="There was an error on this page.\n\n";
+  txt+="Error description: " + err2.message + "\n\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
+  } 
 }
+
+
 
 function timedTexture()
 {
 rn=Math.ceil(200*Math.random());
 var t1=setTimeout('settexture(rn)',1000);
-var t2=setTimeout('setmask(rn)',2000);
+var t2=setTimeout('setmask(rn)',3000);
 easytiger();
 }
 
@@ -142,24 +178,24 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
             </td>
             <td>
-            <p> <img id="texture" alt="random" height="300" width="300">
+            <p> <img id="texture" alt="random" height="300" width="300"/>
 
-            <input id="submitButton" name="Submit" value="Submit" type="submit">
+            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
             </p>
           </tr>
         </tbody>
       </table>
 
 
-   <input id="feedback1" type="hidden" name="TextureFamily" value=""><br>
-   <input id="feed0" name="feed0" value="" type="hidden">
-   <input id="feed1" name="feed1" value="" type="hidden">
+   <input id="feedback1" type="hidden" name="TextureFamily" value=""/><br>
+   <input id="feed0" name="feed0" value="" type="hidden"/>
+   <input id="feed1" name="feed1" value="" type="hidden"/>
 
 
 
 
    <h4> At which point these two bars blend best when you squint? </h4>
-   <p><img id="chart" alt="chart" height="133" width="868"></p>
+   <p><img id="chart" alt="chart" height="133" width="868"/></p>
    <p>Blending point: <input type="text" name="blending" value="not for now"/></p>
 
 
@@ -171,7 +207,24 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
 var home=decode(gup('imageurl'));
 document.getElementById('assignmentId').value = gup('assignmentId');
+
+
+try{
 document.getElementById('texture').src =  home +"t3.jpg";
+}
+catch(err1){
+try{
+document.getElementById('texture').src =  home +"t5.jpg";
+ }
+catch(err2)
+    {
+  txt="There was an error on this page.\n\n";
+  txt+="Error description: " + err2.message + "\n\n";
+  txt+="Click OK to continue.\n\n";
+  alert(txt);
+  }
+}
+
 
 document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg";
 
