@@ -123,9 +123,16 @@ if(ct==1){
 disableit();
 document.getElementById('readyButton').disabled==true;
 document.getElementById('readyButton').value ="you are done with this hit, click submit";
+document.getElementById('submitButton').disabled =false;
+document.getElementById('submitButton').value = "Submit";
+
+
 document.getElementById('feed0').value=feedback0;
 document.getElementById('feed1').value=feedback1;
 }else{
+document.getElementById('submitButton').disabled = true;
+document.getElementById('submitButton').value = "You must complete a batch of 5 before you can submit the results.";
+
 ct=ct-1;
 disableit();
 var t3=setTimeout('cleanit()',1000);
@@ -161,7 +168,17 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
         <tbody>
           <tr>
             <td>
-            <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image and then the original random image comes back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its location, if nothing changes much click on none. </h5>
+          <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its location, if nothing changes much click on none. Submit only after you finish a batch of 5. <br> </h5>
+            </td> 
+            <td>
+            <p> <img id="texture" alt="random" height="300" width="300"/>
+            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
+            </td>
+          </tr>
+        
+          <tr>
+            <td>
+
             <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
 
               <h5>Where is the oddball patch in this image, if any? </h5>
@@ -178,10 +195,10 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
               </p>
 
             </td>
-            <td>
-            <p> <img id="texture" alt="random" height="300" width="300"/>
+            
 
-            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
+               
+            
             </p>
           </tr>
         </tbody>
