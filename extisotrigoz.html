@@ -76,8 +76,8 @@ function ipick(choice)
 {str=String(choice);
 
 document.getElementById(str).name="cat" +ct;
-document.getElementById('feedback1').value=home;
-document.getElementById('feedback2').value=document.getElementById(str).value;
+//document.getElementById('feedback1').value=home;
+//document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
 
 feedback0.push(document.getElementById(str).value);
@@ -127,7 +127,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
 
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
-      
+
 
 
         <table >
@@ -198,7 +198,7 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
-   
+
       if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
       {
       //If we're previewing, disable the button and give it a helpful message
