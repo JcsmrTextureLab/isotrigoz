@@ -31,7 +31,8 @@ function decode(strToDecode)
 //
 // Set parameters
 //
-var feedback0 =["Banana", "Orange", "Apple", "Mango"];
+var feedback0 =new Array();
+var feedback1 =new Array();
 
 var home=decode(gup('imageurl'));
 var rn=1;
@@ -77,15 +78,16 @@ document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=document.getElementById(str).name;
 document.getElementById('feedback2').value=document.getElementById(str).value;
 document.getElementById('feedback3').value="t"+rn+".jpg";
-var x="cat"+ct
-feedback0.push(x);
 
+feedback0.push(document.getElementById(str).value);
+feedback1.push("t"+rn+".jpg");
 
 if(ct==1){
 disableit();
 document.getElementById('readyButton').disabled==true;
 document.getElementById('readyButton').value ="you are done with this hit, click submit";
-document.getElementById('feed').value=feedback0;
+document.getElementById('feed0').value=feedback0;
+document.getElementById('feed1').value=feedback1;
 }else{
 ct=ct-1;
 disableit();
@@ -165,8 +167,8 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
    <input id="feedback1" type="text" name="txt1" value=""><br>
    <input id="feedback2" type="text" name="txt2" value=""><br>
    <input id="feedback3" type="text" name="txt3" value=""><br>
-   <input id="feed" name="feed" value="" type="hidden">
-
+   <input id="feed0" name="feed0" value="" type="hidden">
+   <input id="feed1" name="feed1" value="" type="hidden">
 
 
 
