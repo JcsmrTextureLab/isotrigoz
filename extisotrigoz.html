@@ -113,11 +113,9 @@ function enableit(){
 for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 }
 
-
-
 </script>
 </head>
-  <body>
+<body>
 
       <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
 
@@ -129,14 +127,14 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
             <td>
             <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
 
-              <h4>Where is the oddball patch in this image, if any?</h4>
-              <p> <input id="R0" name="cat"  onclick="ipick(this.id)" value="top left" type="radio" >&nbsp;Top
+              <h4>Where is the oddball patch in this image, if any? </h4>
+              <p> <input id="R0" name="cat"  onclick="ipick(this.id)"  value="top left" type="radio" >&nbsp;Top
                 Left <br>
-                <input id="R1"   name="cat"   onclick="ipick(this.id)" value="top right" type="radio">&nbsp;Top
+                <input id="R1"   name="cat"   onclick="ipick(this.id)"  value="top right" type="radio">&nbsp;Top
                 Right <br>
-                <input id="R2"  name="cat"    onclick="ipick(this.id)" value="bottom left" type="radio">&nbsp;Bottom
+                <input id="R2"  name="cat"    onclick="ipick(this.id)"  value="bottom left" type="radio">&nbsp;Bottom
                 Left <br>
-                <input id="R3"  name="cat"    onclick="ipick(this.id)" value="bottom right" type="radio">&nbsp;Bottom
+                <input id="R3"  name="cat"    onclick="ipick(this.id)"  value="bottom right" type="radio">&nbsp;Bottom
                 Right<br>
                 <input id="R4"  name="cat"    onclick="ipick(this.id)" value="center" type="radio">&nbsp;Center<br>
                 <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None<br>
