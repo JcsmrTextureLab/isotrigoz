@@ -164,20 +164,19 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
 
-        <table >
-        <tbody>
+        <table  border="0">
           <tr>
-            <td>
-          <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its location, if nothing changes much click on none. Submit only after you finish a batch of 5. <br> </h5>
+            <td  width="20%" align="left">
+             <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its corresponding location, if nothing changes much click on none. Submit only after you finish a batch of 5. </h5>
             </td> 
-            <td>
-            <p> <img id="texture" alt="random" height="300" width="300"/>
-            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
+            <td width="50%" align="left">            
+            <img id="texture" alt="random" height="300" width="300"/>
             </td>
-          </tr>
+
+        </tr>
         
-          <tr>
-            <td>
+        <tr>
+            <td width="50%" align="left">
 
             <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
 
@@ -193,16 +192,14 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
                 <input id="R4"  name="cat"    onclick="ipick(this.id)" value="center" type="radio">&nbsp;Center<br>
                 <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None<br>
               </p>
-
             </td>
-            
-
-               
-            
-            </p>
-          </tr>
-        </tbody>
-      </table>
+     
+            <td>
+            <h5> Submit only after you finish the batch </h5>
+            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
+            </td>
+</tr>
+</table>
 
 
    <input id="feedback1" type="hidden" name="TextureFamily" value=""/><br>
