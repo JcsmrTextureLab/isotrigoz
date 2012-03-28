@@ -34,7 +34,8 @@ function decode(strToDecode)
 var feedback0 =new Array();
 var feedback1 =new Array();
 
-var home=decode(gup('imageurl'));
+//var home=decode(gup('imageurl'));
+//var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
 var rn=1;
 var ct=5;
 var str="";
@@ -165,8 +166,6 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
   <h4> Your last selection was </h4>
 
    <input id="feedback1" type="text" name="TextureFamily" value=""><br>
-   //<input id="feedback2" type="text" name="txt2" value=""><br>
-   //<input id="feedback3" type="text" name="txt3" value=""><br>
    <input id="feed0" name="feed0" value="" type="hidden">
    <input id="feed1" name="feed1" value="" type="hidden">
 
@@ -184,10 +183,11 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 </form>
 <script language="Javascript">
 
+var home=decode(gup('imageurl'));
 document.getElementById('assignmentId').value = gup('assignmentId');
 document.getElementById('texture').src =  home +"t3.jpg";
 
-document.getElementById('chart').src = home +"graychart.jpg";
+document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg";
 
 if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
 
@@ -198,19 +198,20 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
     //
+   
       if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
       {
       //If we're previewing, disable the button and give it a helpful message
-      document.getElementById('submitButton').disabled = true;
+    document.getElementById('submitButton').disabled = true;
        document.getElementById('submitButton').value = "You must ACCEPT the HIT, and finish a batch of 5 textures before you can submit the results.";
       } else {
          var form = document.getElementById('mturk_form');
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
-           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+          form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
            
            
            
-         }
+        }
       }
 </script>
 </body>
