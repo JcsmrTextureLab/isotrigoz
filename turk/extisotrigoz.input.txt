@@ -1,0 +1,17 @@
+image_url
+ http://marconioz.github.com/isotrigoz/turk/Box/Even/
+ http://marconioz.github.com/isotrigoz/turk/Box/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Cross/Even/
+ http://marconioz.github.com/isotrigoz/turk/Cross/Odd/
+ http://marconioz.github.com/isotrigoz/turk/El/Even/
+ http://marconioz.github.com/isotrigoz/turk/El/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Foot/Even/
+ http://marconioz.github.com/isotrigoz/turk/Foot/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Oblong/Even/
+ http://marconioz.github.com/isotrigoz/turk/Oblong/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Wolfram/Even/
+ http://marconioz.github.com/isotrigoz/turk/Wolfram/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Wye/Even/
+ http://marconioz.github.com/isotrigoz/turk/Wye/Odd/
+ http://marconioz.github.com/isotrigoz/turk/Zigzag/Even/
+ http://marconioz.github.com/isotrigoz/turk/Zigzag/Odd/
