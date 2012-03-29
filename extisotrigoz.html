@@ -35,7 +35,7 @@ var feedback0 =new Array();
 var feedback1 =new Array();
 
 //var home=decode(gup('imageurl'));
-//var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
+var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
 var rn=1;
 var ct=5;
 var str="";
@@ -113,6 +113,7 @@ function ipick(choice)
 
 document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=home;
+document.getElementById('togo').value="you still have" +ct "to go";
 //document.getElementById('feedback2').value=document.getElementById(str).value;
 //document.getElementById('feedback3').value="t"+rn+".jpg";
 
@@ -164,13 +165,22 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
 
-        <table  border="0">
+        <table  width="700" border="0">
           <tr>
-            <td  width="20%" align="left">
-             <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its corresponding location, if nothing changes much click on none. Submit only after you finish a batch of 5. </h5>
+            <td valign="top">
+             <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its corresponding location, if nothing changes much click on none. Submit only after you finish a batch of 5. </h5>            <p>
+             <input id="togo" name="togo" value="" type="text"/>
+             </p>
             </td> 
-            <td width="50%" align="left">            
+            
+            <td >            
             <img id="texture" alt="random" height="300" width="300"/>
+            </td>
+            <td>
+         
+            </td>
+              <td>
+            
             </td>
 
         </tr>
@@ -230,7 +240,7 @@ document.write( width + " x " + height);
 </form>
 <script language="Javascript">
 
-var home=decode(gup('imageurl'));
+//var home=decode(gup('imageurl'));
 document.getElementById('assignmentId').value = gup('assignmentId');
 
 
