@@ -113,7 +113,7 @@ function ipick(choice)
 
 document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=home;
-document.getElementById('togo').value= ct+ " to go";
+
 //document.getElementById('feedback2').value=document.getElementById(str).value;
 //document.getElementById('feedback3').value="t"+rn+".jpg";
 
@@ -135,6 +135,7 @@ document.getElementById('submitButton').disabled = true;
 document.getElementById('submitButton').value = "Complete before submitting.";
 
 ct=ct-1;
+document.getElementById('togo').value= ct+ " to go";
 disableit();
 var t3=setTimeout('cleanit()',1000);
 gotiger();
