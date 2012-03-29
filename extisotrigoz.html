@@ -120,7 +120,7 @@ document.getElementById('togo').value= ct+ " to go";
 feedback0.push(document.getElementById(str).value);
 feedback1.push("t"+rn+".jpg");
 
-if(ct==1){
+if(ct==0){
 disableit();
 document.getElementById('readyButton').disabled==true;
 document.getElementById('readyButton').value ="Done! click submit";
@@ -186,7 +186,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
             <td >
             <img id="texture" alt="random" height="300" width="300"/><br/>
             </td>
-            <td valign="center" width="300">
+            <td valign="top" width="300">
              <h5> Where is the oddball patch in this image, if any? </h5><br>
                <input id="R0" name="cat"  onclick="ipick(this.id)"  value="top left" type="radio" >&nbsp;Top
                 Left <br>
