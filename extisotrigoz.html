@@ -133,9 +133,9 @@ document.getElementById('feed1').value=feedback1;
 }else{
 document.getElementById('submitButton').disabled = true;
 document.getElementById('submitButton').value = "Complete before submitting.";
-
+document.getElementById('togo').value= ct-1+ " to go";
 ct=ct-1;
-document.getElementById('togo').value= ct+ " to go";
+
 disableit();
 var t3=setTimeout('cleanit()',1000);
 gotiger();
