@@ -113,7 +113,7 @@ function ipick(choice)
 
 document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=home;
-document.getElementById('togo').value="you still have" +ct+ "to go";
+document.getElementById('togo').value=" ct+ " to go";
 //document.getElementById('feedback2').value=document.getElementById(str).value;
 //document.getElementById('feedback3').value="t"+rn+".jpg";
 
@@ -205,7 +205,7 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
            <tr>
             <td>
-             Submit only after you finish the batch <br>
+             Click here after you finish the batch <br>
             <input id="submitButton" name="Submit" value="Submit" type="submit"/>
             <br/>
             </td>
@@ -289,7 +289,7 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
     document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
 
     document.getElementById('readyButton').disabled=true;
-    document.getElementById('readyButton').value="You must  ACCEPT the HIT before you start";
+    document.getElementById('readyButton').value="ACCEPT the HIT to start";
 
       } else {
          var form = document.getElementById('mturk_form');
