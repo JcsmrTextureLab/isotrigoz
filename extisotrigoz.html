@@ -205,13 +205,23 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
    <input id="feedback1" type="hidden" name="TextureFamily" value=""/><br>
    <input id="feed0" name="feed0" value="" type="hidden"/>
    <input id="feed1" name="feed1" value="" type="hidden"/>
+   
+
+<script language="Javascript">
+var height = screen.height;
+var width = screen.width;
+document.write("<h5> Your screen resolution is </h5>")
+document.write( width + " x " + height);
+</script>
 
 
 
 
-   <h4> At which point these two bars blend best when you squint? </h4>
+ <h4> At which point these two bars blend best when you squint? </h4>
    <p><img id="chart" alt="chart" height="133" width="868"/></p>
    <p>Blending point: <input type="text" name="blending" value="not for now"/></p>
+
+
 
 
 
@@ -268,6 +278,11 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
         }
       }
 </script>
+
+  
+
+
+
 </body>
 </html>
 
