@@ -133,7 +133,6 @@ document.getElementById('feed1').value=feedback1;
 }else{
 document.getElementById('submitButton').disabled = true;
 document.getElementById('submitButton').value = "Complete before submitting.";
-document.getElementById('togo').value= ct-1+ " to go";
 ct=ct-1;
 
 disableit();
@@ -245,7 +244,7 @@ var height = screen.height;
 var width = screen.width;
 
 document.getElementById('screen').value=width + " x " + height;
-
+document.getElementById('togo').value= ct+ " to go";
 
 
 
