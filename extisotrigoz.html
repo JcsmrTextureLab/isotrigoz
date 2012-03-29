@@ -34,8 +34,8 @@ function decode(strToDecode)
 var feedback0 =new Array();
 var feedback1 =new Array();
 
-//var home=decode(gup('imageurl'));
-var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
+var home=decode(gup('imageurl'));
+//var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
 var rn=1;
 var ct=5;
 var str="";
@@ -113,7 +113,7 @@ function ipick(choice)
 
 document.getElementById(str).name="cat" +ct;
 document.getElementById('feedback1').value=home;
-document.getElementById('togo').value="you still have" +ct "to go";
+document.getElementById('togo').value="you still have" +ct+ "to go";
 //document.getElementById('feedback2').value=document.getElementById(str).value;
 //document.getElementById('feedback3').value="t"+rn+".jpg";
 
@@ -165,33 +165,30 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
 
       <input id="assignmentId" name="assignmentId" value="" type="hidden">
 
-        <table  width="700" border="0">
+        <table  width="1080" border="0">
+          <tbody>
           <tr>
-            <td valign="top">
-             <h5> After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its corresponding location, if nothing changes much click on none. Submit only after you finish a batch of 5. </h5>            <p>
-             <input id="togo" name="togo" value="" type="text"/>
-             </p>
-            </td> 
-            
-            <td >            
-            <img id="texture" alt="random" height="300" width="300"/>
-            </td>
-            <td>
-         
-            </td>
-              <td>
-            
+            <td colspan="2" align="left">
+             After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on its corresponding location, if nothing changes much click on none. Submit only after you finish a batch of 5. 
+             <br/>
+             <td><br/>
+             </td>
+             <td valign="bottom" width="300">
+           
+             <br/>
+             </td>
+            </tr>
+            <tr>
+            <td width="300">
+<input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" /><br/>            <input id="togo" name="togo" value="" type="text"/><br/>
             </td>
 
-        </tr>
-        
-        <tr>
-            <td width="50%" align="left">
-
-            <input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" />
-
-              <h5>Where is the oddball patch in this image, if any? </h5>
-              <p> <input id="R0" name="cat"  onclick="ipick(this.id)"  value="top left" type="radio" >&nbsp;Top
+            <td >
+            <img id="texture" alt="random" height="300" width="300"/><br/>
+            </td>
+            <td valign="center" width="300">
+             <h5> Where is the oddball patch in this image, if any? </h5><br>
+               <input id="R0" name="cat"  onclick="ipick(this.id)"  value="top left" type="radio" >&nbsp;Top
                 Left <br>
                 <input id="R1"   name="cat"   onclick="ipick(this.id)"  value="top right" type="radio">&nbsp;Top
                 Right <br>
@@ -200,47 +197,61 @@ for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
                 <input id="R3"  name="cat"    onclick="ipick(this.id)"  value="bottom right" type="radio">&nbsp;Bottom
                 Right<br>
                 <input id="R4"  name="cat"    onclick="ipick(this.id)" value="center" type="radio">&nbsp;Center<br>
-                <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None<br>
-              </p>
+                <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None
+
+           <br/>
             </td>
-     
+            </tr>
+
+           <tr>
             <td>
-            <h5> Submit only after you finish the batch </h5>
+             Submit only after you finish the batch <br>
             <input id="submitButton" name="Submit" value="Submit" type="submit"/>
+            <br/>
             </td>
+
+            <td>
+             Looks like your screen resolution is:<br>
+            <input id ="screen" name="screen" type="text"/>
+            <br/>
+            </td>
+
+            <td valign="top">
+           
+            </td>
+
+
 </tr>
+</tbody>
 </table>
 
 
    <input id="feedback1" type="hidden" name="TextureFamily" value=""/><br>
    <input id="feed0" name="feed0" value="" type="hidden"/>
    <input id="feed1" name="feed1" value="" type="hidden"/>
-   
-
-<script language="Javascript">
-var height = screen.height;
-var width = screen.width;
-document.write("<h5> Your screen resolution is </h5>")
-document.write( width + " x " + height);
-</script>
-
 
 
 
  <h4> At which point these two bars blend best when you squint? </h4>
-   <p><img id="chart" alt="chart" height="133" width="868"/></p>
+   <img id="chart" alt="chart" height="133" width="868"/>
    <p>Blending point: <input type="text" name="blending" value="not for now"/></p>
-
-
-
-
-
-
 
 </form>
 <script language="Javascript">
 
-//var home=decode(gup('imageurl'));
+
+var height = screen.height;
+var width = screen.width;
+
+document.getElementById('screen').value=width + " x " + height;
+
+
+
+
+
+
+
+var home=decode(gup('imageurl'));
 document.getElementById('assignmentId').value = gup('assignmentId');
 
 
