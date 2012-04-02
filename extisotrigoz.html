@@ -73,7 +73,7 @@
     var feedback1 =new Array();
 
     var home=decode(gup('imageurl'));
-    //var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
+    var rhome="http://marconioz.github.com/isotrigoz/turk/"
     var rn=1;
     var ct=5;
     var str="";
@@ -105,13 +105,13 @@
     {
     try
     {
-    document.getElementById('texture').src=home +"r" +1+ ".jpg"
+    document.getElementById('texture').src=rhome +"r" +1+ ".jpg"
     }
     catch(err1)
     {
     try
     {
-    document.getElementById('texture').src=home +"r" +1+ ".jpg"
+    document.getElementById('texture').src=rhome +"r" +1+ ".jpg"
     }
     catch(err2)
     {
@@ -388,11 +388,11 @@
     document.getElementById('assignmentId').value = gup('assignmentId');
 
     try{
-    document.getElementById('texture').src =  home +"r2.jpg";
+    document.getElementById('texture').src =  rhome+"r2.jpg";
     }
     catch(err1){
     try{
-    document.getElementById('texture').src =  home +"r2.jpg";
+    document.getElementById('texture').src =  rhome +"r2.jpg";
     }
     catch(err2)
     {
