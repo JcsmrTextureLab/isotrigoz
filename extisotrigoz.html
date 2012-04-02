@@ -105,13 +105,13 @@
     {
     try
     {
-    document.getElementById('texture').src=rhome +"r" +1+ ".jpg"
+    document.getElementById('texture').src=rhome +"r" +1+ ".png"
     }
     catch(err1)
     {
     try
     {
-    document.getElementById('texture').src=rhome +"r" +1+ ".jpg"
+    document.getElementById('texture').src=rhome +"r" +1+ ".png"
     }
     catch(err2)
     {
@@ -183,17 +183,17 @@
 
     function cleanit()
     {
-    for(i=0;i<=3;i++){
+    for(i=0;i<=4;i++){
     if(document.getElementById("R"+i).checked){document.getElementById("R"+i).checked=false}
     }
     }
 
     function disableit(){
-    for(i=0;i<=3;i++){document.getElementById("R"+i).disabled=true}
+    for(i=0;i<=4;i++){document.getElementById("R"+i).disabled=true}
     }
 
     function enableit(){
-    for(i=0;i<=3;i++){document.getElementById("R"+i).disabled=false}
+    for(i=0;i<=4;i++){document.getElementById("R"+i).disabled=false}
     }
 
 
@@ -331,9 +331,18 @@
 			  
                  
               <p>
+                <h5>
+				If you miss one texture use the following button, 
+                Don't abuse this option or the HIT will expire early...				
               </p>
                  
               <p>
+			  <input id="R4"
+                  name="cat"
+                  onclick="ipick(this.id);ct=ct+1;"
+                  value="Duh,missed!"
+                  type="Button"
+			      align="middle" />			  
 			  </p>
             </td>
           </tr>
@@ -388,11 +397,11 @@
     document.getElementById('assignmentId').value = gup('assignmentId');
 
     try{
-    document.getElementById('texture').src =  rhome+"r2.jpg";
+    document.getElementById('texture').src =  rhome+"r3.png";
     }
     catch(err1){
     try{
-    document.getElementById('texture').src =  rhome +"r2.jpg";
+    document.getElementById('texture').src =  rhome +"r3.png";
     }
     catch(err2)
     {
