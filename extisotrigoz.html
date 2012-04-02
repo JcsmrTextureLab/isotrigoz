@@ -142,7 +142,7 @@
     var t1=setTimeout('settexture(rn)',300);
     var t2=setTimeout('setmask(rn)',2300);
     easytiger();
-    document.getElementById('togo').value= ct +" to go";
+    document.getElementById('togo').value= ct;
     }
 
     function easytiger()
@@ -256,15 +256,21 @@
                   type="button"
                   value="Ready?"
                   onclick="timedTexture()" /><br />
+				You've got   
               <input id="togo"
                   name="togo"
                   value=""
-                  type="text" /><br />
-				  
-			<p>               
+                  type="text" /> to go<br />
+				<p><br />
+                </p>	
+				<p><br />
+                </p>
+				<p><br />
+                </p>
+			               
 				If you miss one texture use the following button, 
                 Don't abuse this option or the HIT will expire early...				
-            </p>
+            
 			
 			<input id="R4"
                   name="cat"
@@ -468,7 +474,7 @@
         
         
         document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.png";
-
+        document.getElementById('chart').width=window.innerWidth;
    
     </script>
   </body>
