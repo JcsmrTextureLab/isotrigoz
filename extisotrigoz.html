@@ -8,7 +8,18 @@
           content="HTML-Kit Tools HTML Tidy plugin" />
     <meta http-equiv="Content-Type"
           content="text/html; charset=utf-8" />
-    <style>
+		  
+	<style>
+
+
+        body{font-family:arial;font-size:82.5%;color:#444;background:#b0c4de;margin:0;padding:0 }
+        p, td, th, label{font-size:1.2em}
+        p{margin:0;padding:0 0 1em 0;}
+        h1{font-size:1.8em;line-height:2em;margin:0;padding:0;}
+		  
+	</style>	  
+		  
+    <!-- <style>
 
 
         body{font-family:arial;font-size:62.5%;color:#444;margin:0;padding:0 }
@@ -16,7 +27,7 @@
         p{margin:0;padding:0 0 1em 0;}
         h1{font-size:1.8em;line-height:2em;margin:0;padding:0;}
         h2{font-size:1.4em;line-height:1.6em;margin:0;padding:0;}
-        table{border:1px solid #444;border-width:1px 0 0 1px;border-collapse: collapse;clear:both}
+        table{border:1px solid #444;border-width:1px 0 0 1px;border-collapse: collapse;clear:both} 
         td, th{border:1px solid #444;border-width:0 1px 1px 0;padding:.5em}
         th{background:#eee;font-weight:bold}
 
@@ -38,7 +49,7 @@
         .odd{background:#efefef}
 
    
-    </style>
+    </style> -->
     <script language="Javascript">
 
 
@@ -211,11 +222,15 @@
             name="assignmentId"
             value=""
             type="hidden" />
-      <table width="1080"
+      <table width="width/2"
              border="0">
         <tbody>
           <tr>
             <td colspan="3" align="left">
+			 <h3 align="center">
+                Where is the oddball patch in this image?
+             </h3><br />
+			
 			<p>
 			This HIT is an easy perception task that seems to reveal very important details of how the brain and particularly the visual system works. We have done this a lot in our labs with volunteers. Now we want to confirm our finds with a large pool of samples. So your help is very appreciatted.  
 			</p>
@@ -235,7 +250,7 @@
 			</td>
           </tr>
           <tr>
-            <td width="300">
+            <td width="33%">
               Click here when you ready.<br />
               <input id="readyButton"
                   type="button"
@@ -245,9 +260,25 @@
                   name="togo"
                   value=""
                   type="text" /><br />
+				  
+			<p>               
+				If you miss one texture use the following button, 
+                Don't abuse this option or the HIT will expire early...				
+            </p>
+			
+			<input id="R4"
+                  name="cat"
+                  onclick="ipick(this.id);ct=ct+1;"
+                  value="Duh,missed!"
+                  type="Button"
+			      align="middle" />			
+				  
+				  
+				  
+				  
             </td>
             <td>
-			<table>
+			<table border="0">
 			  <tr>
 			   <td><br/>
 			   </td>
@@ -258,7 +289,7 @@
                   type="Button" /><img src="ticonT.png"
                    alt="Smiley face"
                    align="middle"
-                   width="52"
+                   width="32"
                    height="32"/><br />              
 			  <br/>
 			   </td>
@@ -310,7 +341,7 @@
                   type="Button" /><img src="ticonB.png"
                    alt="Smiley face"
                    align="middle"
-                   width="52"
+                   width="32"
                    height="32" /><br />			  
 			  <br/>
 			   </td>
@@ -328,28 +359,17 @@
 			
 			<td valign="top"
                 width="300">
-              <h5>
-                Where is the oddball patch in this image, if any?
-              </h5><br />
+             
 			  
                 
               <p>
               </p>
 			  
                  
-              <p>
-                <h5>
-				If you miss one texture use the following button, 
-                Don't abuse this option or the HIT will expire early...				
-              </p>
+              
                  
               <p>
-			  <input id="R4"
-                  name="cat"
-                  onclick="ipick(this.id);ct=ct+1;"
-                  value="Duh,missed!"
-                  type="Button"
-			      align="middle" />			  
+			    
 			  </p>
             </td>
           </tr>
@@ -398,7 +418,8 @@
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-    window.open("file:///C:/Users/MARCONI/isotrigoz/extisotrigoz.html","windowName");
+    document.getElementById('texture').height=height/3;
+	document.getElementById('texture').width=height/3;
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
@@ -446,7 +467,8 @@
 
         
         
-        document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg";
+        document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.png";
+
    
     </script>
   </body>
