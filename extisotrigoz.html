@@ -1,283 +1,411 @@
-<!-- This file needs to be hosted on an external server.  -->
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en">
   <head>
-    <title> IsotrigOz </title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="generator"
+          content="HTML-Kit Tools HTML Tidy plugin" />
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8" />
+    <style>
+
+
+        body{font-family:arial;font-size:62.5%;color:#444;margin:0;padding:0 }
+        p, td, th, label{font-size:1.2em}
+        p{margin:0;padding:0 0 1em 0;}
+        h1{font-size:1.8em;line-height:2em;margin:0;padding:0;}
+        h2{font-size:1.4em;line-height:1.6em;margin:0;padding:0;}
+        table{border:1px solid #444;border-width:1px 0 0 1px;border-collapse: collapse;clear:both}
+        td, th{border:1px solid #444;border-width:0 1px 1px 0;padding:.5em}
+        th{background:#eee;font-weight:bold}
+
+        h1{padding:0 15px }
+
+        .wrapper{width:800px;margin:0 auto;border:1px solid #999;border-width: 0 1px 0 1px}
+        .task{padding:0 15px 30px 15px;border-bottom: dotted 1px #444;margin:0 2px 30px 2px;position:relative;}
+
+        #user-agent{font-weight:bold;padding:0}
+        
+        .test-image{width:130px;height:130px;background:url(images/image-sprite.png) no-repeat 0 0;display:block;position:relative}
+        .show-image{background-position:0 -130px}
+        .hide-image{background-position:0 0}
+        
+        .variance-indicator{width:128px;height:128px;background:url(images/traffic_lights.png) no-repeat 0 0;}
+        .green{background-position:0 -126px}
+        .red{background-position:0 0}
+        
+        .odd{background:#efefef}
+
+   
+    </style>
     <script language="Javascript">
-//
-// This method Gets URL Parameters (GUP)
-//
-function gup( name )
-{
-  var regexS = "[\\?&]"+name+"=([^&#]*)";
-  var regex = new RegExp( regexS );
-  var tmpURL = window.location.href;
-  var results = regex.exec( tmpURL );
-  if( results == null )
+
+
+    //
+    // This method Gets URL Parameters (GUP)
+    //
+    function gup( name )
+    {
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var tmpURL = window.location.href;
+    var results = regex.exec( tmpURL );
+    if( results == null )
     return "";
-  else
+    else
     return results[1];
-}
+    }
 
-//
-// This method decodes the query parameters that were URL-encoded
-//
-function decode(strToDecode)
-{
-  var encoded = strToDecode;
-  return unescape(encoded.replace(/\+/g,  " "));
-}
+    //
+    // This method decodes the query parameters that were URL-encoded
+    //
+    function decode(strToDecode)
+    {
+    var encoded = strToDecode;
+    return unescape(encoded.replace(/\+/g,  " "));
+    }
 
-//
-// Set parameters
-//
-var feedback0 =new Array();
-var feedback1 =new Array();
+    //
+    // Set parameters
+    //
+    var feedback0 =new Array();
+    var feedback1 =new Array();
 
-var home=decode(gup('imageurl'));
-//var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
-var rn=1;
-var ct=5;
-var str="";
+    var home=decode(gup('imageurl'));
+    //var home="http://marconioz.github.com/isotrigoz/turk/Box/Even/"
+    var rn=1;
+    var ct=5;
+    var str="";
 
 
-function settexture()
-{
-try
-   {
+    function settexture()
+    {
+    try
+    {
     document.getElementById('texture').src=home +"t"+rn+ ".jpg"
     }
-catch(err1)
-   {
+    catch(err1)
+    {
     try
-   {
+    {
     document.getElementById('texture').src=home +"t"+rn+ ".jpg"
     }
     catch(err2)
-   {
+    {
     txt="There was an error loading this texture.\n\n";
     txt+="Error description: " + err2.message + "\n\n";
     txt+="Click OK to continue.\n\n";
     alert(txt);
-  }
-  }
-  }
-
-function setmask()
-{
-try
-   {
-    document.getElementById('texture').src=home +"t" +1+ ".jpg"
     }
-catch(err1)
-   {
+    }
+    }
+
+    function setmask()
+    {
     try
-   {
-    document.getElementById('texture').src=home +"t" +1+ ".jpg"
+    {
+    document.getElementById('texture').src=home +"r" +1+ ".jpg"
+    }
+    catch(err1)
+    {
+    try
+    {
+    document.getElementById('texture').src=home +"r" +1+ ".jpg"
     }
     catch(err2)
     {
-  txt="There was an error on this page.\n\n";
-  txt+="Error description: " + err2.message + "\n\n";
-  txt+="Click OK to continue.\n\n";
-  alert(txt);
-  }
-  } 
-}
+    txt="There was an error on this page.\n\n";
+    txt+="Error description: " + err2.message + "\n\n";
+    txt+="Click OK to continue.\n\n";
+    alert(txt);
+    }
+    }
+    }
 
 
 
-function timedTexture()
-{
-rn=Math.ceil(200*Math.random());
-var t1=setTimeout('settexture(rn)',300);
-var t2=setTimeout('setmask(rn)',2300);
-easytiger();
-document.getElementById('togo').value= ct +" to go";
-}
-
-function easytiger()
-{
-document.getElementById('readyButton').disabled = true;
-document.getElementById('readyButton').value = "Please select a location";
-enableit();
-}
-
-function gotiger(){
-document.getElementById('readyButton').disabled = false;
-document.getElementById('readyButton').value ="Ready?";
-}
-
-
-function ipick(choice)
-{str=String(choice);
-
-document.getElementById(str).name="cat" +ct;
-document.getElementById('feedback1').value=home;
-
-//document.getElementById('feedback2').value=document.getElementById(str).value;
-//document.getElementById('feedback3').value="t"+rn+".jpg";
-
-feedback0.push(document.getElementById(str).value);
-feedback1.push("t"+rn+".jpg");
-
-if(ct==0){
-disableit();
-document.getElementById('readyButton').disabled==true;
-document.getElementById('readyButton').value ="Done! click submit";
-document.getElementById('submitButton').disabled =false;
-document.getElementById('submitButton').value = "Submit";
-
-
-document.getElementById('feed0').value=feedback0;
-document.getElementById('feed1').value=feedback1;
-}else{
-document.getElementById('submitButton').disabled = true;
-document.getElementById('submitButton').value = "Complete before submitting.";
-ct=ct-1;
-
-disableit();
-var t3=setTimeout('cleanit()',1000);
-gotiger();
-}
-}
-
-
-function cleanit()
-{
-for(i=0;i<=5;i++){
-if(document.getElementById("R"+i).checked){document.getElementById("R"+i).checked=false}
-}
-}
-
-function disableit(){
-for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=true}
-}
-
-function enableit(){
-for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
-}
-
-</script>
-</head>
-<body>
-
-      <form id="mturk_form" method="POST" action="http://workersandbox.mturk.com/mturk/externalSubmit">
-
-      <input id="assignmentId" name="assignmentId" value="" type="hidden">
-
-        <table  width="1080" border="0">
-          <tbody>
-          <tr>
-            <td colspan="3" align="left">
-             After you click the Ready? button, a texture will appear for about 2 seconds somewhere inside this image bellow, after that the original random image will come back.  The texture may be either random or structured. If it looks structured (odd or strange) click on the button corresponding to its location, if nothing changes much click on none. Submit only after you finish a batch of 5.
-             <br/>
-             <td><br/>
-             </td>
-             <td valign="bottom" width="300">          
-             <br/>
-             </td>
-            </tr>
-            <tr>
-            <td width="300">
-            Click here when you ready. <br/>
-<input id="readyButton" type="Button" value="Ready?" onclick="timedTexture()" /><br/>            <input id="togo" name="togo" value="" type="text"/><br/>
-            </td>
-
-            <td >
-            <img id="texture" alt="random" height="300" width="300"/><br/>
-            </td>
-            <td valign="top" width="300">
-             <h5> Where is the oddball patch in this image, if any? </h5><br>
-               <input id="R0" name="cat"  onclick="ipick(this.id)"  value="top left" type="radio" >&nbsp;Top
-                Left <br>
-                <input id="R1"   name="cat"   onclick="ipick(this.id)"  value="top right" type="radio">&nbsp;Top
-                Right <br>
-                <input id="R2"  name="cat"    onclick="ipick(this.id)"  value="bottom left" type="radio">&nbsp;Bottom
-                Left <br>
-                <input id="R3"  name="cat"    onclick="ipick(this.id)"  value="bottom right" type="radio">&nbsp;Bottom
-                Right<br>
-                <input id="R4"  name="cat"    onclick="ipick(this.id)" value="center" type="radio">&nbsp;Center<br>
-                <input id ="R5"  name="cat"   onclick="ipick(this.id)" value="none" type="radio" >&nbsp;None
-
-           <br/>
-            </td>
-            </tr>
-
-           <tr>
-            <td>
-             Click here after you finish the batch <br>
-            <input id="submitButton" name="Submit" value="Submit" type="submit"/>
-            <br/>
-            </td>
-
-            <td>
-             Looks like your screen resolution is:<br>
-            <input id ="screen" name="screen" type="text"/>
-            <br/>
-            </td>
-
-            <td valign="top">
-           
-            </td>
-
-
-</tr>
-</tbody>
-</table>
-
-
-   <input id="feedback1" type="hidden" name="TextureFamily" value=""/><br>
-   <input id="feed0" name="feed0" value="" type="hidden"/>
-   <input id="feed1" name="feed1" value="" type="hidden"/>
-
-
-
- <h4> At which point these two bars blend best when you squint? </h4>
-   <img id="chart" alt="chart" height="133" width="868"/>
-   <p>Blending point: <input type="text" name="blending" value="not for now"/></p>
-
-</form>
-<script language="Javascript">
-
-
-var height = screen.height;
-var width = screen.width;
-
-document.getElementById('screen').value=width + " x " + height;
-
-
-
-
-
-
-
-var home=decode(gup('imageurl'));
-document.getElementById('assignmentId').value = gup('assignmentId');
-
-
-try{
-document.getElementById('texture').src =  home +"t3.jpg";
-}
-catch(err1){
-try{
-document.getElementById('texture').src =  home +"t5.jpg";
- }
-catch(err2)
+    function timedTexture()
     {
-  txt="There was an error on this page.\n\n";
-  txt+="Error description: " + err2.message + "\n\n";
-  txt+="Click OK to continue.\n\n";
-  alert(txt);
-  }
-}
+    rn=Math.ceil(200*Math.random());
+    var t1=setTimeout('settexture(rn)',300);
+    var t2=setTimeout('setmask(rn)',2300);
+    easytiger();
+    document.getElementById('togo').value= ct +" to go";
+    }
+
+    function easytiger()
+    {
+    document.getElementById('readyButton').disabled = true;
+    document.getElementById('readyButton').value = "Please select a location";
+    enableit();
+    }
+
+    function gotiger(){
+    document.getElementById('readyButton').disabled = false;
+    document.getElementById('readyButton').value ="Ready?";
+    }
 
 
-document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg";
+    function ipick(choice)
+    {str=String(choice);
 
-if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
+    document.getElementById(str).name="cat" +ct;
+    document.getElementById('feedback1').value=home;
+
+    //document.getElementById('feedback2').value=document.getElementById(str).value;
+    //document.getElementById('feedback3').value="t"+rn+".jpg";
+
+    feedback0.push(document.getElementById(str).value);
+    feedback1.push("t"+rn+".jpg");
+
+    if(ct==0){
+    disableit();
+    document.getElementById('readyButton').disabled==true;
+    document.getElementById('readyButton').value ="Done! click submit";
+    document.getElementById('submitButton').disabled =false;
+    document.getElementById('submitButton').value = "Submit";
 
 
+    document.getElementById('feed0').value=feedback0;
+    document.getElementById('feed1').value=feedback1;
+    }else{
+    document.getElementById('submitButton').disabled = true;
+    document.getElementById('submitButton').value = "Complete before submitting.";
+    ct=ct-1;
+
+    disableit();
+    var t3=setTimeout('cleanit()',1000);
+    gotiger();
+    }
+    }
+
+
+    function cleanit()
+    {
+    for(i=0;i<=5;i++){
+    if(document.getElementById("R"+i).checked){document.getElementById("R"+i).checked=false}
+    }
+    }
+
+    function disableit(){
+    for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=true}
+    }
+
+    function enableit(){
+    for(i=0;i<=5;i++){document.getElementById("R"+i).disabled=false}
+    }
+
+
+   
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <form id="mturk_form"
+          method="post"
+          action=
+          "http://workersandbox.mturk.com/mturk/externalSubmit"
+          name="mturk_form">
+      <input id="assignmentId"
+            name="assignmentId"
+            value=""
+            type="hidden" />
+      <table width="1080"
+             border="0">
+        <tbody>
+          <tr>
+            <td colspan="3"
+                align="left">
+              After you click the Ready? button, a texture will
+              appear for about 2 seconds somewhere inside this
+              image bellow, after that the original random image
+              will come back. The texture may be either random or
+              structured. If it looks structured (odd or strange)
+              click on the button corresponding to its location, if
+              nothing changes much click on none. Submit only after
+              you finish a batch of 5.<br />
+            </td>
+          </tr>
+          <tr>
+            <td width="300">
+              Click here when you ready.<br />
+              <input id="readyButton"
+                  type="button"
+                  value="Ready?"
+                  onclick="timedTexture()" /><br />
+              <input id="togo"
+                  name="togo"
+                  value=""
+                  type="text" /><br />
+            </td>
+            <td>
+			<table>
+			  <tr>
+			   <td><br/>
+			   </td>
+			  <td align="center" valign="Bottom"><input id="R0"
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Top"
+                  type="Button" /><img src="ticonT.png"
+                   alt="Smiley face"
+                   align="middle"
+                   width="52"
+                   height="32"/><br />              
+			  <br/>
+			   </td>
+			   <td><br/>
+			   </td>			  
+			  </tr>
+			
+			  <tr>			  
+			  <td>
+			  <input id="R1"
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Left"
+                  type="Button" /><img src="ticonL.png"
+                   alt="Smiley face"
+                   align="middle"
+                   width="52"
+                   height="32"/><br />			  
+			  <br/>
+			   </td>
+			   <td> 
+			   <img id="texture"
+                  alt="random"
+                  height="300"
+                  width="300"
+                  name="texture" /><br />
+			   </td>
+			   <td><input id="R2"
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Right"
+                  type="Button" />&nbsp <img src="ticonR.png"
+                   alt="Smiley face"
+                   align="middle"
+                   width="52"
+                   height="32" /><br />
+				   <br/>
+			   </td>
+			  </tr>
+			
+			  <tr>
+			  <td><br/>
+			   </td>
+			  <td align="center">
+			  <input id="R3"
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Bottom"
+                  type="Button" /><img src="ticonB.png"
+                   alt="Smiley face"
+                   align="middle"
+                   width="52"
+                   height="32" /><br />			  
+			  <br/>
+			   </td>
+			   <td><br/>
+			   </td>
+			  </tr>
+			
+			
+              
+			</table>
+		
+            </td>
+            
+			
+			
+			<td valign="top"
+                width="300">
+              <h5>
+                Where is the oddball patch in this image, if any?
+              </h5><br />
+			  
+                
+              <p>
+              </p>
+			  
+                 
+              <p>
+              </p>
+                 
+              <p>
+			  </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Click here after you finish the batch<br />
+              <input id="submitButton"
+                  name="Submit"
+                  value="Submit"
+                  type="submit" /><br />
+            </td>
+            <td>
+              Looks like your screen resolution is:<br />
+              <input id="screen"
+                  name="screen"
+                  type="text" /><br />
+            </td>
+            <td valign="top"></td>
+          </tr>
+        </tbody>
+      </table><input id="feedback1"
+            type="hidden"
+            name="TextureFamily"
+            value="" /><br />
+      <input id="feed0"
+            name="feed0"
+            value=""
+            type="hidden" /> <input id="feed1"
+            name="feed1"
+            value=""
+            type="hidden" />
+      <h4>
+        At which point these two bars blend best when you squint?
+      </h4><img id="chart"
+            alt="chart"
+            height="133"
+            width="868"
+            name="chart" />
+      <p>
+        Blending point: <input type="text"
+           name="blending"
+           value="not for now" />
+      </p>
+    </form><script language="Javascript">
+
+    var height = screen.height;
+    var width = screen.width;
+    document.getElementById('screen').value=width + " x " + height;
+    window.open("file:///C:/Users/MARCONI/isotrigoz/extisotrigoz.html","windowName");
+
+    var home=decode(gup('imageurl'));
+    document.getElementById('assignmentId').value = gup('assignmentId');
+
+    try{
+    document.getElementById('texture').src =  home +"r2.jpg";
+    }
+    catch(err1){
+    try{
+    document.getElementById('texture').src =  home +"r2.jpg";
+    }
+    catch(err2)
+    {
+    txt="There was an error on this page.\n\n";
+    txt+="Error description: " + err2.message + "\n\n";
+    txt+="Click OK to continue.\n\n";
+    alert(txt);
+    }
+    }
+
+
+
+    if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
 
     //
     // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
@@ -296,18 +424,14 @@ if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()
          var form = document.getElementById('mturk_form');
           if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
           form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
-                      
+
         }
       }
-</script>
 
-  
-
-
-
-</body>
+        
+        
+        document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.jpg";
+   
+    </script>
+  </body>
 </html>
-
-
-
-
