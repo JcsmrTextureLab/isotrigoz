@@ -50,6 +50,7 @@
 
    
     </style> -->
+	
     <script language="Javascript">
 
 
@@ -133,7 +134,6 @@
     }
     }
     }
-
 
 
     function timedTexture()
@@ -228,7 +228,7 @@
           <tr>
             <td colspan="3" align="left">
 			 <h3 align="center">
-                Where is the oddball patch in this image?
+                Where is the oddball strip in this image?
              </h3><br />
 			
 			<p>
@@ -370,7 +370,7 @@
                 
               <p>
               </p>
-			  
+			  <div id="slideshow" style="width: 300px; height: 300px;"></div>
                  
               
                  
@@ -477,5 +477,49 @@
         document.getElementById('chart').width=window.innerWidth;
    
     </script>
+	
+
+	
+	<script src="jquery.js"></script>
+    <script src="jquery.cross-slide.min.js"></script>
+	
+	
+	<script>
+    //
+	//Slideshow
+	//
+	
+     $(function() {
+       $('#slideshow').crossSlide({
+        sleep: 2,
+        fade: 0.1
+        }, [
+           {src:'t0.png'},
+           {src:'t1.png'},
+           {src: 't2.png'},
+           {src: 't3.png'},
+           {src: 't4.png'},
+           {src: 't5.png'},
+           {src: 't6.png'},
+           {src: 't7.png'},
+           {src: 't8.png'},
+           {src: 't9.png'},
+           {src: 't10.png'},
+           {src: 't11.png'},
+           {src: 't12.png'},
+           {src: 't13.png'},
+           {src: 't14.png'},
+           {src: 't15.png'},
+           {src: 't16.png'},
+           {src: 't17.png'},
+           {src: 't18.png'},
+           {src: 't19.png'}
+         
+          
+        ])
+      });
+</script>
+	
+	
   </body>
 </html>
