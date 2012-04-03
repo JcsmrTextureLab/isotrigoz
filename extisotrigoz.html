@@ -87,6 +87,7 @@
 
     var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
+	var ehome="http://marconioz.github.com/isotrigoz/turk/isotrigons/Box/even/"
     var rn=1;
     var ct=5;
     var str="";
@@ -237,8 +238,11 @@
 			</p>
             <p> 
              Here are some samples of what you will see.<br />
-			 <div id="slideshow" style="width: 300px; height: 300px;"></div>	
-			 <div id="slideshow" style="width: 300px; height: 300px;"></div>
+			</p>
+			 <div id="slideshow1" style="width: 300px; height: 300px;"></div>	
+			 <div id="slideshow2" style="width: 300px; height: 300px;"></div> 
+			<p>
+			 At the left are the current one from this HIT and to the right are samples from an easy set. The current ones may or may not be just as easy. 
 	
               After you click the Ready? button, a texture will
               appear for about 2 seconds somewhere inside this
@@ -459,34 +463,63 @@
 	//
 	
      $(function() {
-       $('#slideshow').crossSlide({
+       $('#slideshow1').crossSlide({
         sleep: 5,
         fade: 0.1
         }, [
-           {src:home+ 't0.png',from: '10x',to: '10x'},
-           {src:home+ 't1.png',from: '10x',to: '10x'},
-           {src:home+ 't2.png',from: '6x',to: '6x'},
-           {src:home+ 't3.png',from: '6x',to: '6x'},
-           {src:home+ 't4.png',from: '6x',to: '6x'},
-           {src:home+ 't5.png',from: '6x',to: '6x'},
-           {src:home+ 't6.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't7.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't8.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't9.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't10.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't11.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't12.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't13.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't14.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't15.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't16.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't17.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't18.png',from: '3x 3x',to: '3x 3x'},
-           {src:home+ 't19.png',from: '3x 3x',to: '3x 3x'}
+           {src:home+ 't0.png'},
+           {src:home+ 't1.png'},
+           {src:home+ 't2.png'},
+           {src:home+ 't3.png'},
+           {src:home+ 't4.png'},
+           {src:home+ 't5.png'},
+           {src:home+ 't6.png'},
+           {src:home+ 't7.png'},
+           {src:home+ 't8.png'},
+           {src:home+ 't9.png'}
+           
          
           
         ])
       });
+	  
+	  $(function() {
+       $('#slideshow2').crossSlide({
+        sleep: 5,
+        fade: 0.1
+        }, [        
+           {src:ehome+ 't0.png'},
+           {src:ehome+ 't1.png'},
+           {src:ehome+ 't2.png'},
+           {src:ehome+ 't3.png'},
+           {src:ehome+ 't4.png'},
+           {src:ehome+ 't5.png'},
+           {src:ehome+ 't6.png'},
+           {src:ehome+ 't7.png'},
+           {src:ehome+ 't8.png'},
+           {src:ehome+ 't9.png'}
+         
+          
+        ])
+      });
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 </script>
 <script>
 	
