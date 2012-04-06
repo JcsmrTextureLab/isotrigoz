@@ -224,7 +224,7 @@
             name="assignmentId"
             value=""
             type="hidden" />
-      <table width="600"
+      <table width="width/2"
              border="0">
         <tbody>
           <tr>
@@ -459,8 +459,8 @@
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-    document.getElementById('texture').height=height/3.5;
-	document.getElementById('texture').width=height/3.5;
+    document.getElementById('texture').height=width/3
+	document.getElementById('texture').width=width/3;
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
