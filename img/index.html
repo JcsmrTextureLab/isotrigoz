@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    
+    <title>Demo</title>
+  </head>
+  <body>
+    
+    <script src="jquery.js"></script>
+    <script src="jquery.cross-slide.min.js"></script>
+    
+    
+    
+    <div id="slideshow" style="width: 600px; height: 600px;"></div>
+    <script>
+     $(function() {
+       $('#slideshow').crossSlide({
+        sleep: 2,
+        fade: 0.1
+        }, [
+          { src: 'Box_1_even.jpg'},
+           { src: 'Box_1_even_r.jpg'},
+           {src: 'Box_1_odd.jpg'},
+           {src: 'Box_1_odd_r.jpg'},
+           {src: 'Box_2_even.jpg'},
+           {src: 'Box_2_even_r.jpg'},
+           {src: 'Box_2_odd.jpg'},
+           {src: 'Box_2_odd_r.jpg'},
+           {src: 'Box_3_even.jpg'},
+           {src: 'Box_3_even_r.jpg'},
+           {src: 'Box_3_odd.jpg'},
+           {src: 'Box_3_odd_r.jpg'},
+           {src: 'Box_4_even.jpg'},
+           {src: 'Box_4_even_r.jpg'},
+           {src: 'Box_4_odd.jpg'},
+           {src: 'Box_4_odd_r.jpg'},
+           {src: 'Box_5_even.jpg'},
+           {src: 'Box_5_even_r.jpg'},
+           {src: 'Zigzag_10_odd.jpg'},
+           {src: 'Zigzag_10_odd_r.jpg'}
+         
+          
+        ])
+      });
+</script>
+  </body>
+</html>
