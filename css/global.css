@@ -2,13 +2,15 @@
 	Resets defualt browser settings
 	reset.css
 */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td { margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline; }
+html,body,div,span,applet,object,iframe,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,tbody,tfoot,thead,tr,th,td { margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit;  }
 :focus { outline:0; }
 a:active { outline:none; }
 body { line-height:1; color:black; background:white; }
 ol,ul { list-style:none; }
-table { border-collapse:separate; border-spacing:0; }
-caption,th,td { text-align:left; font-weight:normal; }
+/*
+table {border-collapse:separate; border-spacing:0; }
+*/
+caption,th {font-weight:normal; }
 blockquote:before,blockquote:after,q:before,q:after { content:""; }
 blockquote,q { quotes:"" ""; }
 
@@ -16,7 +18,7 @@ blockquote,q { quotes:"" ""; }
 	Page style
 */
 body { 
-	font:normal 62.5%/1.5 Helvetica, Arial, sans-serif;
+	font:normal 72.5%/1.5 Helvetica, Arial, sans-serif;
 	letter-spacing:0;
 	color:#434343;
 	background:#efefef url(../img/background.png) repeat top center;
@@ -27,12 +29,22 @@ body {
 }
 
 #container {
-	width:580px;
-	padding:10px;
-	margin:0 auto;
+	width:600px;
+	padding:0px;
+	margin:0px auto;
 	position:relative;
 	z-index:0;
 }
+
+#bag {
+	width:600px;
+	padding:0px;
+	margin:0px auto;
+	position:relative;
+	z-index:0;
+}
+
+
 
 #example {
 	width:600px;
@@ -91,7 +103,7 @@ body {
 
 .slides_container div.slide {
 	width:570px;
-	height:280px;
+	height:285px;
 	display:block;
 	margin:0px 150px;
 }
@@ -152,10 +164,10 @@ body {
 .caption {
 	z-index:500;
 	position:absolute;
-	bottom:0px;
+	bottom:-10px;
 	left:0px;
 	height:15px;
-	padding:-10px 20px -10px 20px;
+	padding:0px 0px 0px 0px;
 	background:#000;
 	background:rgba(0,0,0,.6);
 	width:270px;

@@ -4,56 +4,46 @@
       xml:lang="en"
       lang="en">
   <head>
-    <meta name="generator"
-          content="HTML-Kit Tools HTML Tidy plugin" />
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=utf-8" />
-		  
-	<style>
-
-
-        body{font-family:arial;font-size:82.5%;color:#444;background:#b0c4de;margin:0;padding:0 }
-        p, td, th, label{font-size:1.2em}
-        p{margin:0;padding:0 0 1em 0;}
-        h1{font-size:1.8em;line-height:2em;margin:0;padding:0;}
-		
-		  
-	</style>	  
-		  
-    <!-- <style>
-
-
-        body{font-family:arial;font-size:62.5%;color:#444;margin:0;padding:0 }
-        p, td, th, label{font-size:1.2em}
-        p{margin:0;padding:0 0 1em 0;}
-        h1{font-size:1.8em;line-height:2em;margin:0;padding:0;}
-        h2{font-size:1.4em;line-height:1.6em;margin:0;padding:0;}
-        table{border:1px solid #444;border-width:1px 0 0 1px;border-collapse: collapse;clear:both} 
-        td, th{border:1px solid #444;border-width:0 1px 1px 0;padding:.5em}
-        th{background:#eee;font-weight:bold}
-
-        h1{padding:0 15px }
-
-        .wrapper{width:800px;margin:0 auto;border:1px solid #999;border-width: 0 1px 0 1px}
-        .task{padding:0 15px 30px 15px;border-bottom: dotted 1px #444;margin:0 2px 30px 2px;position:relative;}
-
-        #user-agent{font-weight:bold;padding:0}
-        
-        .test-image{width:130px;height:130px;background:url(images/image-sprite.png) no-repeat 0 0;display:block;position:relative}
-        .show-image{background-position:0 -130px}
-        .hide-image{background-position:0 0}
-        
-        .variance-indicator{width:128px;height:128px;background:url(images/traffic_lights.png) no-repeat 0 0;}
-        .green{background-position:0 -126px}
-        .red{background-position:0 0}
-        
-        .odd{background:#efefef}
-
-   
-    </style> -->
-	
-    <script language="Javascript">
-
+    <meta name="generator" content="HTML-Kit Tools HTML Tidy plugin" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/global.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	  <script src="src/slides.jquery.js"></script>
+	  <script>
+	    $(function(){
+			$('#slides').slides({
+				preload: false,
+				preloadImage: '',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},10);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},2500);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function(){
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+  </script>
+	<script language="Javascript">
 
     //
     // This method Gets URL Parameters (GUP)
@@ -87,7 +77,7 @@
 
     var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
-	var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/"
+	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
     var rn=1;
     var ct=5;
     var str="";
@@ -119,7 +109,7 @@
     {
     try
     {
-    document.getElementById('texture').src=rhome+"t0.png"
+    
     }
     catch(err1)
     {
@@ -209,12 +199,118 @@
     for(i=0;i<=4;i++){document.getElementById("R"+i).disabled=false}
     }
 
-
-   
-    </script>
-    <title></title>
+   </script>
+	 	<script type="text/javascript">
+   function hideshow(which){
+   if (!document.getElementById)
+   return
+   if (which.style.display=="block")
+   which.style.display="none"
+   else
+   which.style.display="block"
+   }
+   </script>
+  <title>Tag-a-Texture</title>
   </head>
   <body>
+	
+
+<h4 align="center">
+                Where is the oddball strip in an image?</h4><br />
+<h4 align="center"><a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show Instructions</a></h4><br />
+<div id="container" style="display: block">
+<h4>
+Geting used to the task first, have a look at this slide show
+</h4>
+This HIT is an easy perception task that seems to reveal very important details 
+of how the brain and particularly the visual system works. 
+We have done this a lot in our labs with volunteers. 
+Now we want to confirm our finds with a large pool of samples. 
+So your help is very appreciatted. Here are some samples of what you will see:<br />
+<div id="example">
+			<img src="img/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+						<a href="" title="Right structured band on random background" target="_blank">
+						<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"></a>
+						<div class="caption" style="bottom:0">
+							<p>Right structured band on random background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Right random band on structured background" target="_blank">
+						<img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 2"></a>
+						<div class="caption">
+							<p>Right random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Left structured band on random background" target="_blank">
+						<img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 3"></a>
+						<div class="caption">
+							<p>Left structured band on random background </p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Left random band on structured background" target="_blank">
+						<img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 4"></a>
+						<div class="caption">
+							<p>Left random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Top structured band on random background" target="_blank">
+						<img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 5"></a>
+						<div class="caption">
+							<p>Top structured band on random background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Top random band on structured background" target="_blank">
+						<img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 6"></a>
+						<div class="caption">
+							<p>Top random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Bottom structured band on random background" target="_blank">
+						<img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 7"></a>
+						<div class="caption">
+							<p>Bottom structured band on random background</p>
+						</div>
+						</div>
+					<div class="slide" >
+						<a href="" title="Bottom random band on structured background" target="_blank" >
+						<img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8"></a>
+						<div class="caption">
+							<p>Bottom random band on structured background</p>
+						</div>	
+					</div>
+
+				</div>
+				<a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+			</div>
+			<img src="img/example-frame.png"  height="241" alt="Example Frame" id="frame">
+		</div>			
+ 			 Textures may be composed of a structured band over a random background or the other way around. 
+			 Your job is just to find the location of the band. You can pause the slides by rovering the mouse over a slide, 
+			 and navigate back and forth with the controllers. <br/>  
+			 
+			 <h4> 
+			 Lets start the task <br />
+			 After you click the Ready? button bellow, a texture will
+             appear for about 2 seconds somewhere inside this
+              image bellow, after that the original random image
+              will come back. The texture may be either random or
+              structured. If it looks structured (odd or strange)
+              click on the button corresponding to its location, if
+              nothing changes much click on none. Submit only after
+              you finish a batch of 5.<br />
+</div>
+		
+	  <div id="bag">
     <form id="mturk_form"
           method="post"
           action=
@@ -224,65 +320,30 @@
             name="assignmentId"
             value=""
             type="hidden" />
-      <table width="width"
-             border="0">
+      <table align="center">
+<tr>
+<td></td>
+</tr>
+
         <tbody>
           <tr>
-            <td colspan="3" align="left">
-			 <h2 align="center">
-                Where is the oddball strip in an image?
-             </h2><br />
-			<h2> 
-			Geting used to the task first <br />
-			</h2>
-			
-			This HIT is an easy perception task that seems to reveal very important details of how the brain and particularly the visual system works. We have done this a lot in our labs with volunteers. Now we want to confirm our finds with a large pool of samples. So your help is very appreciatted.  
-			
-             Here are some samples of what you will see:<br />
+            <td >	
 			</tr>
-			<tr>
-			
-			 <td align="left" >
-			 <div id="slideshow1" style="width: 250px; height: 250px;"></div>&nbsp;&nbsp;
-			 </td>
-			 
-		    
-			
-			 <td align="right">
-			 <div id="slideshow2" style="width: 250px; height: 250px;"></div> <br />
-			 </td>
-			 
-			 <td><br />
+			<tr>			
+			 <td align="left" >			
 			</td>
-			
-			</tr>
-			
+		 <td align="right">
+		 </td>			 
+			 <td><br />
+			</td>			
+			</tr>			
 			<tr>
-			 <td colspan="3" align="left">
-			
-			 At the left are the current one from this HIT and to the right are samples from an easy set. 
-			 They may be a structured band over a random background or the other way around. 
-			 Your job is just to find the location of the band.<br />   
+			 <td >	
 			 </td>
-			</tr>
-			 
+			</tr>			 
 			<tr>
 			 <td colspan="3" align="left">
-			 <h2> 
-			 Lets start the task
-			<br />
-			</h2>
 			 
-             After you click the Ready? button, a texture will
-             appear for about 2 seconds somewhere inside this
-              image bellow, after that the original random image
-              will come back. The texture may be either random or
-              structured. If it looks structured (odd or strange)
-              click on the button corresponding to its location, if
-              nothing changes much click on none. Submit only after
-              you finish a batch of 5.<br />
-           
-			
 			</td>
           </tr>
           <tr>
@@ -303,8 +364,7 @@
                 </p>
 				<p><br />
                 </p>
-			               
-				If you miss one texture use the following button, 
+								If you miss one texture use the following button, 
                 Don't abuse this option or the HIT will expire early...				
             
 			
@@ -324,7 +384,8 @@
 			  <tr>
 			   <td><br/>
 			   </td>
-			  <td align="center" valign="Bottom"><input id="R0"
+			  <td align="center">
+				 <input id="R0"
                   name="cat"
                   onclick="ipick(this.id)"
                   value="Top"
@@ -347,7 +408,7 @@
                   value="Left"
                   type="Button" /><img src="ticonL.png"
                    alt="Smiley face"
-                   align="middle"
+                   valign="middle"
                    width="32"
                    height="32"/><br />			  
 			  <br/>
@@ -423,15 +484,15 @@
                   type="submit" /><br />
             </td>
             <td>
-              Looks like your screen resolution is:<br />
-              <input id="screen"
-                  name="screen"
-                  type="text" /><br />
+              
             </td>
             <td valign="top"></td>
           </tr>
         </tbody>
-      </table><input id="feedback1"
+      </table>
+</div>
+			
+			<input id="feedback1"
             type="hidden"
             name="TextureFamily"
             value="" /><br />
@@ -442,6 +503,11 @@
             name="feed1"
             value=""
             type="hidden" />
+				Looks like your screen resolution is:<br />
+              <input id="screen"
+                  name="screen"
+                  type="text" /><br />		
+						
       <h4>
         At which point these two bars blend best when you squint?
       </h4><img id="chart"
@@ -459,8 +525,8 @@
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-    document.getElementById('texture').height=width/2;
-	document.getElementById('texture').width=width/2;
+    document.getElementById('texture').height=width/5;
+	  document.getElementById('texture').width=width/5;
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
@@ -481,74 +547,7 @@
     }
     };
 	</script>
-    <script src="jquery.js"></script>
-    <script src="jquery.cross-slide.min.js"></script>
-	
-	
-	<script>
-    //
-	//Slideshow
-	//
-	
-     $(function() {
-       $('#slideshow1').crossSlide({
-        sleep: 5,
-        fade: 0.1
-        }, [
-           {src:home+ 't0.png'},
-           {src:home+ 't1.png'},
-           {src:home+ 't2.png'},
-           {src:home+ 't3.png'},
-           {src:home+ 't4.png'},
-           {src:home+ 't5.png'},
-           {src:home+ 't6.png'},
-           {src:home+ 't7.png'},
-           {src:home+ 't8.png'},
-           {src:home+ 't9.png'}
-           
-         
-          
-        ])
-      });
-	  
-	  $(function() {
-       $('#slideshow2').crossSlide({
-        sleep: 5,
-        fade: 0.1
-        }, [        
-           {src:ehome+ 't0.png'},
-           {src:ehome+ 't1.png'},
-           {src:ehome+ 't2.png'},
-           {src:ehome+ 't3.png'},
-           {src:ehome+ 't4.png'},
-           {src:ehome+ 't5.png'},
-           {src:ehome+ 't6.png'},
-           {src:ehome+ 't7.png'},
-           {src:ehome+ 't8.png'},
-           {src:ehome+ 't9.png'}
-         
-          
-        ])
-      });
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-</script>
+ 
 <script>
 	
  if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
