@@ -403,7 +403,7 @@
 				});
 				control.bind('mouseleave',function(){
 					// on mouse leave start pause timeout
-					pause();
+					//pause();
 				});
 			}
 			
@@ -462,7 +462,7 @@
 					 pause();
 				}
 				// get clicked, pass to animate function					
-				clicked = $(this).attr('href').match('[^#/]+$');
+				//clicked = $(this).attr('href').match('[^#/]+$');
 				// if current slide equals clicked, don't do anything
 				if (current != clicked) {
 					animate('pagination', paginationEffect, clicked);
@@ -477,7 +477,7 @@
 					 pause();
 				}
 				// get clicked, pass to animate function					
-				clicked = $(this).attr('href').match('[^#/]+$') - 1;
+				//clicked = $(this).attr('href').match('[^#/]+$') - 1;
 				// if current slide equals clicked, don't do anything
 				if (current != clicked) {
 					animate('pagination', paginationEffect, clicked);

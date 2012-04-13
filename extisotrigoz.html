@@ -14,8 +14,8 @@
 			$('#slides').slides({
 				preload: false,
 				preloadImage: '',
-				play: 5000,
-				pause: 2500,
+				play: 3000,
+				pause:500,			
 				hoverPause: true,
 				animationStart: function(current){
 					$('.caption').animate({
@@ -29,7 +29,7 @@
 				animationComplete: function(current){
 					$('.caption').animate({
 						bottom:0
-					},2500);
+					},1000);
 					if (window.console && console.log) {
 						// example return of current slide number
 						console.log('animationComplete on slide: ', current);
@@ -38,7 +38,7 @@
 				slidesLoaded: function(){
 					$('.caption').animate({
 						bottom:0
-					},200);
+					},100);
 				}
 			});
 		});
@@ -216,72 +216,72 @@
 	
 
 <h4 align="center">
-                Where is the oddball strip in an image?</h4><br />
+Where is the oddball strip in an image?</h4><br />
 <h4 align="center"><a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show Instructions</a></h4><br />
 <div id="container" style="display: block">
 <h4>
-Geting used to the task first, have a look at this slide show
+Getting used to the task first; Have a look at this slide show
 </h4>
-This HIT is an easy perception task that seems to reveal very important details 
+This HIT is an easy perception task that seems to reveal very important detail 
 of how the brain and particularly the visual system works. 
-We have done this a lot in our labs with volunteers. 
-Now we want to confirm our finds with a large pool of samples. 
+We have done this a lot in our labs among ourselves and with volunteers. 
+Now we want to validate our findings with a large pool of samples. 
 So your help is very appreciatted. Here are some samples of what you will see:<br />
 <div id="example">
 			<img src="img/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">
 			<div id="slides">
 				<div class="slides_container">
 					<div class="slide">
-						<a href="" title="Right structured band on random background" target="_blank">
+					
 						<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"></a>
 						<div class="caption" style="bottom:0">
 							<p>Right structured band on random background</p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Right random band on structured background" target="_blank">
+					
 						<img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 2"></a>
 						<div class="caption">
 							<p>Right random band on structured background</p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Left structured band on random background" target="_blank">
+						
 						<img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 3"></a>
 						<div class="caption">
 							<p>Left structured band on random background </p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Left random band on structured background" target="_blank">
+						
 						<img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 4"></a>
 						<div class="caption">
 							<p>Left random band on structured background</p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Top structured band on random background" target="_blank">
+						
 						<img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 5"></a>
 						<div class="caption">
 							<p>Top structured band on random background</p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Top random band on structured background" target="_blank">
+						
 						<img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 6"></a>
 						<div class="caption">
 							<p>Top random band on structured background</p>
 						</div>
 					</div>
 					<div class="slide">
-						<a href="" title="Bottom structured band on random background" target="_blank">
+						
 						<img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 7"></a>
 						<div class="caption">
 							<p>Bottom structured band on random background</p>
 						</div>
 						</div>
 					<div class="slide" >
-						<a href="" title="Bottom random band on structured background" target="_blank" >
+					
 						<img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8"></a>
 						<div class="caption">
 							<p>Bottom random band on structured background</p>
@@ -416,8 +416,6 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 			   <td> 
 			   <img id="texture"
                   alt="random"
-                  height=""
-                  width="
                   name="texture" /><br />
 			   </td>
 			   <td><input id="R2"
@@ -450,29 +448,12 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 			   </td>
 			   <td><br/>
 			   </td>
-			  </tr>
-			
-			
-              
-			</table>
-		
-            </td>
-            
-			
-			
+			  </tr>           
+			</table>		
+        </td>		
 			<td valign="top">
-             
-			  
-                
-              <p>
-              </p>
-			  
-                 
-              
-                 
-              <p>
-			    
-			  </p>
+		<p></p>
+         <p></p>
             </td>
           </tr>
           <tr>
@@ -520,7 +501,9 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
            name="blending"
            value="not for now" />
       </p>
-    </form><script language="Javascript">
+    </form>
+		
+		<script language="Javascript">
 
     var height = screen.height;
     var width = screen.width;
