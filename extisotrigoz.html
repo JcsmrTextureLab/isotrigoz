@@ -319,10 +319,11 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
             type="hidden" />
       <div id="tbox">
               Click here when you ready.<input id="readyButton"
-                  type="button"
+                  type="button"								
                   value="Ready?"
                   onclick="timedTexture()" />You've got   
                   <input id="togo"
+									readonly="true"
                   name="togo"
 									size="5"
                   value=""
@@ -335,39 +336,30 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 				 <input id="R0"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="Top"
-                  type="Button" /><img src="ticonT.png"
-                   alt="Smiley face"
-                   align="middle"
-                   width="32"
-                   height="32"/>             
-          <input id="R1"
+                  value="   Top"
+                  type="Button" 
+									style="cursor:pointer; border: none; background:url('ticonT.png');background-size:16px 16px;background-repeat:no-repeat"; />
+         <input id="R1"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="Left"
-                  type="Button" /><img src="ticonL.png"
-                   alt="Smiley face"
-                   align="middle"
-                   width="32"
-                   height="32"/>		  
+                  value="   Left"
+                  type="Button" 
+									style="cursor:pointer; border: none; background:url('ticonL.png');background-size:16px 16px;background-repeat:no-repeat"; />
+  
           <input id="R2"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="Right"
-                  type="Button" /><img src="ticonR.png"
-                   alt="Smiley face"
-                   align="middle"
-                   width="32"
-                   height="32" />
+                  value="   Right"
+                  type="Button"
+									style="cursor:pointer; border: none; background:url('ticonR.png');background-size:16px 16px;background-repeat:no-repeat"; />
+         
 					<input id="R3"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="Bottom"
-                  type="Button" /><img src="ticonB.png"
-                   alt="Smiley face"
-                   align="middle"
-                   width="32"
-                   height="32" />
+                  value="   Bottom"
+                  type="Button" 
+									style="cursor:pointer; border: none; background:url('ticonB.png');background-size:16px 16px;background-repeat:no-repeat"; />
+         
 					<input id="R4"
                   name="cat"
                   onclick="ipick(this.id);ct=ct+1;"
@@ -400,6 +392,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                   name="screen"
                   type="text" 
 									size="10"
+									readonly="true"
 									/><br />		
 						
       <h4>
