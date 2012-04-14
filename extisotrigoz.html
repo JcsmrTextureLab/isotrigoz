@@ -317,31 +317,18 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
             name="assignmentId"
             value=""
             type="hidden" />
-
-              Click here when you ready.<br />
-							
-              <input id="readyButton"
+      <div id="tbox">
+              Click here when you ready.<input id="readyButton"
                   type="button"
                   value="Ready?"
-                  onclick="timedTexture()" /><br />
-				You've got   
-              <input id="togo"
+                  onclick="timedTexture()" />You've got   
+                  <input id="togo"
                   name="togo"
+									size="5"
                   value=""
                   type="text" /> to go<br />
-		
-								If you miss one texture use the following button,<br/> 
-							  <input id="R4"
-                  name="cat"
-                  onclick="ipick(this.id);ct=ct+1;"
-                  value="Duh,missed!"
-                  type="Button"
-			           align="middle" />	
-								
-                Don't abuse this option or the HIT may expire early...<br/>				
-            		
-				 <div id="tbox">
-				 <img id="texture"
+																			
+   			<img id="texture"
                   alt="random"
                    name="texture"  src="t0.png"/><br/>
         
@@ -380,15 +367,21 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                    alt="Smiley face"
                    align="middle"
                    width="32"
-                   height="32" /><br />			  
-	        </div>     
-              Click here after you finish the batch<br />
+                   height="32" />
+					<input id="R4"
+                  name="cat"
+                  onclick="ipick(this.id);ct=ct+1;"
+                  value="Duh,missed!"
+                  type="Button"
+			           align="middle" /> <br/>									
+                Don't abuse the "Duh" button, the HIT may expire early...<br/>			 
+                Click here after you finish the batch<br />
               <input id="submitButton"
                   name="Submit"
                   value="Submit"
                   type="submit" /><br />
            
-    
+     </div>
 </div>
 			
 			<input id="feedback1"
@@ -405,7 +398,9 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 				Looks like your screen resolution is:<br />
               <input id="screen"
                   name="screen"
-                  type="text" /><br />		
+                  type="text" 
+									size="10"
+									/><br />		
 						
       <h4>
         At which point these two bars blend best when you squint?
@@ -417,7 +412,8 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
       <p>
         Blending point: <input type="text"
            name="blending"
-           value="not for now" />
+           value="not for now" 
+					 size="10"/>
       </p>
     </form>
 		
