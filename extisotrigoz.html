@@ -1,8 +1,6 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xml:lang="en"
-      lang="en">
-  <head>
-    <meta name="generator" content="HTML-Kit Tools HTML Tidy plugin" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/global.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
@@ -217,9 +215,9 @@
 Where is the oddball strip in an image?</h4><br />
 <h4 align="center"><a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show Instructions</a></h4><br />
 <div id="container" style="display: block">
-<h4>
+
 Getting used to the task first; Have a look at this slide show
-</h4>
+
 This HIT is an easy perception task that seems to reveal very important detail 
 of how the brain and particularly the visual system works. 
 We have done this a lot in our labs among ourselves and with volunteers. 
@@ -294,30 +292,22 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 		</div>			
  			 Textures may be composed of a structured band over a random background or the other way around. 
 			 Your job is just to find the location of the band. You can pause the slides by rovering the mouse over a slide, 
-			 and navigate back and forth with the controllers. <br/>  
-			 
-			
+			 and navigate back and forth with the controllers. <br/>  	
 			 Lets start the task <br />
-			 After you click the Ready? button bellow, a texture will
-             appear for about 2 seconds somewhere inside this
-              image bellow, after that the original random image
-              will come back. The texture may be either random or
-              structured. If it looks structured (odd or strange)
-              click on the button corresponding to its location, if
-              nothing changes much click on none. Submit only after
-              you finish a batch of 5.<br />
+			 After you click the Ready? button bellow, a texture will appear for about 2 seconds somewhere inside this image bellow, 
+			 after that the original random image will come back. The texture may be either random or structured. If it looks 
+			 structured (odd or strange) click on the button corresponding to its location, if nothing changes much click on none. 
+			 Submit only after you finish a batch of 5.<br />
 </div>
 
             <script language="Javascript">
-						var patord={0,2,4,6,1,3,5,7};
+						 var patord=[0,2,4,6,1,3,5,7];
 	           for(i=0;i<=7;i++){
 						 document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}						
 	          </script>
+	
+<div id="bag">
 
-
-
-		
-	  <div id="bag">
     <form id="mturk_form"
           method="post"
           action=
@@ -327,35 +317,9 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
             name="assignmentId"
             value=""
             type="hidden" />
-      <table align="center">
-<tr>
-<td></td>
-</tr>
 
-        <tbody>
-          <tr>
-            <td >	
-			</tr>
-			<tr>			
-			 <td >			
-			</td>
-		 <td >
-		 </td>			 
-			 <td><br />
-			</td>			
-			</tr>			
-			<tr>
-			 <td >	
-			 </td>
-			</tr>			 
-			<tr>
-			 <td >
-			 
-			</td>
-          </tr>
-          <tr>
-            <td width="28%">
               Click here when you ready.<br />
+							
               <input id="readyButton"
                   type="button"
                   value="Ready?"
@@ -365,33 +329,22 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                   name="togo"
                   value=""
                   type="text" /> to go<br />
-				<p><br />
-                </p>	
-				<p><br />
-                </p>
-				<p><br />
-                </p>
-								If you miss one texture use the following button, 
-                Don't abuse this option or the HIT will expire early...				
-            
-			
-			<input id="R4"
+		
+								If you miss one texture use the following button,<br/> 
+							  <input id="R4"
                   name="cat"
                   onclick="ipick(this.id);ct=ct+1;"
                   value="Duh,missed!"
                   type="Button"
-			      align="middle" />			
-				  
-				  
-				  
-				  
-            </td>
-            <td>
-			<table border="0">
-			  <tr>
-			   <td><br/>
-			   </td>
-			  <td align="center">
+			           align="middle" />	
+								
+                Don't abuse this option or the HIT may expire early...<br/>				
+            		
+				 <div id="tbox">
+				 <img id="texture"
+                  alt="random"
+                   name="texture"  src="t0.png"/><br/>
+        
 				 <input id="R0"
                   name="cat"
                   onclick="ipick(this.id)"
@@ -400,49 +353,26 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                    alt="Smiley face"
                    align="middle"
                    width="32"
-                   height="32"/><br />              
-			  <br/>
-			   </td>
-			   <td><br/>
-			   </td>			  
-			  </tr>
-			
-			  <tr>			  
-			  <td>
-			  <input id="R1"
+                   height="32"/>             
+          <input id="R1"
                   name="cat"
                   onclick="ipick(this.id)"
                   value="Left"
                   type="Button" /><img src="ticonL.png"
                    alt="Smiley face"
-                   valign="middle"
+                   align="middle"
                    width="32"
-                   height="32"/><br />			  
-			  <br/>
-			   </td>
-			   <td> 
-			   <img id="texture"
-                  alt="random"
-                  name="texture" src="http://marconioz.github.com/isotrigoz/turk/t0.png"/><br />
-			   </td>
-			   <td><input id="R2"
+                   height="32"/>		  
+          <input id="R2"
                   name="cat"
                   onclick="ipick(this.id)"
                   value="Right"
-                  type="Button" />&nbsp; <img src="ticonR.png"
+                  type="Button" /><img src="ticonR.png"
                    alt="Smiley face"
                    align="middle"
                    width="32"
-                   height="32" /><br />
-				   <br/>
-			   </td>
-			  </tr>
-			
-			  <tr>
-			  <td><br/>
-			   </td>
-			  <td align="center">
-			  <input id="R3"
+                   height="32" />
+					<input id="R3"
                   name="cat"
                   onclick="ipick(this.id)"
                   value="Bottom"
@@ -451,33 +381,14 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                    align="middle"
                    width="32"
                    height="32" /><br />			  
-			  <br/>
-			   </td>
-			   <td><br/>
-			   </td>
-			  </tr>           
-			</table>		
-        </td>		
-			<td valign="top">
-		<p></p>
-         <p></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
+	        </div>     
               Click here after you finish the batch<br />
               <input id="submitButton"
                   name="Submit"
                   value="Submit"
                   type="submit" /><br />
-            </td>
-            <td>
-              
-            </td>
-            <td valign="top"></td>
-          </tr>
-        </tbody>
-      </table>
+           
+    
 </div>
 			
 			<input id="feedback1"
@@ -515,8 +426,8 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-    document.getElementById('texture').height=window.innerWidth/3;
-	  document.getElementById('texture').width=window.innerWidth/3;
+    document.getElementById('texture').height=window.innerWidth/2;
+	  document.getElementById('texture').width=window.innerWidth/2;
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
