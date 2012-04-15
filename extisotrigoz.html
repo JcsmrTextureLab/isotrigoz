@@ -225,19 +225,24 @@ Now we want to validate our findings with a large pool of samples.
 So your help is very appreciatted. Here are some samples of what you will see:<br />
 <div id="example">
 			<img src="img/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon"/>
-			<div id="slides">
+			<div id="slides">			
 				<div class="slides_container">
 					<div class="slide">
 					
-						<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"/></a>
+					<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"/></a>
+						
+						
 						<div class="caption" style="bottom:0">
+						<div id="rmask"> </div>
 							<p>Right structured band on random background</p>
 						</div>
 					</div>
+					
 					<div class="slide">
 					
 						<img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 2"/></a>
 						<div class="caption">
+						<div id="lmask"> </div>
 							<p>Left structured band on random background</p>
 						</div>
 					</div>
@@ -245,6 +250,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 						
 						<img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 3"/></a>
 						<div class="caption">
+						<div id="tmask"> </div>
 							<p>Top structured band on random background </p>
 						</div>
 					</div>
@@ -252,6 +258,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 						
 						<img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 4"/></a>
 						<div class="caption">
+						<div id="bmask"> </div>
 							<p>Bottom structured band on random background</p>
 						</div>
 					</div>
@@ -259,6 +266,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 						
 						<img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 5"/></a>
 						<div class="caption">
+						  <div id="rmask"> </div>
 							<p>Right random band on structured background</p>
 						</div>
 					</div>
@@ -266,6 +274,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 						
 						<img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 6"/></a>
 						<div class="caption">
+						 <div id="lmask"> </div>
 							<p>Left random band on structured background</p>
 						</div>
 					</div>
@@ -273,15 +282,20 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 						
 						<img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 7"/></a>
 						<div class="caption">
+						<div id="tmask"> </div>
 							<p>Top random band on structured background</p>
 						</div>
 						</div>
 					<div class="slide" >
-					
+
+           
 						<img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8"/></a>
+						
 						<div class="caption">
+					  	<div id="bmask"> </div>
 							<p>Bottom random band on structured background</p>
-						</div>	
+						</div>
+						
 					</div>
 
 				</div>
@@ -415,8 +429,8 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-    document.getElementById('texture').height=window.innerWidth/2;
-	  document.getElementById('texture').width=window.innerWidth/2;
+    document.getElementById('texture').height=window.innerWidth/3;
+	  document.getElementById('texture').width=window.innerWidth/3;
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
