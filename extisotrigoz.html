@@ -212,17 +212,18 @@
 	
 
 <h4 align="center">
-Where is the oddball strip in an image?</h4><br />
-<h4 align="center"><a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show Instructions</a></h4><br />
+Where is the oddball strip in an image?<br />
+After reading the instructions you may <a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
 <div id="container" style="display: block">
 
-Getting used to the task first; Have a look at this slide show
+Have a look at this slide show. <br/>
+This HIT is a visual perception task that probes how the brain and particularly 
+the visual system works. We have used this task in our labs among ourselves and 
+with a few volunteers. Now we want to validate our findings with a large pool of 
+subjects, so your help is very appreciated. Here are some samples of what you will see:<br/> 
 
-This HIT is an easy perception task that seems to reveal very important detail 
-of how the brain and particularly the visual system works. 
-We have done this a lot in our labs among ourselves and with volunteers. 
-Now we want to validate our findings with a large pool of samples. 
-So your help is very appreciatted. Here are some samples of what you will see:<br />
+
+<br />
 <div id="example">
 			<img src="img/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon"/>
 			<div id="slides">			
@@ -303,15 +304,40 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
 				<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"/></a>
 			</div>
 			<img src="img/example-frame.png"  height="241" alt="Example Frame" id="frame"/>
-		</div>			
- 			 Textures may be composed of a structured band over a random background or the other way around. 
-			 Your job is just to find the location of the band. You can pause the slides by rovering the mouse over a slide, 
-			 and navigate back and forth with the controllers. <br/>  	
-			 Lets start the task <br />
-			 After you click the Ready? button bellow, a texture will appear for about 2 seconds somewhere inside this image bellow, 
-			 after that the original random image will come back. The texture may be either random or structured. If it looks 
-			 structured (odd or strange) click on the button corresponding to its location, if nothing changes much click on none. 
-			 Submit only after you finish a batch of 5.<br />
+		</div>
+		Textures may be composed of a structured band over a random background, 
+		or the other way around (that is, a random band over a structured background).  
+		The band will appear in one of four places: top, bottom, left, or right.  
+		Your job is just to find which of these locations has the band.<br/>
+ 
+The movie shows some examples. In the first few examples, the band is structured 
+and the background is random; in the next examples, it is the other way around
+(a random band on a structured background). You can pause the slides by hovering 
+the mouse over a slide, and navigate back and forth with the controllers. 
+During the task, the position of the band will be randomized among these four 
+locations (top, bottom, left, or right), and whether the band is structured or 
+the background is structured will also be randomized.  We expect that some trials 
+will be as easy and some will be hard, just like in the movie.  
+The movie indicates the location of the band with a red box; this is just to 
+explain the task; it will not appear during the HIT.<br/>
+<br/>
+		
+		
+Lets start the task.<br/>
+ 
+After you click the Ready? button below, a texture will appear for about 2 seconds 
+somewhere inside this image. After that the original random image will come back. 
+The texture may be either random or structured, but, as a reminder, your job is just 
+to find its location. Indicate your choice by clicking on the button corresponding 
+to its location.  If you are not sure, make your best guess. In some cases, 
+it may be very hard to see where the band is, but we still prefer that you make 
+your best guess.  Please only click on the 'duh' button if you think your attention 
+lapsed, as we are just as interested in your best guesses as in when you are 
+pretty sure of where the band is.</br>
+ 
+Submit only after you finish a batch of 5. </br>		
+		
+
 </div>
 
             <script language="Javascript">
@@ -346,7 +372,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
    			<img id="texture"
                   alt="random"
                    name="texture"  src="t0.png"/><br/>
-        
+         
 				 <input id="R0"
                   name="cat"
                   onclick="ipick(this.id)"
@@ -373,7 +399,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
                   value="   Bottom"
                   type="Button" 
 									style="cursor:pointer; border: none; background:url('ticonB.png');background-size:16px 16px;background-repeat:no-repeat"; />
-         
+                   
 					<input id="R4"
                   name="cat"
                   onclick="ipick(this.id);ct=ct+1;"
@@ -389,7 +415,7 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
            
      </div>
 </div>
-			
+	
 			<input id="feedback1"
             type="hidden"
             name="TextureFamily"
@@ -422,7 +448,8 @@ So your help is very appreciatted. Here are some samples of what you will see:<b
            value="not for now" 
 					 size="10"/>
       </p>
-    </form>
+  
+		</form>
 		
 		<script language="Javascript">
 

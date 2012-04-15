@@ -43,59 +43,68 @@ body {
 	z-index:0;
 }
 #tbox{
-margin:10px 150px;
+margin:10px 100px;
 }
 
 #tmask{
-opacity:0.6;
-filter:alpha(opacity=60);
+opacity:0.4;
+filter:alpha(opacity=40);
 width:270px;
-height:70px;
+height:80px;
 position:absolute;
 background:#000;
-background:rgba(255,0,0,.6);
+background:rgba(228,28,28,.4);
 top:-230px;
 z-index:2000;
+border-top:3px solid red;
+border-bottom:3px solid red;
 }
 
 #bmask{
-opacity:0.6;
-filter:alpha(opacity=60);
+opacity:0.4;
+filter:alpha(opacity=40);
 width:270px;
-height:70px;
+height:80px;
 position:absolute;
 background:#000;
-background:rgba(255,0,0,.6);
-top:-100px;
+background:rgba(228,28,28,0.4);
+top:-120px;
 z-index:2000;
+border-top:3px solid red;
+border-bottom:3px solid red;
 }
 
 
 #rmask{
-opacity:0.6;
-filter:alpha(opacity=60);
-width:70px;
+opacity:0.4;
+filter:alpha(opacity=40);
+width:80px;
 height:270px;
 position:absolute;
 background:#000;
-background:rgba(255,0,0,.6);
+background:rgba(228,28,28,.4);
 top:-270px;
-right:30px;
+right:40px;
 z-index:2000;
+border-left:3px solid red;
+border-right:3px solid red;
 }
 
 
 #lmask{
-opacity:0.6;
-filter:alpha(opacity=60);
-width:70px;
+opacity:0.4;
+filter:alpha(opacity=40);
+width:80px;
 height:270px;
 position:absolute;
 background:#000;
-background:rgba(255,0,0,.6);
+background:rgba(228,28,28,.4);
 top:-270px;
-left:30px;
+left:40px;
 z-index:2000;
+border-left:3px solid red;
+border-right:3px solid red;
+
 }
 
 
