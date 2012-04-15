@@ -556,11 +556,11 @@ Submit only after you finish a batch of 5. </br>
 									size="10"
 									readonly="true"
 									/><br />
-				And looks like you are using :<br/>					
+				And looks like your browser is :<br/>					
 				<input id="ubrowser"
 				       name="ubrowser"
 							 type="text"
-							 size="10"
+							 size="25"
 							 readonly="true"
 							 /><br/>					
 											
@@ -586,7 +586,7 @@ Submit only after you finish a batch of 5. </br>
     var height = screen.height;
     var width = screen.width;
     document.getElementById('screen').value=width + " x " + height;
-		document.getElementById('ubrowser').value=BrowserDetect.browser + BrowserDetect.version + "on" + BrowserDetect.OS;
+		document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
 		
     document.getElementById('texture').height=window.innerWidth/3;
 	  document.getElementById('texture').width=window.innerWidth/3;
