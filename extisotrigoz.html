@@ -333,9 +333,9 @@ BrowserDetect.init();
   <body>
 	
 
-<h4 align="center">
+<h4 align="center" >
 Where is the oddball strip in an image?<br />
-After reading the instructions you may <a href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
+After reading the instructions you may <a style="color:red" href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
 <div id="container" style="display: block">
 
 Have a look at this slide show. <br/>
@@ -558,39 +558,65 @@ Submit only after you finish a batch of 5. </br>
                   name="togo"
 									size="5"
                   value=""
-                  type="text" /> to go<br />
-																			
+                  type="text" /> to go<br /> 
+									<br/>
+			 <table >
+
+
+			 <tr ><td> 					
+			 <div style="margin:0px 260px">					
+			 <input id="R0" 			           
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Top"
+                  type="Button" 
+									style="cursor:pointer; border: none; background:url('ticonT.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat"; /> <br/>
+			 <div/>
+			 <td/>
+			 
+			 <tr><td>
+			 <div style="margin:0px 25px" >
+			 <input id="R1"
+                  name="cat"
+                  onclick="ipick(this.id)"
+                  value="Left"
+                  type="Button" 
+									style="cursor:pointer; border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat"; />
+			 <div/>
+			 <td/>
+			 
+			  <td>
+				<div style="margin:0px -500px">																
    			<img id="texture"
                   alt="random"
                    name="texture"  src="t0.png"/><br/>
+        <td/>        
+				<div/>
          
-				 <input id="R0"
+          <td>
+					 <div style="margin:0px -100px">	
+           <input id="R2"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="   Top"
-                  type="Button" 
-									style="cursor:pointer; border: none; background:url('ticonT.png');background-size:16px 16px;background-repeat:no-repeat"; />
-         <input id="R1"
-                  name="cat"
-                  onclick="ipick(this.id)"
-                  value="   Left"
-                  type="Button" 
-									style="cursor:pointer; border: none; background:url('ticonL.png');background-size:16px 16px;background-repeat:no-repeat"; />
-  
-          <input id="R2"
-                  name="cat"
-                  onclick="ipick(this.id)"
-                  value="   Right"
+                  value="Right"
                   type="Button"
-									style="cursor:pointer; border: none; background:url('ticonR.png');background-size:16px 16px;background-repeat:no-repeat"; />
-         
+									style="cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat"; />
+          <div/>
+					<td/>
+				 <tr/>
+				 
+				 <tr><td>
+				  <div style="margin:-5px 260px">	
 					<input id="R3"
                   name="cat"
                   onclick="ipick(this.id)"
-                  value="   Bottom"
+                  value="Bottom"
                   type="Button" 
-									style="cursor:pointer; border: none; background:url('ticonB.png');background-size:16px 16px;background-repeat:no-repeat"; />
-                   
+									style="cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat"; />
+          <div/>
+					<td/>
+					<tr/>
+					<table/>         
 					<input id="R4"
                   name="cat"
                   onclick="ipick(this.id);ct=ct+1;"
@@ -654,11 +680,12 @@ Submit only after you finish a batch of 5. </br>
 
     var height = screen.height;
     var width = screen.width;
+		var wwidth = window.innerWidth;
     document.getElementById('screen').value=width + " x " + height;
 		document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
 		
-    document.getElementById('texture').height=window.innerWidth/3;
-	  document.getElementById('texture').width=window.innerWidth/3;
+    document.getElementById('texture').height=400
+	  document.getElementById('texture').width=400
 
     var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');

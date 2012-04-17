@@ -2,12 +2,13 @@
 	Resets defualt browser settings
 	reset.css
 */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,tbody,tfoot,thead,th,td { margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit;  }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,tbody,tfoot,thead,th { margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit;  }
 :focus { outline:0; }
 a:active { outline:none; }
 body { line-height:1; color:black; background:white; }
 ol,ul { list-style:none; }
-table {border-collapse:separate; border-spacing:0; }
+/*table {border-collapse:separate; border-spacing:0; }
+*/
 caption,th {font-weight:normal; }
 blockquote:before,blockquote:after,q:before,q:after { content:""; }
 blockquote,q { quotes:"" ""; }
@@ -43,7 +44,8 @@ body {
 	z-index:0;
 }
 #tbox{
-margin:10px 100px;
+width:600px;
+margin:10px 0px;
 }
 
 #tmask{
