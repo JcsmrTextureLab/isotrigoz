@@ -16,7 +16,23 @@
 				animationStart: function(current){
 					$('.caption').animate({
 						bottom:-35
-					},10);
+					},200);
+					$('.trmask').animate({
+					  right:200
+					},200);
+					
+					$('.tlmask').animate({
+					  right:600
+					},200);
+					
+          $('.ttmask').animate({
+					  top:0
+					},200);
+					
+					$('.tbmask').animate({
+					  top:200
+					},200);
+					
 					if (window.console && console.log) {
 						// example return of current slide number
 						console.log('animationStart on slide: ', current);
@@ -29,13 +45,36 @@
 					if (window.console && console.log) {
 						// example return of current slide number
 						console.log('animationComplete on slide: ', current);
+						
 					};
+					$('.trmask').animate({
+					  right:340
+						},500);
+						
+				  $('.tlmask').animate({
+					  right:450
+						},500);	
+						
+					$('.ttmask').animate({
+					  top:40
+					},200);
+					
+					$('.tbmask').animate({
+					  top:150
+					},200);	
+						
+						
+						
+						
+										
 				},
 				slidesLoaded: function(){
 					$('.caption').animate({
-						bottom:0
-					},100);
-				}
+						bottom:0						
+					},1000);
+			
+},
+						
 			});
 		});
   </script>
@@ -333,9 +372,10 @@ BrowserDetect.init();
   <body>
 	
 
-<h4 align="center" >
-Where is the oddball strip in an image?<br />
-After reading the instructions you may <a style="color:red;font-weight:bold" href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
+<h4 align="center" > Where is the oddball strip in an image?<h4/><br />
+
+<h4 style="margin: 0 150px">After reading the instructions you may <a style="color:red;font-weight:bold" 
+href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
 <div id="container" style="display: block">
 
 Have a look at this slide show. <br/>
@@ -350,140 +390,138 @@ subjects, so your help is very appreciated. Here are some samples of what you wi
 			
 			<div id="slides">			
 				<div class="slides_container">
-					<div class="slide">
 					
-					<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"/></a>
-						
-						
-						<div class="caption" style="bottom:0">
-						<div id="rmask"> </div>
-							<p>Right structured band on random background</p>
+					<div class="slide">
+						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"/></a>					
+						<div class="trmask"></div>
+						<div class="caption" style="bottom:0">					
+            <p>Right structured band on random background</p>
 						</div>
-					</div>
-					
-					<div class="slide">
-					
+         </div>
+
+         <div class="slide">					
 						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 2"/></a>
+						<div class="tlmask"></div>
 						<div class="caption">
-						<div id="lmask"> </div>
-							<p>Left structured band on random background</p>
+						<p>Left structured band on random background</p>
 						</div>
 					</div>
-					<div class="slide">
-						
-						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 3"/></a>
-						<div class="caption">
-						<div id="tmask"> </div>
+					
+					
+					<div class="slide">						
+						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 3"/></a>						
+						<div class="ttmask"></div>
+						<div class="caption">					
 							<p>Top structured band on random background </p>
 						</div>
 					</div>
-					<div class="slide">
-						
-						<img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 4"/></a>
+					
+					<div class="slide">						
+						<img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 4"/></a>						
+						<div class="tbmask"></div>
 						<div class="caption">
-						<div id="bmask"> </div>
 							<p>Bottom structured band on random background</p>
 						</div>
 					</div>
-					<div class="slide">
-						
+					
+					
+					<div class="slide">						
 						<img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 5"/></a>
+						<div class="trmask"></div>
 						<div class="caption">
-						  <div id="rmask"> </div>
-							<p>Right random band on structured background</p>
+						 	<p>Right random band on structured background</p>
 						</div>
 					</div>
+					
 					<div class="slide">
-						
 						<img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 6"/></a>
+						<div class="tlmask"></div>
 						<div class="caption">
-						 <div id="lmask"> </div>
 							<p>Left random band on structured background</p>
 						</div>
 					</div>
+
+
 					<div class="slide">						
-						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 7"/></a>
-						 <div class="caption">
-						   <div id="tmask"> </div>
-							 <p>Top random band on structured background</p>
+ 						<img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 7"/></a>
+						<div class="ttmask"></div>
+						<div class="caption">
+								<p>Top random band on structured background</p>
 						 </div>
 					</div>
+					
 					<div class="slide" >
              <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8"/></a>
-                <div class="caption">
-					  	    <div id="bmask"> </div>
+                <div class="tbmask"></div>
+								<div class="caption">
 							    <p>Bottom random band on structured background</p>
 						    </div>
           </div>
 
 			
-				 <div class="slide">
-					
-					<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 9"/></a>
-						
-						
-						<div class="caption" style="bottom:0">
-						<div id="rmask"> </div>
+				 <div class="slide">					
+					<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 9"/></a>						
+						<div class="trmask"></div>
+						<div class="caption" style="bottom:0">					
 							<p>Right structured band on random background</p>
 						</div>
 					</div>
 					
-					<div class="slide">
-					
+				<div class="slide">
 						<img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 10"/></a>
+						<div class="tlmask"></div>
 						<div class="caption">
-						<div id="lmask"> </div>
 							<p>Left structured band on random background</p>
 						</div>
 					</div>
+
 					<div class="slide">
-						
 						<img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 11"/></a>
+						<div class="ttmask"></div>
 						<div class="caption">
-						<div id="tmask"> </div>
 							<p>Top structured band on random background </p>
 						</div>
 					</div>
+
 					<div class="slide">
-						
 						<img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 12"/></a>
+						<div class="tbmask"></div>
 						<div class="caption">
-						<div id="bmask"> </div>
 							<p>Bottom structured band on random background</p>
 						</div>
 					</div>
-					<div class="slide">
-						
+
+					<div class="slide">						
 						<img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 13"/></a>
+						<div class="trmask"></div>
 						<div class="caption">
-						  <div id="rmask"> </div>
 							<p>Right random band on structured background</p>
 						</div>
 					</div>
-					<div class="slide">
-						
+
+					<div class="slide">						
 						<img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 14"/></a>
+						<div class="tlmask"></div>
 						<div class="caption">
-						 <div id="lmask"> </div>
-							<p>Left random band on structured background</p>
+			  			<p>Left random band on structured background</p>
 						</div>
 					</div>
+				
 					<div class="slide">
-						
 						<img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 15"/></a>
-						<div class="caption">
-						<div id="tmask"> </div>
+						<div class="ttmask"></div>
+						<div class="caption">					
 							<p>Top random band on structured background</p>
 						</div>
 						</div>
 						
 					<div class="slide" >
            <img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 16"/></a>
-						<div class="caption">
-					  	     <div id="bmask"> </div>
+						<div class="tbmask"></div>
+						<div class="caption">					  	    
 							     <p>Bottom random band on structured background</p>
 						</div>
-				  </div>
+				    </div>
 
 				</div>
 				
@@ -526,18 +564,22 @@ your best guess.  Please only click on the 'duh' button if you think your attent
 lapsed, as we are just as interested in your best guesses as in when you are 
 pretty sure of where the band is.</br>
  
-Submit only after you finish a batch of 5. </br>		
-		
+Submit only after you finish a batch of 5. </br> </br>
 
 </div>
+		
+<h4 style="margin: 0 150px">After reading the instructions, <a style="color:green;font-weight:bold" 
+href="javascript:hideshow(document.getElementById('bag'))">click here to show/hide the Task part.</a><h4/><br/>
+
 
             <script language="Javascript">
 						 var patord=[0,2,4,6,1,3,5,7];
 	           for(i=0;i<=7;i++){
 						 document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}						
 	          </script>
+
 	
-<div id="bag">
+<div id="bag" style="display: none" >
 
     <form id="mturk_form"
           method="post"
@@ -631,6 +673,7 @@ Submit only after you finish a batch of 5. </br>
                   type="submit" /><br />
            
      </div>
+</div>
 </div>
 	
 			<input id="feedback1"
