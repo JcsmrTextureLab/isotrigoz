@@ -225,18 +225,18 @@
     }
 
 
-		function teacher(c,s){
-		if (c%4==1){if (s=="R2") {return true} else{return false} }
-		if (c%4==2){if (s=="R1"){return true} else{return false} }
-		if (c%4==3){if (s=="R0"){return true} else{return false} }
-		if (c%4==0){if (s=="R3"){return true} else{return false} }		
+		function teacher(r,s){
+		if (r%8==1||2){if (s=="R2") {return true} else{return false} }
+		if (r%8==3||4){if (s=="R1"){return true} else{return false} }
+		if (r%8==5||6){if (s=="R0"){return true} else{return false} }
+		if (r%8==7||0){if (s=="R3"){return true} else{return false} }		
 		} 
 		
 	
     function ipick(choice)
     {str=String(choice);
     
-		document.getElementById('match?').value=teacher(ct,str);
+		document.getElementById('match?').value=teacher(rn+1,str);
 		
     document.getElementById(str).name="cat" +ct;
     document.getElementById('feedback1').value=thome;
@@ -244,7 +244,7 @@
 
     feedback0.push(document.getElementById(str).value);
     feedback1.push("t"+rn+".jpg");
-		feedback2.push(teacher(ct,str));
+		feedback2.push(teacher(rn+1,str));
     
 		
 		
