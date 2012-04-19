@@ -139,14 +139,14 @@
 		var feedback2 =new Array();
 		var feedback3 =new Array();
 		var tcatch=new Array(4);
-		for(i=1;i<=4;i++){tcatch[i]=Math.ceil(2000*Math.random());}
+		for(i=1;i<=4;i++){tcatch[i]=Math.ceil(20*Math.random());}
 		
  
 		
     var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
 	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
-		var tclass="current";
+		var tclass="";
     var rn=1;
 		var thome=home;
     var ct=20;
@@ -158,7 +158,8 @@
 
     function settexture()
     {
-		if (contains(tcatch,ct)) {thome=ehome;tclass="easy"} else{thome=home;tclass="current"}
+		if (contains(tcatch,ct)) {thome=ehome;tclass="easy";} else{thome=home;tclass="current";}
+		feedback3.push(tclass);
     try
     {
     document.getElementById('texture').src=thome +"t"+rn+ ".png"
@@ -247,7 +248,7 @@
     feedback0.push(document.getElementById(str).value);
     feedback1.push("t"+rn+".jpg");
 		feedback2.push(teacher(rn+1,str));
-		feedback3.push(tclass);
+		
     
 		
 		
