@@ -226,17 +226,17 @@
 
 
 		function teacher(r,s){
-		if (r%8==1||2){if (s=="R2") {return true} else{return false} }
-		if (r%8==3||4){if (s=="R1"){return true} else{return false} }
-		if (r%8==5||6){if (s=="R0"){return true} else{return false} }
-		if (r%8==7||0){if (s=="R3"){return true} else{return false} }		
+		if (r%8==1||r%8==2){if (s=="R2") {return true} else{return false} }//right
+		if (r%8==3||r%8==4){if (s=="R1"){return true} else{return false} }//left
+		if (r%8==5||r%8==6){if (s=="R0"){return true} else{return false} }//top
+		if (r%8==7||r%8==0){if (s=="R3"){return true} else{return false} }//bottom		
 		} 
 		
 	
     function ipick(choice)
     {str=String(choice);
-    
-		document.getElementById('match?').value=teacher(rn+1,str);
+    var aux=rn+1; 
+		document.getElementById('match?').value=rn + " " +(rn+1)%8 +" "+ str +" "+ teacher(rn+1,str);
 		
     document.getElementById(str).name="cat" +ct;
     document.getElementById('feedback1').value=thome;
