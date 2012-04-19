@@ -236,7 +236,7 @@
     function ipick(choice)
     {str=String(choice);
     var aux=rn+1; 
-		document.getElementById('match?').value=rn + " " +(rn+1)%8 +" "+ str +" "+ teacher(rn+1,str);
+		document.getElementById('match?').value=teacher(rn+1,str);
 		
     document.getElementById(str).name="cat" +ct;
     document.getElementById('feedback1').value=thome;
