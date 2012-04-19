@@ -18,19 +18,23 @@
 						bottom:-35
 					},200);
 					$('.trmask').animate({
-					  right:200
+					  right:300,
+						opacity:0
 					},200);
 					
 					$('.tlmask').animate({
-					  right:600
+					  right:600,
+						opacity:0
 					},200);
 					
           $('.ttmask').animate({
-					  top:0
+					  top:0,
+						opacity:0
 					},200);
 					
 					$('.tbmask').animate({
-					  top:200
+					  top:200,
+						opacity:0
 					},200);
 					
 					if (window.console && console.log) {
@@ -48,18 +52,22 @@
 						
 					};
 					$('.trmask').animate({
-					  right:340
+					  opacity:0.8,
+						right:340
 						},500);
 						
 				  $('.tlmask').animate({
-					  right:450
+					  opacity:0.8,
+						right:450
 						},500);	
 						
 					$('.ttmask').animate({
-					  top:40
+					  opacity:0.8,
+						top:40
 					},200);
 					
 					$('.tbmask').animate({
+					  opacity:0.8,
 					  top:150
 					},200);	
 						
@@ -77,6 +85,7 @@
 						
 			});
 		});
+	
   </script>
 	<script language="Javascript">
 
@@ -104,31 +113,59 @@
     return unescape(encoded.replace(/\+/g,  " "));
     }
 
+		
+		function contains(a, obj) {
+    var i = a.length;
+    while (i--) {
+       if (a[i] === obj) {
+           return true;
+       }
+    }
+    return false;
+    }
+		
+		
+		
+		
+		
+		
+		
+	
     //
     // Set parameters
     //
     var feedback0 =new Array();
     var feedback1 =new Array();
-
+		var feedback2 =new Array();
+		var tcatch=new Array(4);
+		for(i=1;i<=4;i++){tcatch[i]=Math.ceil(2000*Math.random());}
+		
+ 
+		
     var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
 	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
     var rn=1;
-    var ct=5;
+		var thome=home;
+    var ct=20;
     var str="";
+		
+		
+		
 
 
     function settexture()
     {
+		if (contains(tcatch,ct)) {thome=ehome;} else{thome=home;}
     try
     {
-    document.getElementById('texture').src=home +"t"+rn+ ".png"
+    document.getElementById('texture').src=thome +"t"+rn+ ".png"
     }
     catch(err1)
     {
     try
     {
-    document.getElementById('texture').src=home +"t"+rn+ ".png"
+    document.getElementById('texture').src=thome +"t"+rn+ ".png"
     }
     catch(err2)
     {
@@ -141,7 +178,7 @@
     }
 
     function setmask()
-    {
+    {		
     try
     {
     document.getElementById('texture').src=rhome +"t0.png"
@@ -165,7 +202,9 @@
 
     function timedTexture()
     {
-    rn=Math.ceil(2000*Math.random());
+    
+		rn=Math.ceil(2000*Math.random());
+		
     var t1=setTimeout('settexture(rn)',300);
     var t2=setTimeout('setmask(rn)',2300);
     easytiger();
@@ -176,6 +215,7 @@
     {
     document.getElementById('readyButton').disabled = true;
     document.getElementById('readyButton').value = "Please select a location";
+		document.getElementById('match?').value="";
     enableit();
     }
 
@@ -185,18 +225,30 @@
     }
 
 
+		function teacher(c,s){
+		if (c%4==1){if (s=="R2") {return true} else{return false} }
+		if (c%4==2){if (s=="R1"){return true} else{return false} }
+		if (c%4==3){if (s=="R0"){return true} else{return false} }
+		if (c%4==0){if (s=="R3"){return true} else{return false} }		
+		} 
+		
+	
     function ipick(choice)
     {str=String(choice);
-
+    
+		document.getElementById('match?').value=teacher(ct,str);
+		
     document.getElementById(str).name="cat" +ct;
-    document.getElementById('feedback1').value=home;
+    document.getElementById('feedback1').value=thome;
 
-    //document.getElementById('feedback2').value=document.getElementById(str).value;
-    //document.getElementById('feedback3').value="t"+rn+".jpg";
 
     feedback0.push(document.getElementById(str).value);
     feedback1.push("t"+rn+".jpg");
-
+		feedback2.push(teacher(ct,str));
+    
+		
+		
+		
     if(ct==0){
     disableit();
     document.getElementById('readyButton').disabled==true;
@@ -207,6 +259,7 @@
 
     document.getElementById('feed0').value=feedback0;
     document.getElementById('feed1').value=feedback1;
+		document.getElementById('feed2').value=feedback2;
     }else{
     document.getElementById('submitButton').disabled = true;
     document.getElementById('submitButton').value = "Complete before submitting.";
@@ -217,7 +270,8 @@
     gotiger();
     }
     }
-
+    
+		
 
     function cleanit()
     {
@@ -226,11 +280,13 @@
     }
     }
 
-    function disableit(){
+    function disableit()
+		{
     for(i=0;i<=4;i++){document.getElementById("R"+i).disabled=true}
     }
 
-    function enableit(){
+    function enableit()
+		{
     for(i=0;i<=4;i++){document.getElementById("R"+i).disabled=false}
     }
 
@@ -564,7 +620,7 @@ your best guess.  Please only click on the 'duh' button if you think your attent
 lapsed, as we are just as interested in your best guesses as in when you are 
 pretty sure of where the band is.</br>
  
-Submit only after you finish a batch of 5. </br> </br>
+Submit only after you finish a batch of 20. </br> </br>
 
 </div>
 		
@@ -594,14 +650,8 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
               Click here when you ready.<input id="readyButton"
                   type="button"								
                   value="Ready?"
-                  onclick="timedTexture()" />You've got   
-                  <input id="togo"
-									readonly="true"
-                  name="togo"
-									size="5"
-                  value=""
-                  type="text" /> to go<br /> 
-									<br/>
+                  onclick="timedTexture()" /><br/>
+							
 			 <table >
 
 
@@ -665,7 +715,29 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   value="Duh,missed!"
                   type="Button"
 			           align="middle" /> <br/>									
-                Don't abuse the "Duh" button, the HIT may expire early...<br/>			 
+                Don't abuse the "Duh" button, the HIT may expire early...<br/>
+								
+								You've got   
+                  <input id="togo"
+									readonly="true"
+                  name="togo"
+									size="5"
+                  value=""
+                  type="text" /> to go.
+									 
+							Teacher said:
+								<input id="match?" 				
+						      name="result"
+                  type="text" 
+									size="10"
+									readonly="true"
+									/><br />
+								
+								
+								
+								
+								
+											 
                 Click here after you finish the batch<br />
               <input id="submitButton"
                   name="Submit"
@@ -683,10 +755,20 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
       <input id="feed0"
             name="feed0"
             value=""
-            type="hidden" /> <input id="feed1"
+            type="hidden" /> 
+						
+			<input id="feed1"
             name="feed1"
             value=""
             type="hidden" />
+						
+			<input id="feed2"
+			     name="feed2"
+					 value=""
+					 type="hidden" />			
+						
+
+						
 				Looks like your screen resolution is:<br />
         <input id="screen"
                   name="screen"
