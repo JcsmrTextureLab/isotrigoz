@@ -206,7 +206,7 @@
     function timedTexture()
     {
     
-		rn=Math.ceil(2000*Math.random());
+		rn=Math.ceil(1999*Math.random());
 		
     var t1=setTimeout('settexture(rn)',300);
     var t2=setTimeout('setmask(rn)',2300);
@@ -232,7 +232,8 @@
 		if (r%8==1||r%8==2){if (s=="R2") {return true} else{return false} }//right
 		if (r%8==3||r%8==4){if (s=="R1"){return true} else{return false} }//left
 		if (r%8==5||r%8==6){if (s=="R0"){return true} else{return false} }//top
-		if (r%8==7||r%8==0){if (s=="R3"){return true} else{return false} }//bottom		
+		if (r%8==7||r%8==0){if (s=="R3"){return true} else{return false} }//bottom
+		if (s=="Duh!missed!"){return "NaN"};	
 		} 
 		
 	
