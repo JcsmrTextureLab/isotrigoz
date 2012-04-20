@@ -219,6 +219,7 @@
     document.getElementById('readyButton').disabled = true;
     document.getElementById('readyButton').value = "Please select a location";
 		document.getElementById('match?').value="";
+		document.getElementById('kudos').style.visibility="hidden";
     enableit();
     }
 
@@ -239,16 +240,19 @@
 	
     function ipick(choice)
     {str=String(choice);
-    var aux=rn+1; 
-		document.getElementById('match?').value=teacher(rn+1,str);
+    var aux=teacher(rn+1,str); 
+		document.getElementById('match?').value=aux
 		
-    document.getElementById(str).name="cat" +ct;
+		if (aux==false){ 
+		document.getElementById('kudos').style.visibility="visible"};
+    
+		document.getElementById(str).name="cat" +ct;
     document.getElementById('feedback1').value=thome;
 
 
     feedback0.push(document.getElementById(str).value);
     feedback1.push("t"+rn+".jpg");
-		feedback2.push(teacher(rn+1,str));
+		feedback2.push(aux);
 		
     
 		
@@ -434,7 +438,7 @@ BrowserDetect.init();
   <body>
 
 <h4 align="center" ><a style="color:red;font-weight:bold" 
-href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the instruction part.</a><h4/><br/>
+href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the Instruction part.</a><h4/><br/>
 <div id="container" style="display: block">
 <h4 align="center" > Where is the oddball strip in an image?<h4/><br />
 Have a look at this slide show. <br/>
@@ -641,10 +645,10 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
             value=""
             type="hidden" />
       <div id="tbox">
-              Click here when you ready.<input id="readyButton"
+              Click here <input id="readyButton"
                   type="button"								
                   value="Ready?"
-                  onclick="timedTexture()" /><br/>
+                  onclick="timedTexture()" />when you ready.<br/>
 							
 			 <table >
 
@@ -672,27 +676,26 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 			 <td/>
 			 
 			  <td>
-				<div style="margin:0px -500px">																
-   			<img id="texture"
-                  alt="random"
-                   name="texture"  src="t0.png"/><br/>
-        <td/>        
+				<div style="margin:0px -500px;position:relative;height:400px; width:400px" >																
+   			<img id="texture"alt="random" name="texture"  src="t0.png" style="position: relative; top: 0; left: 0;"/>
+				<img id="kudos"alt="kudos" name="kudos"  src="img/mule.png"  style="visibility:hidden;height:50px; width:50px;position: relative; top: -225px; left: 175px;"/>			
 				<div/>
-         
-          <td>
-					 <div style="margin:0px -100px">	
-           <input id="R2"
+        <td/>        
+
+       <td>
+				<div style="margin:10px -100px">	
+        <input id="R2"
                   name="cat"
                   onclick="ipick(this.id)"
                   value="Right"
                   type="Button"
 									style="cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat"; />
-          <div/>
-					<td/>
-				 <tr/>
+        <div/>
+				<td/>
+				<tr/>
 				 
-				 <tr><td>
-				  <div style="margin:-5px 260px">	
+				<tr><td>
+				  <div style="margin:0px 260px">	
 					<input id="R3"
                   name="cat"
                   onclick="ipick(this.id)"
@@ -703,7 +706,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 					<td/>
 					<tr/>
 					<table/>         
-					<input id="R4"
+					<input id="R4"					    
                   name="cat"
                   onclick="ipick(this.id);ct=ct+1;"
                   value="Duh,missed!"
@@ -717,7 +720,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   name="togo"
 									size="5"
                   value=""
-                  type="text" /> to go.
+                  type="text" /> to go. "     "
 									 
 							Teacher said:
 								<input id="match?" 				
@@ -727,7 +730,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 									readonly="true"
 									/><br />
 								
-								
+						
 								
 								
 								
