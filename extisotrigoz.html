@@ -218,7 +218,7 @@
     {
     document.getElementById('readyButton').disabled = true;
     document.getElementById('readyButton').value = "Please select a location";
-		document.getElementById('match?').value="";
+		
 		document.getElementById('kudos').style.visibility="hidden";
     enableit();
     }
@@ -241,7 +241,7 @@
     function ipick(choice)
     {str=String(choice);
     var aux=teacher(rn+1,str); 
-		document.getElementById('match?').value=aux
+		
 		
 		if (aux==false){ 
 		document.getElementById('kudos').style.visibility="visible"};
@@ -721,7 +721,8 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 									size="5"
                   value=""
                   type="text" /> to go. Click here after you finish the batch
-              <input id="submitButton"
+              
+							<input id="submitButton"
                   name="Submit"
                   value="Submit"
                   type="submit" /><br />
