@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Slides, A Slideshow Plugin for jQuery</title>
+	<link rel="stylesheet" href="css/global.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="src/slides.jquery.js"></script>
+	<script>
+	    $(function(){
+			$('#slides').slides({
+				preload: false,
+				preloadImage: 'img/Box_1_even.jpg',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},10);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},2500);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+		var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
+	</script>
+</head>
+<body>
+<a href="javascript:hideshow(document.getElementById('container'))">Click here to hide/show Instructions</a>
+
+<script type="text/javascript">
+function hideshow(which){
+if (!document.getElementById)
+return
+if (which.style.display=="block")
+which.style.display="none"
+else
+which.style.display="block"
+}
+</script>
+
+
+	<div id="container" style="display: block">
+		<div id="example">
+			<img src="img/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+						<a href="" title="Right structured band on random background" target="_blank">
+						<img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1"></a>
+						<div class="caption" style="bottom:0">
+							<p>Right structured band on random background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Right random band on structured background" target="_blank">
+						<img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 2"></a>
+						<div class="caption">
+							<p>Right random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Left structured band on random background" target="_blank">
+						<img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 3"></a>
+						<div class="caption">
+							<p>Left structured band on random background </p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Left random band on structured background" target="_blank">
+						<img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 4"></a>
+						<div class="caption">
+							<p>Left random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Top structured band on random background" target="_blank">
+						<img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 5"></a>
+						<div class="caption">
+							<p>Top structured band on random background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Top random band on structured background" target="_blank">
+						<img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 6"></a>
+						<div class="caption">
+							<p>Top random band on structured background</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a href="" title="Bottom structured band on random background" target="_blank">
+						<img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 7"></a>
+						<div class="caption">
+							<p>Bottom structured band on random background</p>
+						</div>
+						</div>
+					<div class="slide" >
+						<a href="" title="Bottom random band on structured background" target="_blank" >
+						<img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8"></a>
+						<div class="caption">
+							<p>Bottom random band on structured background</p>
+						</div>	
+					</div>
+
+				</div>
+				<a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+			</div>
+			<img src="img/example-frame.png"  height="241" alt="Example Frame" id="frame">
+		</div>
+		
+	</div>
+
+            <script language="Javascript">
+	           for(i=0;i<=7;i++){
+						 document.getElementById("t"+i).src=ehome+"t" +i+ ".png"}						
+	          </script>
+
+	
+</body>
+</html>		
