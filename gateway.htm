@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/global.css">
+<title>Gateway</title>
+<script>
+   var sheight = screen.height;
+   var swidth = screen.width;
+
+
+
+
+function openWindow(url,w,h,tb,stb,l,mb,sb,rs,x,y){
+var pos=(document.layers)? ',screenX='+x+',screenY='+y: ',left='+x+',top='+y;
+tb=(tb)?'yes':'no';
+stb=(stb)?'yes':'no';
+l=(l)?'yes':'no';
+mb=(mb)?'yes':'no';
+sb=(sb)?'yes':'no';
+rs=(rs)?'yes':'no';
+var txt='';
+txt+='scrollbars='+sb;
+txt+=',width='+w;
+txt+=',height='+h;
+txt+=',toolbar='+tb;
+txt+=',status='+stb;
+txt+=',menubar='+mb;
+txt+=',links='+l;
+txt+=',resizable='+rs;
+var x=window.open(url, 'newWin', txt+pos);
+x.focus();
+}
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+Click here to open this HIT in a standalone window. 
+<input type="button" 
+onclick="openWindow('extisotrigoz.html',swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
+value="Try it"> (if your browser allows) <br/>
+</body>
+</html>
