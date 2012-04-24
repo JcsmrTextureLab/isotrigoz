@@ -457,7 +457,7 @@ txt+=',status='+stb;
 txt+=',menubar='+mb;
 txt+=',links='+l;
 txt+=',resizable='+rs;
-var x=window.open(url, 'newWin'+new Date().getTime(), txt+pos);
+var x=window.open(url, 'newWin', txt+pos);
 x.focus();
 }
 
@@ -679,14 +679,18 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 <div id="bag" style="display: none;margin: 15px 150px">
 
     <form id="mturk_form"
+		      target="newWindow"
           method="post"
           action=
           "http://workersandbox.mturk.com/mturk/externalSubmit"
-          name="mturk_form">
+          name="mturk_form"
+					onSubmit="window.close();">
       <input id="assignmentId"
             name="assignmentId"
             value=""
             type="hidden" />
+						
+					
       <div id="tbox">
               Click here <input id="readyButton"
                   type="button"								
@@ -766,9 +770,10 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   type="text" /> to go. Click here after you finish the batch
               
 							<input id="submitButton"
-                  name="Submit"
+                  name="Subut"
                   value="Submit"
-                  type="submit" /><br />
+                  type="submit"
+									onclick="mturk_form.submit()"/><br />
            
      </div>
 </div>
