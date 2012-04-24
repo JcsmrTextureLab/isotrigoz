@@ -146,7 +146,7 @@
     var swidth = screen.width;
 		var wwidth = window.innerWidth;
 		
-    var home=decode(gup('imageurl'));
+    //var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
 	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
 		var tclass="";
@@ -649,18 +649,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 	           for(i=0;i<=7;i++){
 						 document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}
 						 
-function submitForm(frm) {
-  if (dom) {
-    if (typeof(frm) === 'string') {
-      frm = document.getElementById(frm);
-    }
-    if (typeof(frm.submit) === 'function') {
-      frm.submit();
-    } else if (frm.submit.click) {
-      frm.submit.click();
-    }
-  }
-}
+
 </script>
 
 <div id="bag" style="display: none;margin: 15px 150px">

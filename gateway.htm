@@ -5,12 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/global.css">
 <title>Gateway</title>
-<script>
+
+<script language="Javascript">
    var sheight = screen.height;
    var swidth = screen.width;
-
-
-
 
 function openWindow(url,w,h,tb,stb,l,mb,sb,rs,x,y){
 var pos=(document.layers)? ',screenX='+x+',screenY='+y: ',left='+x+',top='+y;
@@ -32,6 +30,54 @@ txt+=',resizable='+rs;
 var x=window.open(url, 'newWin', txt+pos);
 x.focus();
 }
+
+ 
+
+    //
+    // This method Gets URL Parameters (GUP)
+    //
+    function gup( name )
+    {
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var tmpURL = window.location.href;
+    var results = regex.exec( tmpURL );
+    if( results == null )
+    return "";
+    else
+    return results[1];
+    }
+
+    //
+    // This method decodes the query parameters that were URL-encoded
+    //
+    function decode(strToDecode)
+    {
+    var encoded = strToDecode;
+    return unescape(encoded.replace(/\+/g,  " "));
+    }
+
+		
+		function contains(a, obj) {
+    var i = a.length;
+    while (i--) {
+       if (a[i] === obj) {
+           return true;
+       }
+    }
+    return false;
+    }
+		
+		var home=decode(gup('imageurl'));
+		
+		
+		
+
+
+
+
+
+
 </script>
 
 
