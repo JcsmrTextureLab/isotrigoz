@@ -27,8 +27,9 @@ txt+=',status='+stb;
 txt+=',menubar='+mb;
 txt+=',links='+l;
 txt+=',resizable='+rs;
-var x=window.open(url, 'newWin', txt+pos);
-x.focus();
+var W=window.open(url, 'newWin', txt+pos);
+W.focus();
+return W
 }
 
  
@@ -68,15 +69,8 @@ x.focus();
     return false;
     }
 		
-		var home=decode(gup('imageurl'));
+		var home=parent.home;
 		
-		
-		
-
-
-
-
-
 
 </script>
 
@@ -92,7 +86,7 @@ x.focus();
 <body>
 Click here to open this HIT in a standalone window. 
 <input type="button" 
-onclick="openWindow('extisotrigoz.html',swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
+onclick="var myW=openWindow('extisotrigoz.html',swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
 value="Try it"> (if your browser allows) <br/>
 </body>
 </html>
