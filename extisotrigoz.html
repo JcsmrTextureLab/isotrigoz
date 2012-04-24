@@ -142,6 +142,9 @@
 		for(i=1;i<=4;i++){tcatch[i]=Math.ceil(20*Math.random());}
 		
  
+    var sheight = screen.height;
+    var swidth = screen.width;
+		var wwidth = window.innerWidth;
 		
     var home=decode(gup('imageurl'));
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
@@ -310,6 +313,11 @@
    else
    which.style.display="block"
    }
+	 
+
+	 
+	 
+	 
    </script>
 	 
 	 <script> 
@@ -431,6 +439,28 @@
 
 };
 BrowserDetect.init();
+
+function openWindow(url,w,h,tb,stb,l,mb,sb,rs,x,y){
+var pos=(document.layers)? ',screenX='+x+',screenY='+y: ',left='+x+',top='+y;
+tb=(tb)?'yes':'no';
+stb=(stb)?'yes':'no';
+l=(l)?'yes':'no';
+mb=(mb)?'yes':'no';
+sb=(sb)?'yes':'no';
+rs=(rs)?'yes':'no';
+var txt='';
+txt+='scrollbars='+sb;
+txt+=',width='+w;
+txt+=',height='+h;
+txt+=',toolbar='+tb;
+txt+=',status='+stb;
+txt+=',menubar='+mb;
+txt+=',links='+l;
+txt+=',resizable='+rs;
+var x=window.open(url, 'newWin'+new Date().getTime(), txt+pos);
+x.focus();
+}
+
 </script>
 	 
  <title>Tag-a-Texture</title>
@@ -439,7 +469,18 @@ BrowserDetect.init();
 
 <h4 align="center" ><a style="color:red;font-weight:bold" 
 href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the Instruction part.</a><h4/><br/>
+
+
+
 <div id="container" style="display: block">
+Click here to open this hit in new window.  
+<input type="button" 
+onclick="openWindow(location.href,swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
+value="Try it"> (if your browser allows) <br/>
+
+
+
+
 <h4 align="center" > Where is the oddball strip in an image?<h4/><br />
 Have a look at this slide show. <br/>
 This HIT is a visual perception task that probes how the brain and particularly 
@@ -627,6 +668,8 @@ Submit only after you finish a batch of 20. </br> </br>
 <h4 align="center" style="margin: -15px 150px"> <a style="color:green;font-weight:bold" 
 href="javascript:hideshow(document.getElementById('bag'))">click here to show/hide the Task part. </a><h4/>
 
+
+
             <script language="Javascript">
 						 var patord=[0,2,4,6,1,3,5,7];
 	           for(i=0;i<=7;i++){
@@ -786,15 +829,14 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
            value="not for now" 
 					 size="10"/>
       </p>
-  
+ 
 		</form>
 		
 		<script language="Javascript">
 
-    var height = screen.height;
-    var width = screen.width;
-		var wwidth = window.innerWidth;
-    document.getElementById('screen').value=width + " x " + height;
+		
+	
+    document.getElementById('screen').value=swidth + " x " + sheight;
 		document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
 		
     document.getElementById('texture').height=400
