@@ -695,7 +695,7 @@ function submitForm(frm) {
           method="post"
           action="http://workersandbox.mturk.com/mturk/externalSubmit"
           name="mturk_form"
-					onSubmit="window.close()">
+					onSubmit="">
       <input id="assignmentId"
             name="assignmentId"
             value=""
@@ -784,7 +784,7 @@ function submitForm(frm) {
                   name="submit"
                   value="Submit"
                   type="submit"
-									onclick="submitForm(mturk_form)"
+									onclick="submitForm(mturk_form);window.close()"
 									disabled="true"/><br />
            
      </div>
