@@ -670,21 +670,32 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 
 
 
-            <script language="Javascript">
+<script language="Javascript">
 						 var patord=[0,2,4,6,1,3,5,7];
 	           for(i=0;i<=7;i++){
-						 document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}						
-	          </script>
+						 document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}
+						 
+function submitForm(frm) {
+  if (dom) {
+    if (typeof(frm) === 'string') {
+      frm = document.getElementById(frm);
+    }
+    if (typeof(frm.submit) === 'function') {
+      frm.submit();
+    } else if (frm.submit.click) {
+      frm.submit.click();
+    }
+  }
+}
+</script>
 
 <div id="bag" style="display: none;margin: 15px 150px">
 
     <form id="mturk_form"
-		      target="newWindow"
           method="post"
-          action=
-          "http://workersandbox.mturk.com/mturk/externalSubmit"
+          action="http://workersandbox.mturk.com/mturk/externalSubmit"
           name="mturk_form"
-					onSubmit="window.close();">
+					onSubmit="window.close()">
       <input id="assignmentId"
             name="assignmentId"
             value=""
@@ -770,10 +781,11 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   type="text" /> to go. Click here after you finish the batch
               
 							<input id="submitButton"
-                  name="Subut"
+                  name="submit"
                   value="Submit"
                   type="submit"
-									onclick="mturk_form.submit()"/><br />
+									onclick="submitForm(mturk_form)"
+									disabled="true"/><br />
            
      </div>
 </div>
