@@ -9,7 +9,9 @@
 <script language="Javascript">
    var sheight = screen.height;
    var swidth = screen.width;
-
+	 
+	
+	
 function openWindow(url,w,h,tb,stb,l,mb,sb,rs,x,y){
 var pos=(document.layers)? ',screenX='+x+',screenY='+y: ',left='+x+',top='+y;
 tb=(tb)?'yes':'no';
@@ -27,9 +29,9 @@ txt+=',status='+stb;
 txt+=',menubar='+mb;
 txt+=',links='+l;
 txt+=',resizable='+rs;
-var W=window.open(url, 'newWin', txt+pos);
-W.focus();
-return W
+newWin=home;
+var newWin=window.open(url, newWin, txt+pos);
+newWin.focus();
 }
 
  
@@ -69,8 +71,9 @@ return W
     return false;
     }
 		
-		var home=decode(gup('imageurl'));
-		document.write(home)
+var home=decode(gup('imageurl'));	 
+
+document.write(home);	
 
 </script>
 
@@ -86,7 +89,8 @@ return W
 <body>
 Click here to open this HIT in a standalone window. 
 <input type="button" 
-onclick="var myW=openWindow('extisotrigoz.html',swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
+onclick="openWindow('extisotrigoz.html',swidth/2,9*sheight/10,0,0,0,0,0,10,swidth/4)"
 value="Try it"> (if your browser allows) <br/>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
   <head>    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/global.css">
@@ -146,8 +147,8 @@
     var swidth = screen.width;
 		var wwidth = window.innerWidth;
 		
-    var home=window.opener.home;
-		document.write(home)
+    var home=window.name;
+		document.write(home);
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
 	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
 		var tclass="";
@@ -821,7 +822,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
     document.getElementById('texture').height=400
 	  document.getElementById('texture').width=400
 
-    var home=decode(gup('imageurl'));
+    //var home=decode(gup('imageurl'));
     document.getElementById('assignmentId').value = gup('assignmentId');
 
     try{
