@@ -135,6 +135,8 @@
     //
     // Set parameters
     //
+		
+		var home=decode(gup('imageurl'));
     var feedback0 =new Array();
     var feedback1 =new Array();
 		var feedback2 =new Array();
@@ -147,8 +149,7 @@
     var swidth = screen.width;
 		var wwidth = window.innerWidth;
 		
-    var home=window.name;
-		document.write(home);
+ 
     var rhome="http://marconioz.github.com/isotrigoz/turk/"
 	  var ehome="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/odd/"
 		var tclass="";
@@ -822,7 +823,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
     document.getElementById('texture').height=400
 	  document.getElementById('texture').width=400
 
-    //var home=decode(gup('imageurl'));
+    
     document.getElementById('assignmentId').value = gup('assignmentId');
 
     try{
