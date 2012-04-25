@@ -658,10 +658,10 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 <div id="bag" style="display: none;margin: 15px 150px">
 
     <form id="mturk_form"
-          method="post"
-          action="http://workersandbox.mturk.com/mturk/externalSubmit"
-          name="mturk_form">
-      <input id="assignmentId"
+          method="POST"
+          action="http://workersandbox.mturk.com/mturk/externalSubmit">
+     
+		  <input id="assignmentId"
             name="assignmentId"
             value=""
             type="hidden" />
@@ -746,7 +746,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   type="text" /> to go. Click here after you finish the batch
               
 							<input id="submitButton"
-                  name="submit"
+                  name="Submit"
                   value="Submit"
                   type="submit"
 									disabled="true"/><br />
