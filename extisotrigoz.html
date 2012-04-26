@@ -700,7 +700,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 			 
 			  <td>
 				<div style="margin:0px -500px;position:relative;height:400px; width:400px" >																
-   			<img id="texture"alt="random" name="texture"  src="t0.png" style="position: relative; top: 0; left: 0;"/>
+   			<img id="texture"alt="random" name="texture"  src="t0.png" height="400px" width="400px" style="position: relative; top: 0; left: 0;"/>
 				<img id="kudos"alt="kudos" name="kudos"  src="img/mule.png"  style="visibility:hidden;height:50px; width:50px;position: relative; top: -225px; left: 175px;"/>			
 				<div/>
         <td/>        
@@ -751,9 +751,9 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
                   type="submit"
 									disabled="true"/><br />
            
-     </div>
-</div>
-</div>
+     <div/>
+<div/>
+<div/>
 	
 			<input id="feedback1"
             type="hidden"
@@ -777,13 +777,14 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 			<input id="feed3"
 					 name="feed3"
 					 value=""
-					 type="hidden" />			
+					 type="hidden" />		
+				 	
+<h4 align="center" style="margin: -15px -100px"> <a style="color:green;font-weight:bold" 
+href="javascript:hideshow(document.getElementById('calib'))"> New: Calibration Procedure! click to show/hide;</a><h4/>
 					
-<a style="color:green;font-weight:bold">New: Calibration Procedure!</a><h4/>
+<div id="calib" style="display: none;margin: 15px -100px">
 					 
-					 
-
-Please select the size (in inches) of your monitor diagonal; <br/><br/>
+Please select the size (in inches) of your monitor diagonal; <br/>
 <input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="12.1" />12.1 
 <input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="13.3" />13.3 
 <input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="14.1" />14.1 
@@ -797,18 +798,18 @@ Please select the size (in inches) of your monitor diagonal; <br/><br/>
 <input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="27.0" />27.0 
 <input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="30.0" />30.0 <br/>
 
-You must keep at 
+You must keep your eyes  
 <input id="userDpiByDiag" name="userDDpi" value="" type="text" size="5" readonly="true" />
-from the computer screen.<br/><br/>
+inches from the computer screen.<br/><br/><hr />
 
 Alternatively, type here the number of pixels you find in an inch of your screen. 
 Use a pixel ruler (e.g. you can find one here: http://www.pixelwindowapp.com/ or 
-http://www.mioplanet.com/products/pixelruler/ ) and a normal ruler (steal one from your friend ;) <br/> 
+http://www.mioplanet.com/products/pixelruler/ ) and an ordinary ruler with an imperial scale. <br/> 
 
 <input type="input" size="5" id="userInput" onkeyup="numonly(this);" value="" /> <br/>
 
-You must keep at <input id="userDpiByInput" name="userIDpi" value="" type="text" size="5"/>
-from the computer screen.<br/>				
+You must keep your eyes <input id="userDpiByInput" name="userIDpi" value="" type="text" size="5" readonly="true"/>
+inches from the computer screen.<br/>				
 					
 Looks like your screen resolution is:<br />
         <input id="screen"
@@ -842,6 +843,8 @@ Looks like your screen resolution is:<br />
  
 		</form>
 		
+</div>
+		
 		<script language="Javascript">
 
 		
@@ -849,8 +852,7 @@ Looks like your screen resolution is:<br />
     document.getElementById('screen').value=swidth + " x " + sheight;
 		document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
 		
-    document.getElementById('texture').height=400
-	  document.getElementById('texture').width=400
+
 
     
     document.getElementById('assignmentId').value = gup('assignmentId');
@@ -1007,7 +1009,7 @@ dpidata[90]={format:"5:4",resolution:"1280x1024", diagonal:"20.0", dpi:"82"};
 
 					 
 
-var diag="";var filter={};var filtered_items = [];var scale=3; var picpix=500;
+var diag="";var filter={};var filtered_items = [];var scale=3; var tpx=5;var picpix=500;
 function ipick2(f){
 diag=String(f);
 filter.diagonal=diag;
@@ -1021,8 +1023,6 @@ for(var i=0; i<dpidata.length; i++){
 }
 var aux=filtered_items[filtered_items.length-1].dpi;
 document.getElementById('userDpiByDiag').value=(scale*picpix)/aux;
-//document.getElementById('userMsg2').value=(scale*picpix)/aux;
-
 }
 
 function matched_filter(filter, it){
@@ -1050,6 +1050,9 @@ function numonly(root){
 				
 				var udpi=raat[raat.length-1];
 document.getElementById('userDpiByInput').value=scale*picpix/udpi;
+
+
+
 //document.getElementById('userMsg2').value=scale*500/raat.toString;
 
 
