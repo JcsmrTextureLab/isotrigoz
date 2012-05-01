@@ -137,6 +137,7 @@
     //
 		
 		var home=decode(gup('imageurl'));
+		var tfamily=decode(gup('tfamily'));
     var feedback0 =new Array();
     var feedback1 =new Array();
 		var feedback2 =new Array();
@@ -253,7 +254,7 @@
 		document.getElementById('kudos').style.visibility="visible"};
     
 		document.getElementById(str).name="cat" +ct;
-    document.getElementById('feedback1').value=thome;
+    document.getElementById('feedback1').value=tfamily;
 
 
     feedback0.push(document.getElementById(str).value);
@@ -757,8 +758,8 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 	
 			<input id="feedback1"
             type="hidden"
-            name="TextureFamily"
-            value="" /><br />
+            name="tfamily"
+            value="" /><br /><br/>
       <input id="feed0"
             name="feed0"
             value=""
@@ -783,34 +784,24 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 href="javascript:hideshow(document.getElementById('calib'))"> New: Calibration Procedure! click to show/hide;</a><h4/>
 					
 <div id="calib" style="display: none;margin: 15px -100px">
-					 
-Please select the size (in inches) of your monitor diagonal; <br/>
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="12.1" />12.1 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="13.3" />13.3 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="14.1" />14.1 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="15.0" />15.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="15.4" />15.4 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="17.0" />17.0 <br/>
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="19.0" />19.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="20.0" />20.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="22.0" />22.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="24.0" />24.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="27.0" />27.0 
-<input onclick ="ipick2(this.value)" type="radio" name="diagonal" value="30.0" />30.0 <br/>
 
-You must keep your eyes  
-<input id="userDpiByDiag" name="userDDpi" value="" type="text" size="5" readonly="true" />
-inches from the computer screen.<br/><br/><hr />
 
-Alternatively, type here the number of pixels you find in an inch of your screen. 
-Use a pixel ruler (e.g. you can find one here: http://www.pixelwindowapp.com/ or 
-http://www.mioplanet.com/products/pixelruler/ ) and an ordinary ruler with an imperial scale. <br/> 
 
-<input type="input" size="5" id="userInput" onkeyup="numonly(this);" value="" /> <br/>
+Using a rule, pick the line bellow that is closest in length to an inch: </br>
 
-You must keep your eyes <input id="userDpiByInput" name="userIDpi" value="" type="text" size="5" readonly="true"/>
-inches from the computer screen.<br/>				
-					
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="264" />264<hr style="margin-top:-10;margin-left:50;width:264"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="135" />135<hr style="margin-top:-10;margin-left:50;width:135"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="120" />120<hr style="margin-top:-10;margin-left:50;width:120;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="113" />113<hr style="margin-top:-10;margin-left:50;width:113;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="102" />102<hr style="margin-top:-10;margin-left:50;width:102;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="96" />96<hr style="margin-top:-10;margin-left:50;width:96;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="92" />92<hr style="margin-top:-10;margin-left:50;width:92;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="82" />82<hr style="margin-top:-10;margin-left:50;width:82;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="72" />72<hr style="margin-top:-10;margin-left:50;width:72;"/>
+
+You must keep your eyes <input id="directdpibylines" name="userIDpi" value="" type="text" size="2" readonly="true"/> inches from the computer screen.<br/><br/>
+
+				
 Looks like your screen resolution is:<br />
         <input id="screen"
                   name="screen"
@@ -826,21 +817,7 @@ Looks like your screen resolution is:<br />
 							 readonly="true"
 							 /><br/>					
 											
-						
-      <h4>
-        At which point these two bars bellow blend best when you squint?<p>
-        Blending point: <input type="text"
-           name="blending"
-           value="not for now" 
-					 size="10"/>
-      </p>
-      </h4><img id="chart"
-            alt="chart"
-            height="133"
-            width="868"
-            name="chart" />
-      
- 
+
 		</form>
 		
 </div>
@@ -852,9 +829,7 @@ Looks like your screen resolution is:<br />
     document.getElementById('screen').value=swidth + " x " + sheight;
 		document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
 		
-
-
-    
+   
     document.getElementById('assignmentId').value = gup('assignmentId');
 
     try{
@@ -905,157 +880,18 @@ Looks like your screen resolution is:<br />
 
         
         
-        document.getElementById('chart').src = "http://marconioz.github.com/isotrigoz/graychart.png";
-        document.getElementById('chart').width=window.innerWidth;
+
    
     </script>
 	
 <script language="Javascript">
 
-var dpidata=[];var res=swidth + "x" + sheight;
-dpidata[0]={format:"16:10",resolution:"2560x1600", diagonal:"12.1",  dpi:"250"};
-dpidata[1]={format:"16:10",resolution:"2560x1600", diagonal:"13.3",  dpi:"227"};
-dpidata[2]={format:"16:10",resolution:"2560x1600", diagonal:"14.1",  dpi:"214"};
-dpidata[3]={format:"16:10",resolution:"2560x1600", diagonal:"15.0",  dpi:"201"};
-dpidata[4]={format:"16:10",resolution:"2560x1600", diagonal:"15.4",  dpi:"196"};
-dpidata[5]={format:"16:10",resolution:"2560x1600", diagonal:"17.0",  dpi:"178"};
-dpidata[6]={format:"16:10",resolution:"2560x1600", diagonal:"19.0",  dpi:"159"};
-dpidata[7]={format:"16:10",resolution:"2560x1600", diagonal:"20.0",  dpi:"151"};
-dpidata[8]={format:"16:10",resolution:"2560x1600", diagonal:"22.0",  dpi:"137"};
-dpidata[9]={format:"16:10",resolution:"2560x1600", diagonal:"24.0",  dpi:"126"};
-dpidata[10]={format:"16:10",resolution:"2560x1600", diagonal:"27.0", dpi:"112"};
-dpidata[11]={format:"16:10",resolution:"2560x1600", diagonal:"30.0", dpi:"101"};
-dpidata[12]={format:"16:10",resolution:"1920x1200", diagonal:"12.1", dpi:"187"};
-dpidata[13]={format:"16:10",resolution:"1920x1200", diagonal:"13.3", dpi:"170"};
-dpidata[14]={format:"16:10",resolution:"1920x1200", diagonal:"14.1", dpi:"161"};
-dpidata[15]={format:"16:10",resolution:"1920x1200", diagonal:"15.0", dpi:"151"};
-dpidata[16]={format:"16:10",resolution:"1920x1200", diagonal:"15.4", dpi:"147"};
-dpidata[17]={format:"16:10",resolution:"1920x1200", diagonal:"17.0", dpi:"133"};
-dpidata[18]={format:"16:10",resolution:"1920x1200", diagonal:"19.0", dpi:"119"};
-dpidata[19]={format:"16:10",resolution:"1920x1200", diagonal:"20.0", dpi:"113"};
-dpidata[20]={format:"16:10",resolution:"1920x1200", diagonal:"22.0", dpi:"103"};
-dpidata[21]={format:"16:10",resolution:"1920x1200", diagonal:"24.0", dpi:"94"};
-dpidata[22]={format:"16:10",resolution:"1920x1200", diagonal:"27.0", dpi:"84"};
-dpidata[23]={format:"16:10",resolution:"1920x1200", diagonal:"30.0", dpi:"76"};
-dpidata[24]={format:"16:10",resolution:"1680x1050", diagonal:"12.1", dpi:"164"};
-dpidata[25]={format:"16:10",resolution:"1680x1050", diagonal:"13.3", dpi:"149"};
-dpidata[26]={format:"16:10",resolution:"1680x1050", diagonal:"14.1", dpi:"141"};
-dpidata[27]={format:"16:10",resolution:"1680x1050", diagonal:"15.0", dpi:"132"};
-dpidata[28]={format:"16:10",resolution:"1680x1050", diagonal:"15.4", dpi:"129"};
-dpidata[29]={format:"16:10",resolution:"1680x1050", diagonal:"17.0", dpi:"117"};				
-dpidata[30]={format:"16:10",resolution:"1680x1050", diagonal:"19.0", dpi:"104"};
-dpidata[31]={format:"16:10",resolution:"1680x1050", diagonal:"20.0", dpi:"99"};				
-dpidata[32]={format:"16:10",resolution:"1680x1050", diagonal:"22.0", dpi:"90"};				
-dpidata[33]={format:"16:10",resolution:"1680x1050", diagonal:"24.0", dpi:"83"};				
-dpidata[34]={format:"16:10",resolution:"1680x1050", diagonal:"27.0", dpi:"73"};
-dpidata[35]={format:"16:10",resolution:"1680x1050", diagonal:"30.0", dpi:"66"};				
-dpidata[36]={format:"16:10",resolution:"1680x1050", diagonal:"30.0", dpi:"66"};			
-dpidata[37]={format:"16:10",resolution:"1440x900", diagonal:"12.1", dpi:"140"};
-dpidata[38]={format:"16:10",resolution:"1440x900", diagonal:"13.3", dpi:"128"};
-dpidata[39]={format:"16:10",resolution:"1440x900", diagonal:"14.1", dpi:"120"};
-dpidata[40]={format:"16:10",resolution:"1440x900", diagonal:"15.0", dpi:"113"};
-dpidata[41]={format:"16:10",resolution:"1440x900", diagonal:"15.4", dpi:"110"};
-dpidata[42]={format:"16:10",resolution:"1440x900", diagonal:"17.0", dpi:"100"};
-dpidata[43]={format:"16:10",resolution:"1440x900", diagonal:"19.0", dpi:"89"};
-dpidata[44]={format:"16:10",resolution:"1440x900", diagonal:"20.0", dpi:"85"};
-dpidata[45]={format:"16:10",resolution:"1440x900", diagonal:"22.0", dpi:"77"};
-dpidata[46]={format:"16:10",resolution:"1440x900", diagonal:"24.0", dpi:"71"};
-dpidata[47]={format:"16:10",resolution:"1440x900", diagonal:"27.0", dpi:"63"};
-dpidata[48]={format:"16:10",resolution:"1440x900", diagonal:"30.0", dpi:"57"};
-dpidata[49]={format:"16:10",resolution:"1280x800", diagonal:"12.1", dpi:"125"};
-dpidata[50]={format:"16:10",resolution:"1280x800", diagonal:"13.3", dpi:"114"};
-dpidata[51]={format:"16:10",resolution:"1280x800", diagonal:"14.1", dpi:"107"};
-dpidata[52]={format:"16:10",resolution:"1280x800", diagonal:"15.0", dpi:"101"};
-dpidata[53]={format:"16:10",resolution:"1280x800", diagonal:"15.4", dpi:"98"};
-dpidata[54]={format:"16:10",resolution:"1280x800", diagonal:"17.0", dpi:"89"};
-dpidata[55]={format:"16:10",resolution:"1280x800", diagonal:"19.0", dpi:"79"};
-dpidata[56]={format:"16:10",resolution:"1280x800", diagonal:"20.0", dpi:"76"};
-dpidata[57]={format:"16:10",resolution:"1280x800", diagonal:"22.0", dpi:"69"};
-dpidata[58]={format:"16:10",resolution:"1280x800", diagonal:"24.0", dpi:"63"};
-dpidata[59]={format:"16:10",resolution:"1280x800", diagonal:"27.0", dpi:"56"};
-dpidata[60]={format:"16:10",resolution:"1280x800", diagonal:"30.0", dpi:"50"};
-dpidata[61]={format:"4:3",resolution:"1600x1200", diagonal:"12.1", dpi:"165"};
-dpidata[62]={format:"4:3",resolution:"1600x1200", diagonal:"14.1", dpi:"142"};
-dpidata[63]={format:"4:3",resolution:"1600x1200", diagonal:"15.0", dpi:"133"};
-dpidata[64]={format:"4:3",resolution:"1600x1200", diagonal:"17.0", dpi:"118"};
-dpidata[65]={format:"4:3",resolution:"1600x1200", diagonal:"19.0", dpi:"105"};
-dpidata[66]={format:"4:3",resolution:"1600x1200", diagonal:"20.0", dpi:"100"};
-dpidata[67]={format:"4:3",resolution:"1400x1050", diagonal:"12.1", dpi:"145"};
-dpidata[68]={format:"4:3",resolution:"1400x1050", diagonal:"14.1", dpi:"124"};
-dpidata[69]={format:"4:3",resolution:"1400x1050", diagonal:"15.0", dpi:"117"};
-dpidata[70]={format:"4:3",resolution:"1400x1050", diagonal:"17.0", dpi:"103"};
-dpidata[71]={format:"4:3",resolution:"1400x1050", diagonal:"19.0", dpi:"92"};
-dpidata[72]={format:"4:3",resolution:"1400x1050", diagonal:"20.0", dpi:"87"};
-dpidata[73]={format:"4:3",resolution:"1280x960", diagonal:"12.1", dpi:"132"};
-dpidata[74]={format:"4:3",resolution:"1280x960", diagonal:"14.1", dpi:"113"};
-dpidata[75]={format:"4:3",resolution:"1280x960", diagonal:"15.0", dpi:"107"};
-dpidata[76]={format:"4:3",resolution:"1280x960", diagonal:"17.0", dpi:"94"};
-dpidata[77]={format:"4:3",resolution:"1280x960", diagonal:"19.0", dpi:"84"};
-dpidata[78]={format:"4:3",resolution:"1280x960", diagonal:"20.0", dpi:"80"};
-dpidata[79]={format:"4:3",resolution:"1024x768", diagonal:"12.1", dpi:"106"};				
-dpidata[80]={format:"4:3",resolution:"1024x768", diagonal:"14.1", dpi:"91"};
-dpidata[81]={format:"4:3",resolution:"1024x768", diagonal:"15.0", dpi:"85"};
-dpidata[82]={format:"4:3",resolution:"1024x768", diagonal:"17.0", dpi:"75"};
-dpidata[83]={format:"4:3",resolution:"1024x768", diagonal:"19.0", dpi:"67"};
-dpidata[84]={format:"4:3",resolution:"1024x768", diagonal:"20.0", dpi:"64"};
-dpidata[85]={format:"5:4",resolution:"1280x1024", diagonal:"12.1", dpi:"135"};
-dpidata[86]={format:"5:4",resolution:"1280x1024", diagonal:"14.1", dpi:"116"};
-dpidata[87]={format:"5:4",resolution:"1280x1024", diagonal:"15.0", dpi:"109"};
-dpidata[88]={format:"5:4",resolution:"1280x1024", diagonal:"17.0", dpi:"96"};
-dpidata[89]={format:"5:4",resolution:"1280x1024", diagonal:"19.0", dpi:"86"};
-dpidata[90]={format:"5:4",resolution:"1280x1024", diagonal:"20.0", dpi:"82"};
+
+var scale=3; var tpx=5;var picpix=500;
 
 
-
-					 
-
-var diag="";var filter={};var filtered_items = [];var scale=3; var tpx=5;var picpix=500;
-function ipick2(f){
-diag=String(f);
-filter.diagonal=diag;
-filter.resolution=res;
-
-for(var i=0; i<dpidata.length; i++){
-    var it = dpidata[i];
-    if(matched_filter(filter, it)){
-        filtered_items.push(it);
-    }
-}
-var aux=filtered_items[filtered_items.length-1].dpi;
-document.getElementById('userDpiByDiag').value=(scale*picpix)/aux;
-}
-
-function matched_filter(filter, it){
-    for(var key in filter){
-        if(it[key] !== filter[key]){
-            return false;
-        }
-    }
-    return true;
-}
-
-function numonly(root){
-    var raat=[];
-    var reet = root.value;    
-    var arr1=reet.length;      
-    var ruut = reet.charAt(arr1-1);   
-        if (reet.length > 0){   
-        var regex = /[0-9]|\./;   
-            if (!ruut.match(regex)){   
-            var reet = reet.slice(0, -1);   
-            $(root).val(reet); 						 
-            }   
-        }
-				raat.push(reet);
-				
-				var udpi=raat[raat.length-1];
-document.getElementById('userDpiByInput').value=scale*picpix/udpi;
-
-
-
-//document.getElementById('userMsg2').value=scale*500/raat.toString;
-
-
+function ipick3(f){
+document.getElementById('directdpibylines').value=Math.ceil(scale*picpix/f);
 }
 
 </script>
