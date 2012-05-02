@@ -138,6 +138,8 @@
 		
 		var home=decode(gup('imageurl'));
 		var tfamily=decode(gup('tfamily'));
+		document.getElementById('family').value=tfamily;
+		
     var feedback0 =new Array();
     var feedback1 =new Array();
 		var feedback2 =new Array();
@@ -254,7 +256,7 @@
 		document.getElementById('kudos').style.visibility="visible"};
     
 		document.getElementById(str).name="cat" +ct;
-    document.getElementById('feedback1').value=tfamily;
+    
 
 
     feedback0.push(document.getElementById(str).value);
@@ -756,8 +758,8 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 <div/>
 <div/>
 	
-			<input id="feedback1"
-            type="hidden"
+			<input id="family"
+            type="text"
             name="tfamily"
             value="" /><br /><br/>
       <input id="feed0"
