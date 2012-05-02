@@ -138,7 +138,7 @@
 		
 		var home=decode(gup('imageurl'));
 		var tfamily=decode(gup('tfamily'));
-		document.getElementById('family').value=tfamily;
+	
 		
     var feedback0 =new Array();
     var feedback1 =new Array();
@@ -825,7 +825,7 @@ Looks like your screen resolution is:<br />
 </div>
 		
 		<script language="Javascript">
-
+	  document.getElementById('family').value=tfamily;
 		
 	
     document.getElementById('screen').value=swidth + " x " + sheight;
