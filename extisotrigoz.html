@@ -628,12 +628,53 @@ locations (top, bottom, left, or right), and whether the band is structured or
 the background is structured will also be randomized.  We expect that some trials 
 will be as easy and some will be hard, just like in the movie.  
 The movie indicates the location of the band with a red box; this is just to 
-explain the task; it will not appear during the HIT.<br/>
+explain the task; it will not appear during the HIT.<br/><br/>
+
+Lets start the task. <br/> First perform this quick calibration procedure.<br/>
+
+<h4 align="center" style="margin: 0px 0px"> <a style="color:green;font-weight:bold" 
+href="javascript:hideshow(document.getElementById('calib'))"> Calibration procedure, click to show/hide;</a><h4/>
+					
+<div id="calib" style="display: none;margin: 0px 0px">
+
+Using a rule, pick the line bellow that is closest in length to an inch: </br>
+
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="264" />264<hr style="margin-top:-10;margin-left:50;width:264"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="135" />135<hr style="margin-top:-10;margin-left:50;width:135"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="120" />120<hr style="margin-top:-10;margin-left:50;width:120;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="113" />113<hr style="margin-top:-10;margin-left:50;width:113;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="102" />102<hr style="margin-top:-10;margin-left:50;width:102;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="96" />96<hr style="margin-top:-10;margin-left:50;width:96;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="92" />92<hr style="margin-top:-10;margin-left:50;width:92;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="82" />82<hr style="margin-top:-10;margin-left:50;width:82;"/>
+<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="72" />72<hr style="margin-top:-10;margin-left:50;width:72;"/>
+
+You must keep your eyes <input id="directdpibylines" name="userIDpi" value="" type="text" size="2" readonly="true"/> inches from the computer screen.
 <br/>
+
+
+				
+Looks like your screen resolution is:<br />
+        <input id="screen"
+                  name="screen"
+                  type="text" 
+									size="10"
+									readonly="true"
+									/><br />
+				And looks like your browser is :<br/>					
+				<input id="ubrowser"
+				       name="ubrowser"
+							 type="text"
+							 size="25"
+							 readonly="true"
+							 /><br/>					
+											
+
+		</form>
 		
-		
-Lets start the task.<br/>
- 
+</div>	
+	
+		 
 After you click the Ready? button below, a texture will appear for about 2 seconds 
 somewhere inside this image. After that the original random image will come back. 
 The texture may be either random or structured, but, as a reminder, your job is just 
@@ -646,7 +687,7 @@ pretty sure of where the band is.</br>
 Submit only after you finish a batch of 20. </br> </br>
 </div>
 <h4 align="center" style="margin: -15px 150px"> <a style="color:green;font-weight:bold" 
-href="javascript:hideshow(document.getElementById('bag'))">click here to show/hide the Task part. </a><h4/>
+href="javascript:hideshow(document.getElementById('bag'))">click here to show/hide the Task part (hide the instructions part first). </a><h4/>
 
 
 
@@ -782,47 +823,7 @@ href="javascript:hideshow(document.getElementById('bag'))">click here to show/hi
 					 value=""
 					 type="hidden" />		
 				 	
-<h4 align="center" style="margin: -15px -100px"> <a style="color:green;font-weight:bold" 
-href="javascript:hideshow(document.getElementById('calib'))"> New: Calibration Procedure! click to show/hide;</a><h4/>
-					
-<div id="calib" style="display: none;margin: 15px -100px">
 
-
-
-Using a rule, pick the line bellow that is closest in length to an inch: </br>
-
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="264" />264<hr style="margin-top:-10;margin-left:50;width:264"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="135" />135<hr style="margin-top:-10;margin-left:50;width:135"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="120" />120<hr style="margin-top:-10;margin-left:50;width:120;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="113" />113<hr style="margin-top:-10;margin-left:50;width:113;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="102" />102<hr style="margin-top:-10;margin-left:50;width:102;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="96" />96<hr style="margin-top:-10;margin-left:50;width:96;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="92" />92<hr style="margin-top:-10;margin-left:50;width:92;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="82" />82<hr style="margin-top:-10;margin-left:50;width:82;"/>
-<input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="72" />72<hr style="margin-top:-10;margin-left:50;width:72;"/>
-
-You must keep your eyes <input id="directdpibylines" name="userIDpi" value="" type="text" size="2" readonly="true"/> inches from the computer screen.<br/><br/>
-
-				
-Looks like your screen resolution is:<br />
-        <input id="screen"
-                  name="screen"
-                  type="text" 
-									size="10"
-									readonly="true"
-									/><br />
-				And looks like your browser is :<br/>					
-				<input id="ubrowser"
-				       name="ubrowser"
-							 type="text"
-							 size="25"
-							 readonly="true"
-							 /><br/>					
-											
-
-		</form>
-		
-</div>
 		
 		<script language="Javascript">
 	  document.getElementById('family').value=tfamily;
