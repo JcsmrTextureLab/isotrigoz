@@ -1,0 +1,375 @@
+/* 
+	Resets defualt browser settings
+	reset.css
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,tbody,tfoot,thead,th { margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit;  }
+:focus { outline:0; }
+a:active { outline:none; }
+body { line-height:1; color:black; background:white;  }
+ol,ul { list-style:none; }
+/*table {border-collapse:separate; border-spacing:0; }
+*/
+caption,th {font-weight:normal; }
+blockquote:before,blockquote:after,q:before,q:after { content:""; }
+blockquote,q { quotes:"" ""; }
+
+hr {
+margin-top:10px;
+margin-left:0;
+margin-right:0;
+float:left;
+}
+
+
+
+
+/*
+	Page style
+*/
+
+body { 
+	font:normal 72.5%/1.5 Helvetica, Arial, sans-serif;
+	letter-spacing:0;
+	color:#434343;
+	background-color:#efefef; 
+        background-image:url('../img/background.png');
+        background-repeat: repeat;
+        background-position: top center;
+	padding:5px 0;
+	margin:5px;
+	position:relative;
+	text-align:center;
+	text-shadow:0 1px 0 rgba(255,255,255,.8);
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+#container {
+	width:600px;
+	padding:0px;
+	margin:0px auto;
+	position:relative;
+	z-index:0;
+	text-align:left;
+}
+
+#bag { 
+	width:600px;
+ 
+	padding:0px;
+	margin:0px auto;
+	position:relative;
+	z-index:0;
+	text-align:left;
+}
+#tbox{
+width:600px;
+position:relative;
+}
+
+#lace{
+position:relative;
+width:600px;
+margin:-25px auto; 
+}
+
+#wrap {
+position:relative;
+width:100%;
+}
+
+#header {
+  width:100%;
+  padding:0% 0%;
+}
+#main {
+  position:relative;
+  width: 100%;
+  display:table;
+}
+#left_col {
+  position:relative;
+	width:15%;
+  display:table-cell;
+	text-align:right;
+}
+#mid_col {
+  position:relative;
+  width:1%; 
+  display:table-cell;
+}
+#right_col {
+  position:relative;	
+	display:table-cell;
+	text-align:left;
+}
+#feeter {
+  position:relative;
+  width:100%;
+}
+
+#kudos{
+display:inline-block;
+visibility:hidden;
+height:50px; 
+width:50px;
+position: relative; 
+top:  245px; 
+left: 275px;
+z-index:3000;
+}
+
+#readyButton{
+display:inline-block;
+position: relative; 
+top:  310px; 
+left: 270px;
+z-index:5000;
+}
+
+
+
+#texture{
+display:inline;
+}
+
+.trmask{
+
+opacity:0.6;
+filter:alpha(opacity=60);
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=60)"; 
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+width:79px;
+height:270px;
+position:absolute;
+background:#000;
+background:rgba(228,28,28,.6);
+top:0px;
+right:340px;
+z-index:500;
+border-left:1px solid red;
+border-right:1px solid red;
+}
+
+.tlmask{
+opacity:0.6;
+filter:alpha(opacity=60);
+width:79px;
+height:270px;
+position:absolute;
+background:#000;
+background:rgba(228,28,28,.6);
+top:0px;
+right:450px;
+z-index:2000;
+border-left:1px solid red;
+border-right:1px solid red;
+
+}
+
+.ttmask{
+opacity:0.6;
+filter:alpha(opacity=60);
+width:270px;
+height:79px;
+position:absolute;
+background:#000;
+background:rgba(228,28,28,.6);
+top:40px;
+z-index:2000;
+border-top:1px solid red;
+border-bottom:1px solid red;
+}
+
+.tbmask{
+opacity:0.6;
+filter:alpha(opacity=60);
+width:270px;
+height:79px;
+position:absolute;
+background:#000;
+background:rgba(228,28,28,0.6);
+top:150px;
+z-index:2000;
+border-top:1px solid red;
+border-bottom:1px solid red;
+}
+
+
+
+
+#example {
+	width:600px;
+	height:350px;
+	position:relative;
+}
+
+#ribbon {
+	position:absolute;
+	top:-3px;
+	left:-15px;
+	z-index:500;
+}
+
+#frame {
+	position:absolute;
+	z-index:0;
+	width:739px;
+	height:341px;
+	top:-3px;
+	left:-80px;
+}
+
+/*
+	Slideshow
+*/
+
+#slides {
+	position:absolute;
+	top:15px;
+	left:4px;
+	z-index:100;
+
+}
+
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+
+.slides_container {
+	width:570px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container div.slide {
+	width:570px;
+	height:285px;
+	display:block;
+	margin:0px 150px;
+}
+
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next,#slides .prev {
+	position:absolute;
+	top:107px;
+	left:-39px;
+	width:24px;
+	height:43px;
+	display:block;
+	z-index:101;
+}
+
+#slides .next {
+	left:585px;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+	margin:26px auto;
+	width:120px;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../img/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+/*
+	Caption
+*/
+
+.caption {
+	z-index:500;
+	position:absolute;
+	bottom:-10px;
+	left:0px;
+	height:15px;
+	padding:0px 0px 0px 0px;
+	background:#000;
+	background:rgba(0,0,0,.6);
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=60)"; /*IE8*/
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+	width:270px;
+	font-size:1.1em;
+	line-height:1.33;
+	color:#fff;
+	border-top:1px solid #000;
+	text-shadow:none;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+/*
+	Footer
+*/
+
+#footer {
+	text-align:center;
+	width:580px;
+	margin-top:9px;
+	padding:4.5px 0 18px;
+	border-top:1px solid #dfdfdf;
+}
+
+#footer p {
+	margin:4.5px 0;
+	font-size:1.0em;
+}
+
+/*
+	Anchors
+*/
+
+a:link,a:visited {
+	color:#599100;
+	text-decoration:none;
+}
+
+a:hover,a:active {
+	color:#599100;
+	text-decoration:underline;
+}

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>    
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+        <LINK REL="StyleSheet" HREF="css/allbglobal.css" TYPE="text/css" MEDIA="screen">	
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="src/slides.jquery.js"></script>
+        <script type="text/javascript" src="src/hit.js"></script>
+
+
+        <title>Tag-a-Texture</title>
+    </head>
+    <body>
+
+        <h4 align="center" ><a style="color:red;font-weight:bold" 
+                               href="javascript:hideshow(document.getElementById('container'))">click here to hide/show the Instruction part.</a></h4>
+
+
+
+        <div id="container"  style="display: block">
+
+
+            <h4 align="center" > Where is the oddball strip in an image?</h4><br>
+
+            Have a look at this slide show. <br>
+            This HIT is a visual perception task that probes how the brain and particularly 
+            the visual system works. We have used this task in our labs among ourselves and 
+            with a few volunteers. Now we want to validate our findings with a large pool of 
+            subjects, so your help is very appreciated. Here are some samples of what you will see:
+            <br> 
+            <br>
+
+            <div id="example">
+
+                <div id="slides">			
+                    <div class="slides_container">
+
+                        <div class="slide">
+                            <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 1">		
+                            <div class="trmask"></div>
+                            <div class="caption" style="bottom:0">					
+                                <p>Right structured band on random background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">					
+                            <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 2">
+                            <div class="tlmask"></div>
+                            <div class="caption">
+                                <p>Left structured band on random background</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">						
+                            <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 3">					
+                            <div class="ttmask"></div>
+                            <div class="caption">					
+                                <p>Top structured band on random background </p>
+                            </div>
+                        </div>
+
+                        <div class="slide">						
+                            <img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 4">						
+                            <div class="tbmask"></div>
+                            <div class="caption">
+                                <p>Bottom structured band on random background</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">						
+                            <img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 5">
+                            <div class="trmask"></div>
+                            <div class="caption">
+                                <p>Right random band on structured background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img   src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 6">
+                            <div class="tlmask"></div>
+                            <div class="caption">
+                                <p>Left random band on structured background</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">						
+                            <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 7">
+                            <div class="ttmask"></div>
+                            <div class="caption">
+                                <p>Top random band on structured background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" >
+                            <img  src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 8">
+                            <div class="tbmask"></div>
+                            <div class="caption">
+                                <p>Bottom random band on structured background</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">					
+                            <img id="t0" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t0.png"  width="270" height="270" alt="Slide 9">						
+                            <div class="trmask"></div>
+                            <div class="caption" style="bottom:0">					
+                                <p>Right structured band on random background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img id="t1" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t2.png"  width="270" height="270" alt="Slide 10">
+                            <div class="tlmask"></div>
+                            <div class="caption">
+                                <p>Left structured band on random background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img  id="t2" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t4.png"  width="270" height="270" alt="Slide 11">
+                            <div class="ttmask"></div>
+                            <div class="caption">
+                                <p>Top structured band on random background </p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img  id="t3" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t6.png"  width="270" height="270" alt="Slide 12">
+                            <div class="tbmask"></div>
+                            <div class="caption">
+                                <p>Bottom structured band on random background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">						
+                            <img  id="t4" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t1.png"  width="270" height="270" alt="Slide 13">
+                            <div class="trmask"></div>
+                            <div class="caption">
+                                <p>Right random band on structured background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">						
+                            <img  id="t5" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t3.png"  width="270" height="270" alt="Slide 14">
+                            <div class="tlmask"></div>
+                            <div class="caption">
+                                <p>Left random band on structured background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <img  id="t6" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t5.png"  width="270" height="270" alt="Slide 15">
+                            <div class="ttmask"></div>
+                            <div class="caption">					
+                                <p>Top random band on structured background</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" >
+                            <img id="t7" src="http://marconioz.github.com/isotrigoz/turk/CHUBB/isotrigons/Box/even/t7.png"  width="270" height="270" alt="Slide 16">
+                            <div class="tbmask"></div>
+                            <div class="caption">					  	    
+                                <p>Bottom random band on structured background</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+                    <a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+                </div>
+                <img src="img/example-frame.png"  height="241" alt="Example Frame" id="frame">
+            </div>
+            Textures may be composed of a structured band over a random background, 
+            or the other way around (that is, a random band over a structured background).  
+            The band will appear in one of four places: top, bottom, left, or right.  
+            Your job is just to find which of these locations has the band.<br>
+
+            The movie shows some examples. In the first few examples, the band is structured 
+            and the background is random; in the next examples, it is the other way around
+            (a random band on a structured background). You can pause the slides by hovering 
+            the mouse over a slide, and navigate back and forth with the controllers. 
+            During the task, the position of the band will be randomized among these four 
+            locations (top, bottom, left, or right), and whether the band is structured or 
+            the background is structured will also be randomized.  We expect that some trials 
+            will be as easy and some will be hard, just like in the movie.  
+            The movie indicates the location of the band with a red box; this is just to 
+            explain the task; it will not appear during the HIT.<br><br>
+
+            Lets start the task. <br> First perform this quick calibration procedure.<br>
+
+            <h4 align="center" style="margin: 5px 0px"> <a style="color:green;font-weight:bold" 
+                                                           href="javascript:hideshow(document.getElementById('calib'))"> Calibration procedure, click to hide/show this procedure;</a></h4>
+
+            <div id="calib" style="display: block; margin: 5px 0px;width:600px;">
+
+                Using a rule, pick the line bellow that is closest in length to an inch: <br>
+
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="264" style="float:left;"><hr style="width:264px;">264<br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="135" style="float:left"><hr style="width:135px;">135<br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="120" style="float:left"><hr style="width:120px;">120<br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="113" style="float:left"><hr style="width:113px;">113<br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="102" style="float:left"><hr style="width:102px;">102<br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="96" style="float:left"><hr style="width:96px;">96 <br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="92" style="float:left"><hr style="width:92px;">92 <br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="82" style="float:left"><hr style="width:82px;">82 <br>
+                <input onclick ="ipick3(this.value)" type="radio" name="directdpi" value="72" style="float:left"><hr style="width:72px;">72 <br>
+
+                <br>
+                You must keep your eyes <input id="directdpibylines" name="userIDpi" value="" type="text" size="2" readonly="readonly"> inches from the computer screen.
+                <br>
+
+                Looks like your screen resolution is:<br>
+                <input id="screen"
+                       name="screen"
+                       type="text" 
+                       size="10"
+                       readonly="readonly"
+                       ><br>
+                And looks like your browser is :<br>					
+                <input id="ubrowser"
+                       name="ubrowser"
+                       type="text"
+                       size="25"
+                       readonly="readonly"
+                       ><br>	
+
+                <script type="text/javascript" language="Javascript">
+                    var patord=[0,2,4,6,1,3,5,7];
+                    for(i=0;i<=7;i++){
+                        document.getElementById("t"+i).src=home+"t" +patord[i]+ ".png"}
+                </script>					 
+
+            </div>													 
+            After you click the Ready? button at the center of the random image below, a texture will appear for about 2 seconds 
+            somewhere inside this image. After that the original random image will come back. 
+            The texture may be either a random or structured band, but, as a reminder, your job is just 
+            to find its location. Indicate your choice by clicking on the button corresponding 
+            to its location.  If you are not sure, make your best guess. In some cases, 
+            it may be very hard to see where the band is, but we still prefer that you make 
+            your best guess.  Please only click on the 'duh' button if you think your attention 
+            lapsed, as we are just as interested in your best guesses as in when you are 
+            pretty sure of where the band is.<br>
+            Submit only after you finish a batch of 20.
+
+            <h4 align="center" ><a style="color:red;font-weight:bold" 
+                                   href="javascript:hideshow(document.getElementById('container'))">click to hide/show the Instruction part.</a></h4>
+
+        </div>
+
+        <h4><a style="color:orange;font-weight:bold" href="javascript:hideshow(document.getElementById('bag'))">click to hide/show the Task part. </a></h4>
+
+
+        <div id="bag" style="display: block;">
+
+            <form id="mturk_form"
+                  method="POST"
+                  action="http://workersandbox.mturk.com/mturk/externalSubmit">
+
+                <input id="assignmentId"
+                       name="assignmentId"
+                       value=""
+                       type="hidden" >    
+
+
+                <div id="tbox">
+                    <input id="readyButton" type="button" value="Ready?" onclick="timedTexture()" >
+                    Click on the Ready? button at the center of the image bellow to start.<br>
+                    <img id="kudos"alt="kudos" name="kudos"  src=""  align="center">			
+                    <div id="lace">
+                        <div id="wrap">	
+                            <div id="header" align="center"> 			 		
+                                <input id="R0" 			           
+                                       name="cat"
+                                       onclick="ipick(this.id)"
+                                       value="Top"
+                                       type="Button" 
+                                       style="cursor:pointer; border: none; background:url('ticonT.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat" >
+                            </div>
+
+                            <div id="main">
+                                <div id="left_col" >
+                                    <input id="R1"
+                                           name="cat"
+                                           onclick="ipick(this.id)"
+                                           value="Left"
+                                           type="Button" 
+                                           style="cursor:pointer; border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                </div>			 
+
+                                <div id="mid_col">
+
+                                    <img id="texture"alt="random" name="texture"  src="t0.png" height="400" width="400" align="center">
+
+                                </div>
+
+                                <div id="right_col">	
+                                    <input id="R2"
+                                           name="cat"
+                                           onclick="ipick(this.id)"
+                                           value="Right"
+                                           type="Button"
+                                           style="cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                </div>
+                            </div>
+
+                            <div id="feeter" align="center">	
+                                <input id="R3"
+                                       name="cat"
+                                       onclick="ipick(this.id)"
+                                       value="Bottom"
+                                       type="Button" 
+                                       style="cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="R4"					    
+                           name="cat"
+                           onclick="ipick(this.id);ct=ct+1;"
+                           value="Duh,missed!"
+                           type="Button"
+                           align="middle" > <br>									
+                    Don't abuse the "Duh" button, the HIT may expire early...<br>
+
+                    You've got   
+                    <input id="togo"
+                           readonly="readonly"
+                           name="togo"
+                           size="5"
+                           value=""
+                           type="text" > to go. Click here after you finish the batch
+
+                    <input id="submitButton"
+                           name="Submit"
+                           value="Submit"
+                           type="submit"
+                           disabled="disabled"><br>
+
+
+                </div>
+       
+
+
+                <input id="family"
+                       type="hidden"
+                       name="tfamily"
+                       value="" ><br><br>
+                <input id="feed0"
+                       name="feed0"
+                       value=""
+                       type="hidden" > 
+
+                <input id="feed1"
+                       name="feed1"
+                       value=""
+                       type="hidden" >
+
+                <input id="feed2"
+                       name="feed2"
+                       value=""
+                       type="hidden" >
+
+                <input id="feed3"
+                       name="feed3"
+                       value=""
+                       type="hidden" >		
+
+
+            </form>
+        </div>            
+            <script type="text/javascript" language="Javascript">
+                document.getElementById('family').value=tfamily;
+                document.getElementById('screen').value=swidth + " x " + sheight;
+                document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
+                document.getElementById('assignmentId').value = gup('assignmentId');
+        
+                try{
+                    document.getElementById('texture').src =  rhome+"t3.png";
+                }
+                catch(err1){
+                    try{
+                        document.getElementById('texture').src =  rhome +"t3.png";
+                    }
+                    catch(err2)
+                    {
+                        txt="There was an error on this page.\n\n";
+                        txt+="Error description: " + err2.message + "\n\n";
+                        txt+="Click OK to continue.\n\n";
+                        alert(txt);
+                    }
+                };
+        
+	
+                if(!document.getElementById('readyButton').disabled){disableit()}else{enableit()};
+        
+                //
+                // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
+                //
+        
+                if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+                {
+                    //If we're previewing, disable the button and give it a helpful message
+                    document.getElementById('submitButton').disabled = true;
+                    document.getElementById('submitButton').value = "You must ACCEPT the HIT first.";
+            
+                    document.getElementById('readyButton').disabled=true;
+                    document.getElementById('readyButton').value="ACCEPT the HIT to start";
+            
+                } else {
+                    var form = document.getElementById('mturk_form');
+                    if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
+                        form.action = "http://workersandbox.mturk.com/mturk/externalSubmit";
+                
+                    }
+                }
+       
+                var scale=3; var tpx=5;var picpix=500;
+        
+        
+                function ipick3(f){
+                    document.getElementById('directdpibylines').value=Math.ceil(scale*picpix/f);
+                }
+        
+            </script>
+
+    </body>
+</html>
+
