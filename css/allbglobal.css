@@ -38,6 +38,7 @@ body {
 	padding:5px 0;
 	margin:5px;
 	position:relative;
+        text-justify:kashida;
 	text-align:center;
 	text-shadow:0 1px 0 rgba(255,255,255,.8);
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -55,23 +56,25 @@ body {
 #bag { 
 	width:600px;
  
-	padding:0px;
-	margin:0px auto;
+	padding:0px 0px;
+	margin:-0px auto;
 	position:relative;
 	z-index:0;
 	text-align:left;
+         
+        
 }
 #tbox{
 width:600px;
 position:relative;
-margin:-10px auto;
+margin:-0px auto;
 }
 
 #lace{
 position:relative;
 width:600px;
-height:590px;
-margin:-35px auto; 
+height:610px;
+margin:-55px auto; 
 }
 
 #wrap {
