@@ -225,10 +225,10 @@ border-bottom:1px solid red;
 #frame {
 	position:absolute;
 	z-index:0;
-	width:455px;
+	width:445px;
 	height:340px;
 	top:-13px;
-	left:65px;
+	left:69px;
 }
 
 
@@ -281,7 +281,7 @@ border-bottom:1px solid red;
 #slides .next,#slides .prev {
 	position:absolute;
 	top:107px;
-	left:107px;
+	left:110px;
 	width:24px;
 	height:43px;
 	display:block;
@@ -289,7 +289,7 @@ border-bottom:1px solid red;
 }
 
 #slides .next {
-	left:440px;
+	left:435px;
 }
 
 /*
