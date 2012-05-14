@@ -296,7 +296,7 @@
                                            onclick="ipick(this.id)"
                                            value="Left"
                                            type="Button" 
-                                           style="z-index:2000;cursor:pointer; text-align:left;border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                           style="cursor:pointer; text-align:left;border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                                 &nbsp;&nbsp;
                                 </div>			 
                                 &nbsp;
@@ -314,7 +314,7 @@
                                            onclick="ipick(this.id)"
                                            value="Right"
                                            type="Button"
-                                           style="z-index:2000;cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                           style="cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                                 </div>
                             </div>
 
@@ -325,7 +325,7 @@
                                        onclick="ipick(this.id)"
                                        value="Bottom"
                                        type="Button" 
-                                       style="z-index:2000;cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                       style="cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                             </div>
                         </div>
                     <img src="img/example-frame-half.png"  height="241" alt="Example Frame" id="frame2"> 
@@ -386,7 +386,22 @@
                 <input id="feed3"
                        name="feed3"
                        value=""
-                       type="hidden" >		
+                       type="hidden" >
+                
+                <input id="Uscreen"
+                       type="hidden"
+                       name ="uscreen"
+                       value="">                 
+                <input id="Ubrowser"
+                       type="hidden"
+                       name ="ubrowser"
+                       value=""> 
+                <input id="Udpi"
+                       type="hidden"
+                       name ="udpi"
+                       value="">                 
+                
+                
 
 
             </form>
@@ -394,7 +409,10 @@
             <script type="text/javascript" language="Javascript">
                 document.getElementById('family').value=tfamily;
                 document.getElementById('screen').value=swidth + " x " + sheight;
+                document.getElementById('Uscreen').value=swidth + " x " + sheight;
                 document.getElementById('ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
+                document.getElementById('Ubrowser').value=BrowserDetect.browser +" "+ BrowserDetect.version + " on " + BrowserDetect.OS;
+                
                 document.getElementById('assignmentId').value = gup('assignmentId');
         
                 try{
@@ -442,6 +460,7 @@
         
                 function ipick3(f){
                     document.getElementById('directdpibylines').value=Math.ceil(scale*picpix/f);
+                    document.getElementById('Udpi').value=f;
                 }
         
             </script>
