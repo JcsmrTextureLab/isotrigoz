@@ -176,7 +176,7 @@
                     <a href="#" class="prev"><img src="img/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
                     <a href="#" class="next"><img src="img/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
                 </div>
-                <img src="img/example-frame.png"  height="241" alt="Example Frame" id="frame">
+                <img src="img/example-frame-half.png"  height="241" alt="Example Frame" id="frame">
             </div>
             Textures may be composed of a structured band over a random background, 
             or the other way around (that is, a random band over a structured background).  
@@ -272,7 +272,7 @@
 
                 <div id="tbox">
                     <input id="readyButton" type="button" value="Ready?" onclick="timedTexture()" >
-                   <h4 align="center" > Click on the Ready? button at the center of the image bellow to start.</h4>
+                   <div style="text-align:center" > Click on the Ready? button at the center of the image bellow to start, then choose a location.</div>
                     <img id="kudos"alt="kudos" name="kudos"  src=""  align="center">			
                     <div id="lace">
                         <div id="wrap">	
@@ -287,21 +287,25 @@
 
                             <div id="main">
                                 <div id="left_col" >
+                                   
                                     <input id="R1"
                                            name="cat"
                                            onclick="ipick(this.id)"
                                            value="Left"
                                            type="Button" 
-                                           style="cursor:pointer; border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                           style="cursor:pointer; text-align:left;border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                &nbsp;&nbsp;&nbsp;
                                 </div>			 
-
+                                &nbsp;
                                 <div id="mid_col">
-
+                           
                                     <img id="texture"alt="random" name="texture"  src="t0.png" height="400" width="400" align="center">
-
+                                
                                 </div>
+                                &nbsp;
 
-                                <div id="right_col">	
+                                <div id="right_col">
+                                    &nbsp;&nbsp;&nbsp;
                                     <input id="R2"
                                            name="cat"
                                            onclick="ipick(this.id)"
@@ -311,7 +315,8 @@
                                 </div>
                             </div>
 
-                            <div id="feeter" align="center">	
+                            <div id="feeter" align="center">
+                               
                                 <input id="R3"
                                        name="cat"
                                        onclick="ipick(this.id)"
@@ -320,8 +325,9 @@
                                        style="cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                             </div>
                         </div>
+                    <img src="img/example-frame-half.png"  height="241" alt="Example Frame" id="frame2"> 
                     </div>
-
+                   
                     <input id="R4"					    
                            name="cat"
                            onclick="ipick(this.id);ct=ct+1;"
