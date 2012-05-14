@@ -194,14 +194,14 @@ $(function(){
 
     function easytiger()
     {
-    document.getElementById('readyButton').disabled = true;
-    
+    document.getElementById('readyButton').disabled = true; 
     document.getElementById('readyButton').value = "Where?";
     document.getElementById('kudos').style.visibility="hidden";
     enableit();
     }
 
-    function gotiger(){
+    function gotiger(){        
+    document.getElementById('readyButton').style.visibility="visible";
     document.getElementById('readyButton').disabled = false;
     document.getElementById('readyButton').value ="Ready?";
     }

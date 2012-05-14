@@ -286,6 +286,7 @@
                                        type="Button" 
                                        style="cursor:pointer; border: none; background:url('ticonT.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat" >
                             </div>
+                            <br>
 
                             <div id="main">
                                 <div id="left_col" >
@@ -295,8 +296,8 @@
                                            onclick="ipick(this.id)"
                                            value="Left"
                                            type="Button" 
-                                           style="cursor:pointer; text-align:left;border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
-                                &nbsp;&nbsp;&nbsp;
+                                           style="z-index:2000;cursor:pointer; text-align:left;border: none; background:url('ticonL.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                &nbsp;&nbsp;
                                 </div>			 
                                 &nbsp;
                                 <div id="mid_col">
@@ -304,7 +305,7 @@
                                     <img id="texture"alt="random" name="texture"  src="t0.png" height="400" width="400" align="center">
                                 
                                 </div>
-                                &nbsp;
+                                &nbsp;&nbsp;&nbsp;
 
                                 <div id="right_col">
                                     &nbsp;&nbsp;&nbsp;
@@ -313,7 +314,7 @@
                                            onclick="ipick(this.id)"
                                            value="Right"
                                            type="Button"
-                                           style="cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                           style="z-index:2000;cursor:pointer; border: none; background:url('ticonR.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                                 </div>
                             </div>
 
@@ -324,21 +325,25 @@
                                        onclick="ipick(this.id)"
                                        value="Bottom"
                                        type="Button" 
-                                       style="cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
+                                       style="z-index:2000;cursor:pointer; border: none; background:url('ticonB.png');height:50px; width:50px;background-size:50px 50px;background-repeat:no-repeat">
                             </div>
                         </div>
                     <img src="img/example-frame-half.png"  height="241" alt="Example Frame" id="frame2"> 
-                    </div>
+                    
                    
                     <input id="R4"					    
                            name="cat"
                            onclick="ipick(this.id);ct=ct+1;"
                            value="Duh,missed!"
                            type="Button"
-                           align="middle" > <br>									
+                           align="middle" >
+                  
+                    <br><br>
+                  
+                    									
                     Don't abuse the "Duh" button, the HIT may expire early...<br>
 
-                    You've got   
+                    You have   
                     <input id="togo"
                            readonly="readonly"
                            name="togo"
@@ -351,7 +356,9 @@
                            value="Submit"
                            type="submit"
                            disabled="disabled"><br>
-
+                   
+                    
+                  </div>
 
                 </div>
        
